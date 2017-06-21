@@ -14,7 +14,6 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    if params[:image] == null
     params.require(:user).permit(:username, :password, :image)
   end
 end

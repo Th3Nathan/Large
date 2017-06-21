@@ -4,11 +4,22 @@
   margin-top: 105px;
   text-align: center;
   background-color: white;
-  height: 490px;
+  height: 550px;
   z-index: 10;
   position: relative;
   margin: auto;
   top: 20px;
+}
+
+#file-input {
+
+}
+
+#image-preview {
+  position: absolute;
+  width: 100px;
+  bottom: 240px;
+  right: 20px;
 }
 
 .logo {
@@ -40,7 +51,7 @@
 }
 
 .form-header {
-
+  margin-bottom: 2px;
 }
 
 #errors-list {
@@ -76,6 +87,11 @@
 #session-form input[type="submit"] {
   font-size: 1.2em;
   margin-bottom: 8px;
+}
+
+#file-input  {
+  padding-top: 5px;
+  margin-bottom: 7px;
 }
 
 #toggle-sign-button {

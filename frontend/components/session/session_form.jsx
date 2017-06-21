@@ -77,7 +77,9 @@ class SessionForm extends React.Component {
     let formData = new FormData();
     formData.append("user[username]", this.state.username);
     formData.append("user[password]", this.state.password);
-    formData.append("user[image]", this.state.imageFile);
+    if (this.state.imageFile){
+      formData.append("user[image]", this.state.imageFile);
+    }
 
     this.props.scrubErrors();
     this.props.processForm(formData);
@@ -96,6 +98,18 @@ class SessionForm extends React.Component {
 
   render(){
 
+  let upload;
+  if (this.props.formType === 'signup'){
+    upload = (
+      <div>
+      <label className="input-label">Upload avatar image
+        <br/>
+        <input id="file-input" type="file" onChange={this.updateFile} ></input>
+      </label>
+      <br/>
+      </div>
+    );
+  }
 
   let header;
   if (this.props.formType === "signup")
@@ -122,7 +136,8 @@ class SessionForm extends React.Component {
   <div onClick={this.leaveModal} id="overlay"></div>
     <section id="session-form" className={this.state.classname}>
       {redirect}
-      <img src={this.state.imageUrl} />
+
+      <img id="image-preview" src={this.state.imageUrl} />
       <div id="form-header-box">
         <div id="rainbow-title">
           <span style={colors.green}>L</span>
@@ -133,14 +148,11 @@ class SessionForm extends React.Component {
         </div>
       </div>
       {header}
-      <h5 className="error">{this.props.errors}</h5>
       <form>
 
-      <label className="input-label">Upload Image
-        <br/>
-        <input type="file" onChange={this.updateFile} ></input>
-      </label>
+      {upload}
       <br/>
+      <h5 className="error">{this.props.errors}</h5>
 
         <label className="input-label">Username
           <br/>
