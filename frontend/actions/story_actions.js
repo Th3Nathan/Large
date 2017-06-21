@@ -28,6 +28,27 @@ export const receiveErrors = errors => {
   };
 };
 
+export const addStory = story => {
+  return {
+    type: CREATE_STORY,
+    story
+  };
+};
+
+export const deleteStory = story => {
+  return {
+    type: DELETE_STORY,
+    story
+  };
+};
+
+export const update = story => {
+  return {
+    type: UPDATE_STORY,
+    story
+  };
+};
+
 export const fetchStories = () => {
   return APIUtil.fetchStories()
     .then(stories => {
@@ -45,12 +66,22 @@ export const fetchSingleStory = (id) => {
 export const updateStory = (newStory, id) => {
   return APIUtil.fetchSingleStory(newStory, id)
     .then(story => {
-      return dispatch(receiveSingleStory(story));
+      return dispatch(update(story));
+    });
+};
+
+export const createStory = (story) => {
+  return APIUtil.createStory(story)
+    .then(story => {
+      return dispatch({
+        type: CREATE_STORY,
+        story
+      });
     });
 };
 
 export const destroyStory = id => {
   return APIUtil.destroyStory(id).then((story) => {
-    return dispatch(receiveStories(story));
+    return dispatch(deleteStory(story));
   });
 };

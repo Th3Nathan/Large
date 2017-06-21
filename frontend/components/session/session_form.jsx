@@ -105,7 +105,6 @@ class SessionForm extends React.Component {
   }
 
   render(){
-
   let upload;
   if (this.props.formType === 'signup'){
     upload = (
@@ -179,7 +178,7 @@ class SessionForm extends React.Component {
         <input type="submit" value="DEMO" onClick={this.demoLogin}></input>
         <br/>
       </form>
-      <Link onClick={this.clearForm} id="toggle-sign-button" to={`/${destination}`}>{destination}</Link>
+      <Link id="toggle-sign-button" to={`/${destination}`}>{destination}</Link>
     </section>
     </div>
   );
