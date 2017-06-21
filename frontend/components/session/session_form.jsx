@@ -21,6 +21,7 @@ class SessionForm extends React.Component {
     this.clearForm = this.clearForm.bind(this);
     this.turnOnModalAnimation = this.props.turnOnModalAnimation.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillUnmount(){
@@ -47,10 +48,17 @@ class SessionForm extends React.Component {
     };
   }
 
+  demoLogin(e){
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("user[username]", "nathan");
+    formData.append("user[password]", "password");
+    formData.append("user[image]", null);
+    this.props.signIn(formData);
+  }
+
   submit(e){
     e.preventDefault();
-
-
     let userErr;
     let passErr;
     if (this.state.username === ""){
@@ -168,6 +176,7 @@ class SessionForm extends React.Component {
         </label>
         <br/>
         <input type="submit" value="GO" onClick={this.submit}></input>
+        <input type="submit" value="DEMO" onClick={this.demoLogin}></input>
         <br/>
       </form>
       <Link onClick={this.clearForm} id="toggle-sign-button" to={`/${destination}`}>{destination}</Link>

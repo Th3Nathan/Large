@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     processForm: user => dispatch(processForm(user)),
+    signIn: user => dispatch(signIn(user)),
     scrubErrors: () => dispatch(scrubErrors()),
     turnOnModalAnimation: () => dispatch(turnOnModalAnimation()),
     turnOffModalAnimation: () => dispatch(turnOffModalAnimation())
