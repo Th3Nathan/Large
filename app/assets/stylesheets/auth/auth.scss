@@ -18,9 +18,10 @@
 
 #image-preview {
   position: absolute;
-  width: 100px;
-  bottom: 240px;
-  right: 20px;
+  width: 80px;
+  height: 80px;
+  bottom: 220px;
+  right: 25px;
   border-radius: 50px;
 }
 
@@ -64,6 +65,13 @@
   list-style-type: none;
   color: darkred;
   padding: 0;
+}
+
+#pencil {
+  position: absolute;
+  width: 20px;
+  right: 120px;
+  top: 278px;
 }
 
 .error {

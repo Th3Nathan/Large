@@ -7,16 +7,11 @@ class Greeting extends React.Component {
   }
 
   render(){
-    let thumbnail;
-    if (this.props.currentUser && this.props.currentUser.image_url){
-      thumbnail = (<img id="header-thumbnail" src={this.props.currentUser.image_url} />);
-    }
-    else {
-      thumbnail = (<img id="header-thumbnail" src="images/logo.png" />);
-    }
+
 
 
     if (this.props.currentUser){
+      let thumbnail = (<img id="header-thumbnail" src={this.props.currentUser.image_url} />);
       return (
         <section>
           <h3 id="greeting">Hello, {this.props.currentUser.username}!</h3>

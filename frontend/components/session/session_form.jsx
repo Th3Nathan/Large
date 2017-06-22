@@ -13,7 +13,7 @@ class SessionForm extends React.Component {
       passwordErrors: "",
       classname: this.props.modalAnimation ? "w3-animate-zoom" : "",
       imageFile: null,
-      imageUrl: null
+      imageUrl: "images/default_user.png"
     };
     this.props.turnOffModalAnimation();
     this.submit = this.submit.bind(this);
@@ -51,9 +51,8 @@ class SessionForm extends React.Component {
   demoLogin(e){
     e.preventDefault();
     let formData = new FormData();
-    formData.append("user[username]", "nathan");
+    formData.append("user[username]", "Guest");
     formData.append("user[password]", "password");
-    formData.append("user[image]", null);
     this.props.signIn(formData);
   }
 
@@ -108,12 +107,19 @@ class SessionForm extends React.Component {
   let upload;
   if (this.props.formType === 'signup'){
     upload = (
-      <div>
-        <input id="file-input" type="file" onChange={this.updateFile} ></input>
+      <div className="collapse">
+          <input onChange={this.updateFile} type="file" id="files" className="hidden"/>
+          <label htmlFor="files"><img id="pencil" src="images/pencil.png"/></label>
       <br/>
       </div>
     );
   }
+
+  let imagePreview;
+  if (this.props.formType === "signup")
+    imagePreview = <img id="image-preview" src={this.state.imageUrl} />;
+  else
+    imagePreview = <img></img>;
 
   let header;
   if (this.props.formType === "signup")
@@ -140,8 +146,7 @@ class SessionForm extends React.Component {
   <div onClick={this.leaveModal} id="overlay"></div>
     <section id="session-form" className={this.state.classname}>
       {redirect}
-
-      <img id="image-preview" src={this.state.imageUrl} />
+      {imagePreview}
       <div id="form-header-box">
         <div id="rainbow-title">
           <span style={colors.green}>L</span>

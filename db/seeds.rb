@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+
+guest = User.create({image: "https://s3.amazonaws.com/large-dev/dog.jpg", username: "Guest", password: "password"});
