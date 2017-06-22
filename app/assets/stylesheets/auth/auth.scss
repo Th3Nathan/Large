@@ -12,7 +12,8 @@
 }
 
 #file-input {
-
+  margin-top: 20px;
+  margin-bottom: -20px;
 }
 
 #image-preview {
@@ -20,6 +21,11 @@
   width: 100px;
   bottom: 240px;
   right: 20px;
+  border-radius: 50px;
+}
+
+#first-error {
+  margin-top: -15px;
 }
 
 .logo {

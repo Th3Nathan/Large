@@ -17,7 +17,6 @@ class Greeting extends React.Component {
 
 
     if (this.props.currentUser){
-      debugger
       return (
         <section>
           <h3 id="greeting">Hello, {this.props.currentUser.username}!</h3>

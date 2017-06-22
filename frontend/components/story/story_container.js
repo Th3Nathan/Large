@@ -1,36 +1,21 @@
 import { connect } from 'react-redux';
-import { RECEIVE_STORIES,
-         RECEIVE_SINGLE_STORY,
-         UPDATE_STORY,
-         
-         } from '../../actions/story_actions';
-
-import SessionForm from './session_form';
+import { fetchStories } from '../../actions/story_actions';
+import { storiesSelector } from "../../reducers/selectors";
 import { withRouter } from 'react-router-dom';
+import StoryIndex from './story_index';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    loggedIn: !!state.session.currentUser,
-    errors: state.session.errors,
-    formType: ownProps.location.pathname.slice(1),
-    modalAnimation: state.presentation.modalAnimation
+    stories: storiesSelector(state.stories.all)
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  let action;
-  const processForm = (ownProps.location.pathname.slice(1) === 'signin')
-   ? signIn : signUp;
-
+const mapDispatchToProps = dispatch => {
   return {
-    processForm: user => dispatch(processForm(user)),
-    signIn: user => dispatch(signIn(user)),
-    scrubErrors: () => dispatch(scrubErrors()),
-    turnOnModalAnimation: () => dispatch(turnOnModalAnimation()),
-    turnOffModalAnimation: () => dispatch(turnOffModalAnimation())
+  fetchStories: user => dispatch(fetchStories())
   };
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(SessionForm)
+  connect(mapStateToProps, mapDispatchToProps)(StoryIndex)
 );

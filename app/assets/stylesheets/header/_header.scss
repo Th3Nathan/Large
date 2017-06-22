@@ -5,12 +5,12 @@ body {
 
 #header-thumbnail {
   position: absolute;
-  width: 55px;
-  height: 55px;
-  right: 230px;
+  width: 50px;
+  height: 50px;
+  right: -69px;
   border-radius: 50px;
-  top: 10px;
-  border: 1px solid #02b875;;
+  top: -3px;
+  border: 1px solid #02b875;
 }
 
 #title {
@@ -18,6 +18,10 @@ body {
   color: black;
   cursor: pointer;
   height: 65px;
+}
+
+.error h5 {
+
 }
 
 #root {
@@ -42,6 +46,7 @@ header h1 {
 
 header section {
   float: right;
+  position: relative;
 }
 
 header img {
@@ -78,6 +83,7 @@ header section a, header section span {
   top: -15px;
   position: relative;
   margin-left: 15px;
+  font-size: 12px;
 }
 
 header section a:hover, span:hover {

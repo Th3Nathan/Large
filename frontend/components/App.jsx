@@ -5,6 +5,7 @@ import Header from './header';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
 import UsersContainer from './users/users_container.jsx';
+import StoriesContainer from './story/story_container';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
     <Header />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <AuthRoute path="/signin" component={SessionFormContainer} />
+    <StoriesContainer />
     <UsersContainer />
   </div>
   );

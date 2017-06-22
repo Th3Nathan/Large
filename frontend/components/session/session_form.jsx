@@ -109,10 +109,7 @@ class SessionForm extends React.Component {
   if (this.props.formType === 'signup'){
     upload = (
       <div>
-      <label className="input-label">Upload avatar image
-        <br/>
         <input id="file-input" type="file" onChange={this.updateFile} ></input>
-      </label>
       <br/>
       </div>
     );
@@ -159,7 +156,7 @@ class SessionForm extends React.Component {
 
       {upload}
       <br/>
-      <h5 className="error">{this.props.errors}</h5>
+      <h5 className="error" id="first-error">{this.props.errors}</h5>
 
         <label className="input-label">Username
           <br/>

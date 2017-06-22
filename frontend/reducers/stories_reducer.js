@@ -9,7 +9,7 @@ import { merge } from 'lodash';
 
 const defaultState = {
   current_story: {},
-  stories: {}
+  all: {}
 };
 
 const storiesReducer = (state = defaultState, action) => {
@@ -18,7 +18,7 @@ const storiesReducer = (state = defaultState, action) => {
   switch (action.type) {
 
     case RECEIVE_STORIES:
-      return merge({}, newState, { stories : action.stories });
+      return merge({}, newState, { all : action.stories });
 
     case RECEIVE_SINGLE_STORY:
       return merge(newState, { current_story : action.story });
@@ -40,4 +40,4 @@ const storiesReducer = (state = defaultState, action) => {
   }
 };
 
-export default storyReducer;
+export default storiesReducer;

@@ -49,28 +49,28 @@ export const update = story => {
   };
 };
 
-export const fetchStories = () => {
+export const fetchStories = () => dispatch => {
   return APIUtil.fetchStories()
     .then(stories => {
       return dispatch(receiveStories(stories));
     });
 };
 
-export const fetchSingleStory = (id) => {
+export const fetchSingleStory = (id) => dispatch => {
   return APIUtil.fetchSingleStory(id)
     .then(story => {
       return dispatch(receiveStory(story));
     });
 };
 
-export const updateStory = (newStory, id) => {
+export const updateStory = (newStory, id) => dispatch => {
   return APIUtil.fetchSingleStory(newStory, id)
     .then(story => {
       return dispatch(update(story));
     });
 };
 
-export const createStory = (story) => {
+export const createStory = (story) => dispatch => {
   return APIUtil.createStory(story)
     .then(story => {
       return dispatch({
@@ -80,7 +80,7 @@ export const createStory = (story) => {
     });
 };
 
-export const destroyStory = id => {
+export const destroyStory = id => dispatch => {
   return APIUtil.destroyStory(id).then((story) => {
     return dispatch(deleteStory(story));
   });
