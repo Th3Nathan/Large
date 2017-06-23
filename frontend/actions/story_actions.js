@@ -59,7 +59,7 @@ export const fetchStories = () => dispatch => {
 export const fetchSingleStory = (id) => dispatch => {
   return APIUtil.fetchSingleStory(id)
     .then(story => {
-      return dispatch(receiveStory(story));
+      return dispatch(receiveSingleStory(story));
     });
 };
 

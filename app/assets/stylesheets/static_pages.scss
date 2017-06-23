@@ -8,3 +8,31 @@
 .collapse {
   height: 0px;
 }
+
+
+.lock:hover .icon-unlock,
+.lock .icon-lock {
+    display: none;
+}
+.lock:hover .icon-lock {
+    display: inline;
+}
+
+
+.fa {
+  padding: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.fa-bookmark-o, .fa-angle-down {
+  color: rgba(0, 0, 0, 0.44);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.fa-bookmark-o:hover, .fa-angle-down:hover {
+  color: black;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}

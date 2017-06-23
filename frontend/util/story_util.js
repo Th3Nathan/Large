@@ -32,7 +32,7 @@ export const fetchStories = () => {
   });
 };
 
-export const fetchStory = (id) => {
+export const fetchSingleStory = (id) => {
   return $.ajax({
     method: 'GET',
     url: `api/stories/${id}`,

@@ -12,10 +12,16 @@ Story.destroy_all
 guest = User.create({
   image: "https://s3.amazonaws.com/large-dev/dog.jpg",
   username: "Guest",
-  password: "password"
+  password: "password",
+  bio: "I am a guest user, I have a cute puppy pikture and went to Dog College!"
 })
 
-commenter = User.create({image: "https://s3.amazonaws.com/large-dev/dog.jpg", username: "Commenter", password: "password"});
+commenter = User.create({
+  image: "https://s3.amazonaws.com/large-dev/dog.jpg",
+  username: "Commenter",
+  password: "password",
+  bio: "I like to talk about myself, someone better cut me short or im gonna spew my words all over this page. Hey Hey Hey thats what i sayyyyyyydjdjdjdjdjdjdjdjdjflsjfjdsklfja;sf;lkjasdf;lakjsdf;ljasdf;lkjasdf;lkjasdf;lkjasdf;lkjasdf;lkjasd;flkjsad;flkjasd;flkjas;dlfkjas;dlfkjs"
+  });
 
 story1 = Story.create({
   title: "Eating Sushi",

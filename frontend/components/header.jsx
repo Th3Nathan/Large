@@ -23,20 +23,23 @@ class Header extends React.Component {
   }
 
   componentDidMount(){
-    this.props.turnOnModalAnimation();
+    // this.props.turnOnModalAnimation();
   }
 
   render(){
     return (
       <header>
-        <Link to="/"><div id="title">
-          <img src="images/logo.png" />
-          <h1>Large</h1>
-        </div></Link>
+      <img src="https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" ></img>
+        <Link to="/">
+          <div id="title">
+            <h1>Large</h1>
+          </div>
+        </Link>
+
         <GreetingContainer />
         <Link id="new-story-link" to={this.props.loggedIn ? "/stories/new" : "/signin"}>
           Write a story
-        </Link>
+        </Link> 
       </header>
     );
   }

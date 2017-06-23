@@ -1,7 +1,7 @@
 import React from "react";
 import StoryBlurb from "./blurb";
 
-class StoryIndex extends React.Component {
+class StoriesIndex extends React.Component {
   componentDidMount(){
     this.props.fetchStories();
   }
@@ -13,12 +13,14 @@ class StoryIndex extends React.Component {
       );
     });
   return (
-  <div>
-    <h2>Hello frothe stories list</h2>
-    {stories}
-  </div>
+  <section className="stories">
+    <h1>Features Stories</h1>
+    <div className="story-index">
+      {stories}
+    </div>
+  </section>
   );
   }
 }
 
-export default StoryIndex;
+export default StoriesIndex;

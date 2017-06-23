@@ -26,6 +26,10 @@
   font-size: 12px;
 }
 
+.author-box-username:hover {
+  text-decoration: underline;
+}
+
 .author-box-datetime {
   display: flex;
 }
@@ -50,10 +54,5 @@
   font-size: 20px;
   display: flex;
   padding: 7px;
-}
-
-.fa {
-  padding: 4px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  cursor: pointer;
 }

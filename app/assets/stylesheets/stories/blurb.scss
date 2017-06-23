@@ -1,6 +1,6 @@
 .blurb {
   display: flex;
-  width: 50%;
+  width: 48%;
   height: 280px;
   border: 1px solid rgba(0,0,0,.1);
   margin: 10px;
@@ -21,6 +21,11 @@
   padding: 20px;
   width: 300px;
 }
+
+.blurb-text a {
+  text-decoration: none;
+}
+
 .blurb-title {
   font-size: 20px;
   font-weight: bold;
@@ -30,5 +35,5 @@
   font-weight: 400;
   font-size: 14px;
   color: rgba(0,0,0,.44);
-  height: 130px;
+  margin-bottom: 130px;
 }

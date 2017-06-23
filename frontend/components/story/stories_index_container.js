@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchStories } from '../../actions/story_actions';
 import { storiesSelector } from "../../reducers/selectors";
 import { withRouter } from 'react-router-dom';
-import StoryIndex from './story_index';
+import StoriesIndex from './stories_index';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -17,5 +17,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(StoryIndex)
+  connect(mapStateToProps, mapDispatchToProps)(StoriesIndex)
 );

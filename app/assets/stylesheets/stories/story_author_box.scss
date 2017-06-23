@@ -1,0 +1,126 @@
+.story-author-box {
+  height: 40px;
+  display: flex;
+  width: 740px;
+  margin: auto;
+  margin-top: 29px;
+  padding-left: 25px;
+}
+
+.story-author-box-image {
+  width: 15%;
+  margin-right: -40px;
+}
+
+.story-author-box-image img {
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+}
+
+.story-author-box-info {
+  width: 70%;
+  position: relative;
+}
+
+.story-author-box-info a {
+  text-decoration: none;
+}
+
+.story-author-box-username {
+  color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  margin: 0px;
+  margin-left: 8px;
+  margin-top: 1px;
+  font-size: 15px;
+
+}
+
+.story-author-box-username:hover {
+
+}
+
+.story-author-box-follow {
+  border-radius: 50px;
+  color: #02B875;
+  width: 59px;
+  padding: 0px 8px 0px 8px;
+  line-height: 1.35;
+  font-size: 12px;
+  border: 1px solid #02B875;
+  cursor: pointer;
+  text-align: center;
+  position: absolute;
+  top: 4px;
+  left: 120px;
+}
+
+
+.story-author-box-follow:hover {
+  color: #02B875;
+  border: 1px solid #1c9963;
+}
+
+.story-author-box-datetime {
+  display: flex;
+}
+
+.story-author-box-bio {
+  font-size: 13px;
+  line-height: 1.4;
+  padding-left: 12px;
+  margin-bottom: 1px;
+  width: 140%;
+  color: rgba(0,0,0,.44);
+}
+
+.story-author-box-text {
+  font-size: 12px;
+  margin-right: -2px;
+  color: rgba(0, 0, 0, 0.44);
+  line-height: 1.2;
+  margin-top: 1px;
+  padding-left: 7px;
+}
+
+.story-author-box-dot {
+  color: rgba(0, 0, 0, 0.44);
+  position: relative;
+  top: -7px;
+  right: -4px;
+}
+
+.story-author-box-icons {
+  font-size: 20px;
+  display: flex;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.lock:hover .icon-unlock,
+.lock .icon-lock {
+    display: none;
+}
+.lock:hover .icon-lock {
+    display: inline;
+}
+
+
+.fa {
+  padding: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.fa-bookmark-o, .fa-angle-down {
+  color: rgba(0, 0, 0, 0.44);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.fa-bookmark-o:hover, .fa-angle-down:hover {
+  color: black;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
