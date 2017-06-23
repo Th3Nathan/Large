@@ -23,6 +23,11 @@ class User < ActiveRecord::Base
   has_attached_file :image, styles: { thumb: ["32x32#", :png] }, default_url: "/images/logo.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  has_many :stories,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: 'Story'
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

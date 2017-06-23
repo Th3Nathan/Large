@@ -12,7 +12,12 @@
 #
 
 class Story < ActiveRecord::Base
-  validates :id, :title, :body, :author_id, :date, presence: true
+  validates :title, :body, :author_id, :date, :description, presence: true
   has_attached_file :image, default_url: "/images/logo.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  belongs_to :author,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: 'User'
 end

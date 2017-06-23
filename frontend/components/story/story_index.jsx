@@ -1,4 +1,5 @@
 import React from "react";
+import StoryBlurb from "./blurb";
 
 class StoryIndex extends React.Component {
   componentDidMount(){
@@ -8,12 +9,12 @@ class StoryIndex extends React.Component {
   render(){
     const stories = this.props.stories.map(story => {
       return (
-        <li key={story.id}>{story.body}<img src={story.image_url}/></li>
+        <StoryBlurb key={story.id} story={story} />
       );
     });
   return (
   <div>
-    <h2>Hello from the stories list</h2>
+    <h2>Hello frothe stories list</h2>
     {stories}
   </div>
   );

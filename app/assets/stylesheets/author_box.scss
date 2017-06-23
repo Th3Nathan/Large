@@ -1,0 +1,59 @@
+.author-box {
+  height: 40px;
+  display: flex;
+}
+
+.author-box-image {
+  width: 15%;
+  margin-right: 10px;
+}
+
+.author-box-image img {
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.author-box-info {
+  width: 70%;
+}
+
+.author-box-username {
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0px;
+  margin-left: 8px;
+  margin-top: 1px;
+  font-size: 12px;
+}
+
+.author-box-datetime {
+  display: flex;
+}
+
+.author-box-text {
+  font-size: 12px;
+  margin-right: -2px;
+  color: rgba(0, 0, 0, 0.44);
+  line-height: 1.2;
+  margin-top: 1px;
+  padding-left: 7px;
+}
+
+.author-box-dot {
+  color: rgba(0, 0, 0, 0.44);
+  position: relative;
+  top: -7px;
+  right: -4px;
+}
+
+.author-box-icons {
+  font-size: 20px;
+  display: flex;
+  padding: 7px;
+}
+
+.fa {
+  padding: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
