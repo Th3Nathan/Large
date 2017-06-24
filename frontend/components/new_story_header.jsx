@@ -16,8 +16,7 @@ class NewStoryHeader extends React.Component {
     this.state = {
       showDropdown: false
     };
-    this.removeDropdown = this.removeDropdown.bind(this);
-    this.addDropdown = this.addDropdown.bind(this);
+
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
@@ -27,18 +26,9 @@ class NewStoryHeader extends React.Component {
     });
   }
 
-  removeDropdown(e){
-    this.setState({ showDropdown: false });
-  }
-
-  addDropdown(e){
-    this.setState({ showDropdown: true });
-  }
-
   render(){
     return (
       <section className="new-story-header">
-        <div onClick={this.removeDropdown} className="click-listener"></div>
         <div className="new-story-share"><h5>Share</h5></div>
         <div className="new-story-publish">
           <h5>Publish</h5>
