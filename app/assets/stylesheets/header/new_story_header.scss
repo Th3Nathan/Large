@@ -34,8 +34,14 @@
 .new-story-publish .fa-angle-down {
   color: #02b875;
 }
+
 .fa-ellipsis-h {
   cursor:pointer;
+}
+
+.fa-ellipsis-h:hover {
+  cursor:pointer;
+color: rgba(0,0,0,.8);
 }
 
 .header-fa {
@@ -43,4 +49,26 @@
   position: relative;
   top: 5px;
   font-size: 20px !important;
+}
+
+.click-listener {
+  position: absolute;
+  left: -1000px;
+  top: 0;
+  right: -1000px;
+  bottom: -1000px;
+}
+
+.new-story-dropdown {
+  position: absolute;
+  list-style-type: none;
+  border: 1px solid rgba(0,0,0,.2);
+  padding: 15px;
+  right: -95px;
+  top: 34px;
+  width: 210px;
+}
+
+.new-story-dropdown-title {
+  font-size: 12px;
 }
