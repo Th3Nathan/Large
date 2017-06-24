@@ -2,12 +2,39 @@
   width: 50px;
   position: fixed;
   text-decoration: none;
+  align-items: center;
+}
+
+#share-bar-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0,0,0,.44);
 }
 
 #share-bar a {
   text-decoration: none;
+  font-size: 25px;
+  color: rgba(0,0,0,.44);
+  padding-left: 4px;
 }
 
-#heart-unclicked {
+.share-icon {
+  width: 100%;
+}
+
+.story-like-count {
+  font-size: 15px !important;
+  margin: auto;
+  padding-left: 10px !important;
+  top: -5px;
+  position: relative;
+}
+
+#heart-unclicked i {
   color: #02B875;
+  width: 100% !important;
+}
+
+.like-wrapper {
+  display: block;
 }

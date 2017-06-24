@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import StoryAuthorBox from './story_author_box';
 import ShareBar from './share_bar';
-
+import { StickyContainer, Sticky } from 'react-sticky';
 class StoriesShow extends React.Component {
 
   componentDidMount(){
@@ -15,6 +15,7 @@ class StoriesShow extends React.Component {
         return <h2> Im hanging around two long </h2>;
       } else { return(
       <section>
+        <StickyContainer>
         <StoryAuthorBox
           author={this.props.story.author}
           author_id={this.props.story.author_id}
@@ -22,7 +23,28 @@ class StoriesShow extends React.Component {
           date={this.props.story.date}
         />
       <div style={backgroundImage} className="stories-show-image"></div>
-      <ShareBar />
+      <Sticky>
+      {
+        ({
+          style,
+          isSticky,
+          wasSticky,
+          distanceFromTop,
+          distanceFromBottom,
+          calculatedHeight
+        }) => {
+          if (distanceFromTop < 18){
+            return (
+                <ShareBar />
+            );
+          }
+          else {
+            return <div></div>;
+          }
+         }
+       }
+      </Sticky>
+      </StickyContainer>
       </section>
     );
   }

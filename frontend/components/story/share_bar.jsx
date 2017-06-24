@@ -7,15 +7,28 @@ class ShareBar extends React.Component {
     return(
       <section id="share-bar">
         <h1 id="share-bar-title">SHARE</h1>
-        <a href="#" className="lock" id="heart-unclicked">
-          <i className=" fa fa-heart icon-lock"></i>
-          <i className=" fa fa-heart-o icon-unlock"></i>
+        <div className="like-wrapper">
+        <a href="/" className="lock" id="heart-unclicked">
+          <i className="fa fa-heart icon-lock share-icon"></i>
+          <i className="fa fa-heart-o icon-unlock share-icon"></i>
         </a>
-        <i className="fa fa-twitter" aria-hidden="true"></i>
-        <i className="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+
+        <a className="story-like-count" href="">
+          68
+        </a>
+
+        <a href="">
+          <i className="fa fa-twitter share-icon" aria-hidden="true"></i>
+        </a>
+
+        <a>
+          <i className="fa fa-facebook share-icon" aria-hidden="true"></i>
+        </a>
+
         <a href="#" className="lock">
-          <i className="fa fa-bookmark icon-lock"></i>
-          <i className="fa fa-bookmark-o icon-unlock"></i>
+          <i className="fa fa-bookmark icon-lock share-icon"></i>
+          <i className="fa fa-bookmark-o icon-unlock share-icon"></i>
         </a>
       </section>
     );
