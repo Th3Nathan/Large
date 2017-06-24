@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StoryAuthorBox from './story_author_box';
+import NewAuthorBox from './new_author_box';
 
 class NewStory extends React.Component {
   render(){
     return (
       <section>
       <NewAuthorBox
-        author={this.props.currentUser}
+        currentUser={this.props.currentUser}
       />
       </section>
     );

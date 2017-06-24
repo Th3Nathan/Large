@@ -1,0 +1,46 @@
+.new-story-header {
+  color: rgba(0,0,0,.6);
+  display: flex;
+}
+.new-story-share h5 {
+  font-size: 14px;
+ color: rgba(0,0,0,.4);
+ margin-right: 20px;
+}
+.new-story-share h5:hover {
+ color: rgba(0,0,0,.6);
+ cursor: pointer;
+}
+.new-story-publish {
+  cursor: pointer;
+  color: #00ab6b;
+  display: flex;
+  margin-right: 15px;
+}
+.new-story-publish fa {}
+
+.new-story-publish h5:hover {
+  cursor:pointer;
+  color: #00ab6b;
+}
+.new-story-publish h5 {
+  color: #02b875;
+  font-size: 14px;
+}
+
+.new-story-publish .fa-angle-down:hover {
+  color: #00ab6b;
+}
+.new-story-publish .fa-angle-down {
+  color: #02b875;
+}
+.fa-ellipsis-h {
+  cursor:pointer;
+}
+
+.header-fa {
+  transition: none !important;
+  position: relative;
+  top: 5px;
+  font-size: 20px !important;
+}

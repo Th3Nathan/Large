@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import { turnOnModalAnimation } from '../actions/presentational_actions';
+import NewStoryHeader from "./new_story_header";
 
 const StoryLink = () => {
   return (
@@ -23,6 +24,9 @@ class Header extends React.Component {
   }
 
   render(){
+    const newStoryBlock = (this.props.location.pathname === "/stories/new") ?
+    <NewStoryHeader /> : <Link id="new-story-link" to="/stories/new">Write a story</Link>;
+
     return (
       <header>
       <img src="https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" ></img>
@@ -33,9 +37,7 @@ class Header extends React.Component {
         </Link>
 
         <GreetingContainer />
-        <Link id="new-story-link" to="/stories/new">
-          Write a story
-        </Link>
+        { newStoryBlock }
       </header>
     );
   }
@@ -53,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

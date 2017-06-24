@@ -5,7 +5,7 @@ import NewStory from './new_story';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.currentUser
+    currentUser: state.session.currentUser
   };
 };
 
