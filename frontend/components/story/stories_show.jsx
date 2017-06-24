@@ -14,38 +14,35 @@ class StoriesShow extends React.Component {
       if (!this.props.story.id){
         return <h2> Im hanging around two long </h2>;
       } else { return(
-      <section>
         <StickyContainer>
+      <section>
         <StoryAuthorBox
           author={this.props.story.author}
           author_id={this.props.story.author_id}
           story={this.props.story.body}
           date={this.props.story.date}
         />
-      <div style={backgroundImage} className="stories-show-image"></div>
-      <Sticky>
-      {
-        ({
-          style,
-          isSticky,
-          wasSticky,
-          distanceFromTop,
-          distanceFromBottom,
-          calculatedHeight
-        }) => {
-          if (distanceFromTop < 18){
-            return (
-                <ShareBar />
-            );
-          }
-          else {
-            return <div></div>;
-          }
+
+
+        <div className="story-show-image-container">
+          <img className="stories-show-image" src={`${this.props.story.image_url}`} />
+        </div>
+
+        <Sticky disableCompensation>
+        {
+          ({ style, isSticky, wasSticky, distanceFromTop, distanceFromBottom, calculatedHeight }) => {
+            if (distanceFromTop  < 10)
+              return ( <ShareBar /> );
+            else
+              return <div></div>;
+           }
          }
-       }
-      </Sticky>
-      </StickyContainer>
+        </Sticky>
+        <p>{this.props.story.body}jdslfjdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdsdlk lsdkjfls dfsd sdfds
+        </p>
+
       </section>
+      </StickyContainer>
     );
   }
   }

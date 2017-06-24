@@ -22,10 +22,6 @@ class Header extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    // this.props.turnOnModalAnimation();
-  }
-
   render(){
     return (
       <header>
@@ -37,9 +33,9 @@ class Header extends React.Component {
         </Link>
 
         <GreetingContainer />
-        <Link id="new-story-link" to={this.props.loggedIn ? "/stories/new" : "/signin"}>
+        <Link id="new-story-link" to="/stories/new">
           Write a story
-        </Link> 
+        </Link>
       </header>
     );
   }

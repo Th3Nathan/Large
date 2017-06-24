@@ -7,9 +7,6 @@ class Greeting extends React.Component {
   }
 
   render(){
-
-
-
     if (this.props.currentUser){
       let thumbnail = (<img id="header-thumbnail" src={this.props.currentUser.image_url} />);
       return (
