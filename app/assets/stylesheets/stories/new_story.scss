@@ -5,3 +5,19 @@
     font-size: 20px;
     color: rgba(0, 0, 0, 0.5);
 }
+
+.fa-picture-o {
+  position: relative;
+  left: -170px;
+  margin-bottom: 120px;
+  top: 78px;
+  font-size: 30px !important;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#story-image-preview {
+  max-height: 110px;
+  position: absolute;
+  left: 600px;
+  top: 200px;
+}

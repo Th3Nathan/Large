@@ -72,11 +72,7 @@ export const updateStory = (newStory, id) => dispatch => {
 
 export const createStory = (story) => dispatch => {
   return APIUtil.createStory(story)
-    .then(story => {
-      return dispatch({
-        type: CREATE_STORY,
-        story
-      });
+    .then(story => {return dispatch(addStory(story));
     });
 };
 

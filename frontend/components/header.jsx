@@ -5,8 +5,8 @@ import GreetingContainer from './greeting/greeting_container';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import { turnOnModalAnimation } from '../actions/presentational_actions';
 import NewStoryHeader from "./new_story_header";
-import createStory from './../actions/story_actions';
-import removeDraft from './../actions/session_actions';
+import { createStory } from './../actions/story_actions';
+import { removeDraft } from './../actions/session_actions';
 
 const StoryLink = () => {
   return (
@@ -28,8 +28,17 @@ class Header extends React.Component {
 
   publish(e){
     e.preventDefault();
-    this.props.createStory(this.props.draft);
+    let story = this.props.draft;
+    let formData = new FormData();
+    formData.append("story[title]", story.title);
+    formData.append("story[body]", story.body);
+    formData.append("story[image]", story.imageFile);
+    formData.append("story[author_id]", this.props.currentUser.id);
+    formData.append("story[password]", "password");
+    
+    this.props.createStory(formData);
     this.props.removeDraft();
+    this.props.history.push('/');
   }
 
   render(){
@@ -63,7 +72,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
      turnOnModalAnimation: () => dispatch(turnOnModalAnimation() ),
-     createStory: () => dispatch(createStory(story)),
+     createStory: (story) => dispatch(createStory(story)),
      removeDraft: () => dispatch(removeDraft())
   };
 };

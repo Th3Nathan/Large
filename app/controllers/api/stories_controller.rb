@@ -8,6 +8,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def create
+    debugger
     @story = Story.new(story_params)
     if @story.save
       render :show
