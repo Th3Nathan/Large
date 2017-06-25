@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class NewAuthorBox extends React.Component {
 
   truncateDescription(){
+    if (!this.props.currentUser.bio) return "";
     if (this.props.currentUser.bio.length > 100){
       return this.props.currentUser.bio.slice(0, 97) + "...";
     }

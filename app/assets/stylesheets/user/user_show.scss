@@ -1,0 +1,45 @@
+.user-show {
+
+}
+.user-show-profile-box {
+  display: flex;
+  width: 640px;
+  margin: auto;
+  padding: 20px;
+  margin-top: 30px;
+}
+.user-show-info {}
+
+.user-show-info input {
+  border: none;
+  outline: none;
+}
+
+.user-show-name {
+  font-size: 30px;
+  padding-bottom: 0px;
+  font-weight: 550;
+
+}
+
+.user-show-bio {
+  font-size: 16px;
+  color: rgba(0,0,0,.6);
+  margin-left: 10px;
+  width: 100%;
+}
+
+.user-show-following {}
+.follow-info {
+  color: rgba(0,0,0,.44);
+}
+.user-show-now-editing {}
+.user-show-now-editing button {}
+.user-show-editing {}
+.user-show-editing button {}
+.user-show-image {
+  width: 100px;
+}
+.user-show-image img {
+  width: 100%;
+}
