@@ -1,4 +1,7 @@
-blockquote {
-  border-left: 4px solid #111;
-  padding-left: 1em;
+.new-story-title {
+    overflow: visible;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
 }

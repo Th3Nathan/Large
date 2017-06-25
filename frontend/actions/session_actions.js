@@ -4,6 +4,21 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const SCRUB_ERRORS = 'SCRUB_ERRORS';
+export const UPDATE_DRAFT = 'UPDATE_DRAFT';
+export const REMOVE_DRAFT = 'REMOVE_DRAFT';
+
+export const updateDraft = newDraft => {
+  return {
+    type: UPDATE_DRAFT,
+    newDraft
+  };
+};
+
+export const removeDraft = () => {
+  return {
+    type: REMOVE_DRAFT
+  };
+};
 
 export const receiveCurrentUser = currentUser => {
   return {
