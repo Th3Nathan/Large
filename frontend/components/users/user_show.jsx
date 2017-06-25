@@ -15,7 +15,11 @@ class UserShow extends React.Component {
 
     this.toggleEdit = this.toggleEdit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.update = this.update.bind(this);
+    this.cancel = this.cancel.bind(this);
+    this.save = this.save.bind(this);
   }
+
 
   componentDidMount(){
     this.props.fetchSingleUser(this.props.match.params.id)
@@ -27,6 +31,13 @@ class UserShow extends React.Component {
           image_file: null
         });
       });
+  }
+
+  update(field){
+    return (e) => {
+      e.preventDefault();
+      this.setState({[field]: e.target.value});
+    };
   }
 
   toggleEdit(e){
@@ -58,17 +69,21 @@ class UserShow extends React.Component {
     formData.append("user[image]", user.imageFile);
 
     this.props.updateUser(user, this.props.loggedInUser.id)
-      .then(response => {
-        this.setState({
-          username: response.user.username,
-          bio: response.user.bio,
-          image_url: response.user.image_url,
-          image_file: null
-        });
-      });
+      .then(this.setState({editing: false}));
+  }
+
+  cancel(){
+    this.setState({
+      editing: false,
+      username: this.props.loggedInUser.username,
+      bio: this.props.loggedInUser.bio,
+      image_url: this.props.loggedInUser.image_url,
+    });
   }
 
   render(){
+    let disabled = this.state.editing ? false : true;
+
     let editButtons;
     if (!this.props.loggedInUser || !this.props.showedUser)
       editButtons = null;
@@ -84,19 +99,27 @@ class UserShow extends React.Component {
     else {
       editButtons = (
         <div className="user-show-editing">
-          <button className="user-show-editing-save">Save</button>
-          <button className="user-show-editing-cancel" onClick={this.toggleEdit}>Cancel</button>
+          <button onClick={this.save} className="user-show-editing-save">Save</button>
+          <button className="user-show-editing-cancel" onClick={this.cancel}>Cancel</button>
         </div>
       );
     }
+
+    let overlay;
+    if (this.state.editing){
+      overlay = (
+        <label htmlFor="files">
+          <i className="fa fa-picture-o user-show-picture-overlay" aria-hidden="true"></i>
+        </label>);
+    } else { overlay = null; }
 
     return (
       <section className="user-show">
         <div className="user-show-profile-box">
           <div className="user-show-info">
-            <input type="text" className="user-show-name" value={this.state.username} />
+            <input disabled={disabled} onChange={this.update('username')} type="text" className="user-show-name" value={this.state.username} />
             <br />
-            <input type="text" className="user-show-bio" value={this.state.bio} />
+            <input disabled={disabled} onChange={this.update('bio')} type="text" className="user-show-bio" value={this.state.bio} />
             <div className="user-show-following">
               <h2 className="follow-info"><b>{this.state.following}</b> Following&nbsp;&nbsp;</h2>
               <h2 className="follow-info"><b>{this.state.followers}</b> Follower</h2>
@@ -109,7 +132,7 @@ class UserShow extends React.Component {
             id="files"
             className="hidden"
           />
-            <label htmlFor="files"><i className="fa fa-picture-o user-show-picture-overlay" aria-hidden="true"></i></label>
+            { overlay }
             <img className="user-display-image" src={this.state.image_url} />
 
 
