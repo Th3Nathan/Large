@@ -42,6 +42,12 @@ export const scrubErrors = () => {
 
 //Thunk actions
 
+export const updateUser = (user, id) => dispatch => {
+  return APIUtil.updateUser(user, id)
+    .then(user => {
+      return dispatch(receiveCurrentUser(user));
+    });
+};
 
 export const signIn = user => dispatch => {
   return APIUtil.signIn(user)

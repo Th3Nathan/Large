@@ -2,18 +2,20 @@ import { connect } from 'react-redux';
 import { logOut } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 import UserShow from './user_show';
+import { fetchSingleUser } from '../../actions/user_actions';
+import { updateUser } from '../../actions/session_actions';
 
-
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = (state) => {
   return {
-    currentUser: session.currentUser
+    loggedInUser: state.session.currentUser,
+    showedUser: state.users.showed,
   };
 };
 
-
 const mapDispatchToProps = dispatch => {
   return {
-    logOut: () => dispatch(logOut()).then(() => turnOnModalAnimation())
+    updateUser: (user, id) => dispatch(updateUser(user, id)),
+    fetchSingleUser: (id) => dispatch(fetchSingleUser(id))
   };
 };
 

@@ -8,7 +8,9 @@
   padding: 20px;
   margin-top: 30px;
 }
-.user-show-info {}
+.user-show-info {
+  width: 80%;
+}
 
 .user-show-info input {
   border: none;
@@ -29,17 +31,103 @@
   width: 100%;
 }
 
-.user-show-following {}
+.user-show-following {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 30px;
+}
 .follow-info {
   color: rgba(0,0,0,.44);
+  font-size: 14px;
 }
-.user-show-now-editing {}
-.user-show-now-editing button {}
-.user-show-editing {}
-.user-show-editing button {}
-.user-show-image {
+.user-show-not-editing {}
+.user-show-not-editing button {
+  font-size: 15px;
+  color: rgba(0,0,0,.44);
+  transition: all .3s;
+  border: 1px solid rgba(0,0,0,.14);
+  background: white;
+  border-radius: 50px;
+  outline: none;
+  width: 65px;
+  height: 45px;
+  margin-top: 15px;
+}
+
+.user-show-not-editing button:hover {
+  border: 1px solid rgba(0,0,0,.64);
+}
+
+
+.user-show-editing {
+  display: flex;
+}
+
+.user-show-editing-cancel {
+  font-size: 15px;
+  color: rgba(0,0,0,.44);
+  transition: all .3s;
+  border: 1px solid rgba(0,0,0,.14);
+  background: white;
+  border-radius: 50px;
+  outline: none;
+  width: 65px;
+  height: 45px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.user-show-editing-cancel:hover {
+  border: 1px solid rgba(0,0,0,.64);
+}
+
+.user-show-editing-save {
+  font-size: 15px;
+  color: #1c9963;
+  transition: all .3s;
+  border: 1px solid #02b875;
+  background: white;
+  border-radius: 50px;
+  outline: none;
+  width: 65px;
+  height: 45px;
+  margin-top: 15px;
+}
+
+.user-show-editing-save:hover {
+  border: 1px solid #00ab6b;;
+}
+
+.user-show-editing button:hover {
+}
+
+
+.user-display-image {
   width: 100px;
+  height: 100px;
+  border-radius: 150px;
+  position: relative;
+  right: -80px;
+  top: 20px;
 }
-.user-show-image img {
-  width: 100%;
+
+.user-display-image img {
+  border-radius: 150px;
+  width: 110px;
+  height: 110px;
+}
+
+.user-show-picture-overlay {
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.1);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 60px !important;
+  border-radius: 150px;
+  left: 180px;
+  top: 19px;
+  z-index: 10;
+  position: relative;
 }
