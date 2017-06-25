@@ -1,12 +1,6 @@
 Work for today.
 
-Users need to add a bio.
-  -when users create new story, link to edit bio if no bio
-  -when users click thier welcome user, or thier image in the top
-  -Making good progress, need a new user action that fetches user by Id.
-  -Got that, my form is also coming along,
-  -now I need a post user action that will hit that shit when hit edit button.
-  -I update user in my session loop, but I need to fetch the user from the users loop as well, two actions 
+-add some links to update user profile 
 Stories need errors.
   -Mess
 Stories need delete.

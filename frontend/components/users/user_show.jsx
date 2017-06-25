@@ -69,7 +69,8 @@ class UserShow extends React.Component {
     formData.append("user[image]", user.imageFile);
 
     this.props.updateUser(user, this.props.loggedInUser.id)
-      .then(this.setState({editing: false}));
+      .then(() => this.props.fetchSingleUser(this.props.match.params.id))
+        .then(() => this.setState({editing: false}));
   }
 
   cancel(){
