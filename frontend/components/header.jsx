@@ -34,8 +34,7 @@ class Header extends React.Component {
     formData.append("story[body]", story.body);
     formData.append("story[image]", story.imageFile);
     formData.append("story[author_id]", this.props.currentUser.id);
-    formData.append("story[password]", "password");
-    
+    formData.append("story[description]", story.description);
     this.props.createStory(formData);
     this.props.removeDraft();
     this.props.history.push('/');

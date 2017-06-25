@@ -1,4 +1,16 @@
+#new-story {
+  position: relative;
+}
+
 .new-story-title {
+    overflow: visible;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.new-story-description {
     overflow: visible;
     border: none;
     outline: none;
@@ -8,7 +20,7 @@
 
 .fa-picture-o {
   position: relative;
-  left: -170px;
+  left: -425px;
   margin-bottom: 120px;
   top: 78px;
   font-size: 30px !important;
@@ -18,6 +30,6 @@
 #story-image-preview {
   max-height: 110px;
   position: absolute;
-  left: 600px;
-  top: 200px;
+  left: 256px;
+  top: 120px;
 }
