@@ -23,18 +23,19 @@ class NewStory extends React.Component {
    this.quilModules = {
             toolbar: {
                 container: [
-
                     ['bold', 'italic', 'blockquote'],
                     ['link', 'image'],
                 ],
                 handlers: {
-                    'image': this.imageHandler.bind(this)
+                    'image': this.imageHandler.bind(this),
+                    'link': this.linkHandler.bind(this)
                 }
             }
         };
     this.updateBody = this.updateBody.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
     this.imageHandler = this.imageHandler.bind(this);
+    this.linkHandler = this.linkHandler.bind(this);
     this.updateFile = this.updateFile.bind(this);
   }
 
@@ -49,6 +50,15 @@ class NewStory extends React.Component {
       fileReader.readAsDataURL(file);
     }
   }
+
+  linkHandler(value){
+      if (value) {
+        var href = prompt('Enter the URL');
+        this.quillRef.getEditor().format('link', href);
+      } else {
+        this.quillRef.getEditor().format('link', false);
+      }
+    }
 
   imageHandler(image, callback){
       var range = this.quillRef.getEditor().getSelection();
