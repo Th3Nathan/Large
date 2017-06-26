@@ -4,26 +4,9 @@ import NewAuthorBox from './new_author_box';
 import ReactQuill, { Quill } from 'react-quill';
 import renderHTML from 'react-render-html';
 
-class NewStory extends React.Component {
+class StoryForm extends React.Component {
   constructor(props){
     super(props);
-    if (this.props.draft){
-      this.state = {
-      body: this.props.draft.body,
-      title: this.props.draft.title,
-      description: this.props.draft.description
-    };
-    } else {
-      this.state = {
-        body: "",
-        title: "",
-        imageFile: null,
-        description: "",
-        imageUrl: "images/default_user.png"
-      };
-    }
-
-
    this.quilModules = {
             toolbar: {
                 container: [
@@ -44,15 +27,17 @@ class NewStory extends React.Component {
     this.updateFile = this.updateFile.bind(this);
   }
 
-  updateFile(e){
-    let file = e.currentTarget.files[0];
-    let fileReader = new FileReader();
-    fileReader.onloadend = function() {
-      this.setState({imageFile: file, imageUrl: fileReader.result });
-    }.bind(this);
-
-    if (file){
-      fileReader.readAsDataURL(file);
+  componentDidMount(){
+    if (this.props.formType === "edit"){
+      this.props.fetchSingleStory(this.props.storyId)
+        .then(({story}) => this.props.updateDraft(story))
+          .then(() => this.quillRef.getEditor().pasteHTML(this.props.draft.body));
+    }
+    else if (!this.props.draft){
+      this.props.updateDraft({});
+    }
+    else {
+      this.quillRef.getEditor().pasteHTML(this.props.draft.body);
     }
   }
 
@@ -74,25 +59,36 @@ class NewStory extends React.Component {
   }
 
   updateTitle(e){
-    this.setState({title: e.target.value});
-    this.props.updateDraft(this.state);
+    const newDraft = Object.assign({}, this.props.title, { title: e.target.value });
+    this.props.updateDraft(newDraft);
   }
 
   updateDescription(e){
-    this.setState({description: e.target.value});
-    this.props.updateDraft(this.state);
+    const newDraft = Object.assign({}, this.props.draft, { description: e.target.value });
+    this.props.updateDraft(newDraft);
+  }
+
+  updateFile(e){
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      const newDraft = Object.assign({}, this.props.draft, { imageFile: file, imageUrl: fileReader.result} );
+      this.props.updateDraft(newDraft);
+    }.bind(this);
+
+    if (file){
+      fileReader.readAsDataURL(file);
+    }
   }
 
   updateBody(html){
-    this.setState({body: html});
     this.props.updateDraft(this.state);
-  }
-
-  componentDidMount(){
-    this.quillRef.getEditor().pasteHTML(this.state.body);
+    const newDraft = Object.assign({}, this.props.draft, { body: html })
   }
 
   render(){
+    if (!this.props.draft) return null;
+    const { title, body, description, imageUrl } = this.props.draft;
     return (
       <section id="new-story">
       <NewAuthorBox
@@ -101,24 +97,24 @@ class NewStory extends React.Component {
       <br/>
       <input className="new-story-title"
         onChange={this.updateTitle}
-        type="text" value={this.state.title}
+        type="text" value={title}
         placeholder="Enter a title">
       </input>
 
       <input onChange={this.updateFile}
-      type="file"
-      id="files"
-      className="hidden"
+        type="file"
+        id="files"
+        className="hidden"
       />
       <input className="new-story-description"
         onChange={this.updateDescription}
-        type="text" value={this.state.description}
+        type="text" value={description}
         placeholder="Enter a description">
       </input>
 
 
       <label htmlFor="files"><i className="fa fa-picture-o" aria-hidden="true"></i></label>
-      <img id="story-image-preview" src={this.state.imageUrl} />
+      <img id="story-image-preview" src={imageUrl} />
       <div id="text-editor">
         <ReactQuill
           ref={(el) => this.quillRef = el}
@@ -140,4 +136,4 @@ class NewStory extends React.Component {
   }
 }
 
-export default NewStory;
+export default StoryForm;

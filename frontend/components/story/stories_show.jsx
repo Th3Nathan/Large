@@ -11,19 +11,10 @@ class StoriesShow extends React.Component {
   }
 
   render(){
-
-      let editButton;
-      if (this.props.story.author_id === this.props.currentUser.id){
-        editButton = (
-          <Link className="edit-link" to={`/stories/edit/${this.props.match.params.story_id}`}>Edit</Link>
-        );
-      } 
-
-
+    //IF STORY RENDER ELSE NULL
+    if (this.props.story){
       const backgroundImage = {"backgroundImage": `url(${this.props.story.image_url})`};
-      if (!this.props.story.id){
-        return <h2> Im hanging around two long </h2>;
-      } else { return(
+      return(
 
       <StickyContainer>
       <section className="story-show">
@@ -34,8 +25,8 @@ class StoriesShow extends React.Component {
           date={this.props.story.date}
         />
 
-        {editButton}
 
+      <h1 className="story-title">{this.props.story.title}</h1>
 
         <div className="story-show-image-container">
           <img className="stories-show-image" src={`${this.props.story.image_url}`} />
@@ -51,14 +42,16 @@ class StoriesShow extends React.Component {
            }
          }
         </Sticky>
+
         {renderHTML(this.props.story.body)}
 
 
       </section>
       </StickyContainer>
     );
+  } else return null;
+    }
+
   }
-  }
-}
 
 export default StoriesShow;

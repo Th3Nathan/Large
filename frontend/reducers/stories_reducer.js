@@ -21,7 +21,7 @@ const storiesReducer = (state = defaultState, action) => {
       return merge({}, newState, { all : action.stories });
 
     case RECEIVE_SINGLE_STORY:
-      return merge(newState, { current_story : action.story });
+      return merge(newState, { all: { [action.story.id]: action.story } });
 
     case UPDATE_STORY:
       newState[action.story.id] = action.story;

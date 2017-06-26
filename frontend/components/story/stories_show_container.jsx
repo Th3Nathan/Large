@@ -6,7 +6,7 @@ import StoriesShow from './stories_show';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    story: state.stories.current_story,
+    story: state.stories.all[ownProps.match.params.story_id],
     currentUser: state.session.currentUser
   };
 };

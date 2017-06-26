@@ -39,7 +39,7 @@ const sessionReducer = (state = defaultState, action) => {
       return newState;
 
     case UPDATE_DRAFT:
-      newState.draft = action.newDraft;
+      newState.draft = merge({}, newState.draft, action.newDraft);
       return newState;
 
     case REMOVE_DRAFT:

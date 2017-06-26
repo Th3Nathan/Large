@@ -8,6 +8,7 @@ import UsersContainer from './users/users_container.jsx';
 import StoriesIndexContainer from './story/stories_index_container';
 import StoriesShowContainer from './story/stories_show_container';
 import NewStory from './story/new_story_container';
+import EditStory from './story/edit_story_container';
 import UserShow from './users/user_show_container';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
     <Header />
     <Switch>
     <Route exact path="/stories/new" component={NewStory} />
+    <Route path="/stories/edit/:story_id" component={EditStory} />
     <Route exact path="/users/:id" component={UserShow} />
     <Route exact path="/stories/:story_id/" component={StoriesShowContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />

@@ -64,7 +64,7 @@ export const fetchSingleStory = (id) => dispatch => {
 };
 
 export const updateStory = (newStory, id) => dispatch => {
-  return APIUtil.fetchSingleStory(newStory, id)
+  return APIUtil.updateStory(newStory, id)
     .then(story => {
       return dispatch(update(story));
     });
