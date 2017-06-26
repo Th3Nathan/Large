@@ -14,7 +14,7 @@ class StoriesIndex extends React.Component {
     });
   return (
   <section className="stories">
-    <h1>Features Stories</h1>
+    <h1>{this.props.title || "Featured Stories"}</h1>
     <div className="story-index">
       {stories}
     </div>

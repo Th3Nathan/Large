@@ -6,7 +6,8 @@ import StoriesShow from './stories_show';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    story: state.stories.current_story
+    story: state.stories.current_story,
+    currentUser: state.session.currentUser
   };
 };
 

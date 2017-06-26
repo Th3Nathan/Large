@@ -24,6 +24,7 @@ class Header extends React.Component {
   constructor(props){
     super(props);
     this.publish = this.publish.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   publish(e){
@@ -40,9 +41,25 @@ class Header extends React.Component {
     this.props.history.push('/');
   }
 
+  delete(e){
+    e.preventDefault();
+    this.props.removeDraft();
+    this.props.history.push('/stories');
+  }
+
   render(){
-    const newStoryBlock = (this.props.location.pathname === "/stories/new") ?
-    <NewStoryHeader publish={this.publish} /> : <Link id="new-story-link" to="/stories/new">Write a story</Link>;
+    let newStoryBlock;
+    if (
+      (this.props.location.pathname.slice(1, 8) === "stories") &&
+          (this.props.currentUser.story_ids.includes(parseInt(this.props.location.pathname.split("/")[2])))
+        ){
+      newStoryBlock = <EditHeader storyId={parseInt(this.props.location.pathname.split("/")[2])} />;
+    }
+    else if (this.props.location.pathname === "/stories/new"){
+      newStoryBlock = <NewStoryHeader delete={this.delete} publish={this.publish} />;
+    } else {
+      newStoryBlock = <Link id="new-story-link" to="/stories/new">Write a story</Link>;
+    }
 
     return (
       <header>

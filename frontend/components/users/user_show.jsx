@@ -1,4 +1,6 @@
 import React from 'react';
+import StoriesIndex from './../story/stories_index';
+
 class UserShow extends React.Component {
 
   constructor(props){
@@ -9,7 +11,7 @@ class UserShow extends React.Component {
       bio: "",
       following: 4,
       followers: 6,
-      image_file: "",
+      image_file: null,
       image_url: "",
     };
 
@@ -22,15 +24,16 @@ class UserShow extends React.Component {
 
 
   componentDidMount(){
-    this.props.fetchSingleUser(this.props.match.params.id)
+    //WHY DOES THIS WORK????!!!
+    this.props.fetchStories()
+    .then(() => this.props.fetchSingleUser(this.props.match.params.id)
       .then(response => {
         this.setState({
           username: response.user.username,
           bio: response.user.bio,
           image_url: response.user.image_url,
-          image_file: null
         });
-      });
+      }));
   }
 
   update(field){
@@ -62,12 +65,12 @@ class UserShow extends React.Component {
     let user = this.props.loggedInUser;
     user.username = this.state.username;
     user.bio = this.state.bio;
-    user.image = this.state.image_file;
     let formData = new FormData();
     formData.append("user[username]", user.username);
     formData.append("user[bio]", user.bio);
-    formData.append("user[image]", user.imageFile);
-
+    if (this.state.image_file){
+      formData.append("user[image]", this.state.image_file);
+    }
     this.props.updateUser(user, this.props.loggedInUser.id)
       .then(() => this.props.fetchSingleUser(this.props.match.params.id))
         .then(() => this.setState({editing: false}));
@@ -86,6 +89,7 @@ class UserShow extends React.Component {
     let disabled = this.state.editing ? false : true;
 
     let editButtons;
+
     if (!this.props.loggedInUser || !this.props.showedUser)
       editButtons = null;
     else if (this.props.loggedInUser.id !== this.props.showedUser.id){
@@ -138,8 +142,7 @@ class UserShow extends React.Component {
 
 
         </div>
-        <h1>Your Stories!!!</h1>
-        <p>Here is a list of stories that the current user has written</p>
+        <StoriesIndex title={"Stories"} fetchStories={this.props.fetchStories} stories={this.props.storiesByUser} />
       </section>
     );
   }

@@ -3,25 +3,38 @@ import { Link } from 'react-router-dom';
 import StoryAuthorBox from './story_author_box';
 import ShareBar from './share_bar';
 import { StickyContainer, Sticky } from 'react-sticky';
-class StoriesShow extends React.Component {
+import renderHTML from 'react-render-html';
 
+class StoriesShow extends React.Component {
   componentDidMount(){
     this.props.fetchSingleStory(this.props.match.params.story_id);
   }
 
   render(){
+
+      let editButton;
+      if (this.props.story.author_id === this.props.currentUser.id){
+        editButton = (
+          <Link className="edit-link" to={`/stories/edit/${this.props.match.params.story_id}`}>Edit</Link>
+        );
+      } 
+
+
       const backgroundImage = {"backgroundImage": `url(${this.props.story.image_url})`};
       if (!this.props.story.id){
         return <h2> Im hanging around two long </h2>;
       } else { return(
-        <StickyContainer>
-      <section>
+
+      <StickyContainer>
+      <section className="story-show">
         <StoryAuthorBox
           author={this.props.story.author}
           author_id={this.props.story.author_id}
           story={this.props.story.body}
           date={this.props.story.date}
         />
+
+        {editButton}
 
 
         <div className="story-show-image-container">
@@ -38,8 +51,8 @@ class StoriesShow extends React.Component {
            }
          }
         </Sticky>
-        <p>{this.props.story.body}jdslfjdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdlk lsdkjfljdslfjdslkfjdslkjflksdjflksdjfl sdlkfjsdljf sdlkfjsdsdlk lsdkjfls dfsd sdfds
-        </p>
+        {renderHTML(this.props.story.body)}
+
 
       </section>
       </StickyContainer>

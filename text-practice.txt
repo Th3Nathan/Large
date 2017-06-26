@@ -1,15 +1,15 @@
-Work for today.
 
--add some links to update user profile
 
 Stories need delete.
 Stories need edit.
   -Not too bad, set the draft to the edit story, when you hit publish, instead of post do a patch. Done.
 Stories show needs social media bar to go to the side
   -Stories show needs edit story link if author is the current user..
-Bonus
-  -User profile, where you can edit bio, lists stories written by the user under heading, "Your stories"
+
 
 
 WOW!
 lots
+
+
+bugs, my users cannot update thier profile image 

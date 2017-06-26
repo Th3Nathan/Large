@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NewStoryDropdown = () => {
+const NewStoryDropdown = (props) => {
   return (
     <ul className="new-story-dropdown">
       <li className="new-story-dropdown-title">Actions</li>
-      <li className="new-story-dropdown-item">Delete story</li>
+      <li onClick={props.delete} className="new-story-dropdown-item">Delete story</li>
     </ul>
   );
 };
@@ -37,7 +37,7 @@ class NewStoryHeader extends React.Component {
         <i onClick={this.toggleDropdown} className="fa fa-ellipsis-h header-fa" aria-hidden="true"></i>
 
         {this.state.showDropdown ?
-          <NewStoryDropdown /> : null
+          <NewStoryDropdown delete={this.props.delete} /> : null
         }
       </section>
     );

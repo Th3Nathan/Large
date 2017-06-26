@@ -8,6 +8,7 @@ class StoryAuthorBox extends React.Component {
   }
 
   truncateDescription(){
+    if (!this.props.author.bio) return null;
     if (this.props.author.bio.length > 100){
       return this.props.author.bio.slice(0, 97) + "...";
     }
