@@ -123,6 +123,7 @@ class StoryForm extends React.Component {
       <div id="text-editor">
         <ReactQuill
           val={body}
+          ref={(el) => this.quillRef = el}
           theme="bubble"
           placeholder={"Tell your story"}
           onChange={this.updateBody}

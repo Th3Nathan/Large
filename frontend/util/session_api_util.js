@@ -8,6 +8,7 @@ export const signUp = formData => {
   });
 };
 
+
 export const signIn = formData => {
   return $.ajax({
     method: "POST",

@@ -35,10 +35,10 @@ export const addStory = story => {
   };
 };
 
-export const deleteStory = story => {
+export const deleteStory = id => {
   return {
     type: DELETE_STORY,
-    story
+    id
   };
 };
 
@@ -78,6 +78,6 @@ export const createStory = (story) => dispatch => {
 
 export const destroyStory = id => dispatch => {
   return APIUtil.removeStory(id).then((story) => {
-    return dispatch(deleteStory(story));
+    return dispatch(deleteStory(id));
   });
 };

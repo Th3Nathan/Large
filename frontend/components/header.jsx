@@ -8,6 +8,7 @@ import NewStoryHeader from "./new_story_header";
 import { createStory, fetchSingleStory, updateStory, destroyStory } from './../actions/story_actions';
 import { removeDraft, updateDraft } from './../actions/session_actions';
 import SaveHeader from './save_header';
+import { refresh } from '../actions/session_actions';
 
 const StoryLink = () => {
   return (
@@ -48,9 +49,10 @@ class Header extends React.Component {
     formData.append("story[image]", story.imageFile);
     formData.append("story[author_id]", this.props.currentUser.id);
     formData.append("story[description]", story.description);
-    this.props.createStory(formData);
-    this.props.removeDraft();
-    this.props.history.push('/stories');
+    this.props.createStory(formData)
+      .then(() => {this.props.refresh(this.props.currentUser.id);})
+        .then(() => { this.props.removeDraft();})
+          .then(() => { this.props.history.push('/stories');});
   }
 
   deleteDraft(e){
@@ -139,7 +141,8 @@ const mapDispatchToProps = (dispatch) => {
      updateDraft: (draft) => dispatch(updateDraft(draft)),
      destroyStory: (id) => dispatch(destroyStory(id)),
      fetchSingleStory: (id) => dispatch(fetchSingleStory(id)),
-     updateStory: (story, id) => dispatch(updateStory(story, id))
+     updateStory: (story, id) => dispatch(updateStory(story, id)),
+     refresh: (id) => dispatch(refresh(id)),
   };
 };
 

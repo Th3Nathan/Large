@@ -8,6 +8,5 @@
       json.username story.author.username
       json.image_url story.author.image.url
     end
-    json.comments story.comments, :body, :date, :author
   end
 end

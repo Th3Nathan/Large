@@ -49,6 +49,13 @@ export const updateUser = (user, id) => dispatch => {
     });
 };
 
+export const refresh = (id) => dispatch => {
+  return APIUtil.fetchSingleUser(id)
+    .then(user => {
+      return dispatch(receiveCurrentUser(user));
+    });
+};
+
 export const signIn = user => dispatch => {
   return APIUtil.signIn(user)
     .then(user => {

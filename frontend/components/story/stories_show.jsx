@@ -4,11 +4,14 @@ import StoryAuthorBox from './story_author_box';
 import ShareBar from './share_bar';
 import { StickyContainer, Sticky } from 'react-sticky';
 import renderHTML from 'react-render-html';
+import Comments from '../comment/comment_list_container';
 
 class StoriesShow extends React.Component {
   componentDidMount(){
     this.props.fetchSingleStory(this.props.match.params.story_id);
   }
+
+  //will receive props nextprops !== current url then refetch 
 
   render(){
     if (this.props.story){
@@ -44,7 +47,7 @@ class StoriesShow extends React.Component {
 
         {renderHTML(this.props.story.body)}
 
-
+      <Comments />
       </section>
       </StickyContainer>
     );
