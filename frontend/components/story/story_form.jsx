@@ -89,6 +89,7 @@ class StoryForm extends React.Component {
   render(){
     if (!this.props.draft) return null;
     const { title, body, description, imageUrl } = this.props.draft;
+    debugger
     return (
       <section id="new-story">
       <NewAuthorBox
