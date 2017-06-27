@@ -50,7 +50,7 @@ class Header extends React.Component {
     formData.append("story[description]", story.description);
     this.props.createStory(formData);
     this.props.removeDraft();
-    this.props.history.push('/');
+    this.props.history.push('/stories');
   }
 
   deleteDraft(e){

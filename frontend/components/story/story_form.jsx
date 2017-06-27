@@ -33,10 +33,11 @@ class StoryForm extends React.Component {
         .then(({story}) => this.props.updateDraft(story))
           .then(() => this.quillRef.getEditor().pasteHTML(this.props.draft.body));
     }
-    else if (!this.props.draft){
-      this.props.updateDraft({});
+    else if (!this.props.draft && !this.props.draft.body){
+      this.props.updateDraft({body: "sdfsdfds"});
     }
     else {
+      debugger
       this.quillRef.getEditor().pasteHTML(this.props.draft.body);
     }
   }
