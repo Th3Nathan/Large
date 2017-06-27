@@ -21,7 +21,7 @@ export const updateStory = (formData, id) => {
 export const removeStory = (id) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/session/${id}`,
+    url: `/api/stories/${id}`,
   });
 };
 

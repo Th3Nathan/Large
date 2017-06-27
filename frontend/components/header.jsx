@@ -5,7 +5,7 @@ import GreetingContainer from './greeting/greeting_container';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import { turnOnModalAnimation } from '../actions/presentational_actions';
 import NewStoryHeader from "./new_story_header";
-import { createStory, fetchSingleStory, updateStory, deleteStory } from './../actions/story_actions';
+import { createStory, fetchSingleStory, updateStory, destroyStory } from './../actions/story_actions';
 import { removeDraft, updateDraft } from './../actions/session_actions';
 import SaveHeader from './save_header';
 
@@ -60,9 +60,9 @@ class Header extends React.Component {
   }
 
   deleteStoryHandler(e){
-    const storyId = parseInt(this.props.location.pathname.split("/")[2]);
-    this.props.deleteStory(storyId)
-      .then(() => this.history.push("/"));
+    const storyId = parseInt(this.props.location.pathname.split("/")[3]);
+    this.props.destroyStory(storyId)
+      .then(() => this.props.history.push("/"));
   }
 
   toEditHandler(e){
@@ -72,13 +72,14 @@ class Header extends React.Component {
   }
 
   saveHandler(e){
+    //Cannot read slice of undefined!!:>>
     e.preventDefault();
     let story = this.props.draft;
     let formData = new FormData();
     formData.append("story[title]", story.title);
     formData.append("story[body]", story.body);
-    if (story.imageUrl.slice(0, 2) === "s3")
-      formData.append("story[image]", story.imageUrl);
+    if (story.image_url)
+      formData.append("story[image]", story.image_url);
     else { formData.append("story[image]", story.imageFile); }
     formData.append("story[author_id]", this.props.currentUser.id);
     formData.append("story[description]", story.description);
@@ -136,7 +137,7 @@ const mapDispatchToProps = (dispatch) => {
      createStory: (story) => dispatch(createStory(story)),
      removeDraft: () => dispatch(removeDraft()),
      updateDraft: (draft) => dispatch(updateDraft(draft)),
-     deleteStory: (id) => dispatch(deleteStory(id)),
+     destroyStory: (id) => dispatch(destroyStory(id)),
      fetchSingleStory: (id) => dispatch(fetchSingleStory(id)),
      updateStory: (story, id) => dispatch(updateStory(story, id))
   };

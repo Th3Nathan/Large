@@ -77,7 +77,7 @@ export const createStory = (story) => dispatch => {
 };
 
 export const destroyStory = id => dispatch => {
-  return APIUtil.destroyStory(id).then((story) => {
+  return APIUtil.removeStory(id).then((story) => {
     return dispatch(deleteStory(story));
   });
 };

@@ -72,7 +72,7 @@ class StoryForm extends React.Component {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function() {
-      const newDraft = Object.assign({}, this.props.draft, { imageFile: file, imageUrl: fileReader.result} );
+      const newDraft = Object.assign({}, this.props.draft, { imageFile: file, image_url: fileReader.result} );
       this.props.updateDraft(newDraft);
     }.bind(this);
 
@@ -88,8 +88,7 @@ class StoryForm extends React.Component {
 
   render(){
     if (!this.props.draft) return null;
-    const { title, body, description, imageUrl } = this.props.draft;
-    debugger
+    const { title, body, description, image_url } = this.props.draft;
     return (
       <section id="new-story">
       <NewAuthorBox
@@ -115,7 +114,7 @@ class StoryForm extends React.Component {
 
 
       <label htmlFor="files"><i className="fa fa-picture-o" aria-hidden="true"></i></label>
-      <img id="story-image-preview" src={imageUrl} />
+      <img id="story-image-preview" src={image_url} />
       <div id="text-editor">
         <ReactQuill
           ref={(el) => this.quillRef = el}
