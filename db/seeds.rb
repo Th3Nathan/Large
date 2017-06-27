@@ -5,9 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#wo I get comments connected with story in the story JBuilder, or should I fetch seperately for comments matching story id in the index
 User.destroy_all
 Story.destroy_all
-
+Comment.destroy_all
 
 guest = User.create({
   image: "https://s3.amazonaws.com/large-dev/dog.jpg",
@@ -32,7 +33,25 @@ story1 = Story.create({
   image: "https://s3.amazonaws.com/large-dev/story1.jpg"
 })
 
-story1 = Story.create({
+  comment1 = Comment.create({
+    body: "Why are you eating so much sushi?",
+    author_id: commenter.id,
+    story_id: story1.id
+  })
+
+  comment2 = Comment.create({
+    body: "Cuz Im RICH...!",
+    author_id: story1.author_id,
+    story_id: story1.id
+  })
+
+  comment3 = Comment.create({
+    body: "Sik LIFE Homz",
+    author_id: commenter.id,
+    story_id: story1.id
+  })
+
+story5 = Story.create({
   title: "Eating Sushi",
   description: "This is in the story blurb",
   body: "This is how you eat sushi...",
@@ -40,6 +59,24 @@ story1 = Story.create({
   date: Date.new,
   image: "https://s3.amazonaws.com/large-dev/story1.jpg"
 })
+
+  comment4 = Comment.create({
+    body: "Not again yo",
+    author_id: commenter.id,
+    story_id: story5.id
+  })
+
+  comment5 = Comment.create({
+    body: "You know I like sushi, comon man",
+    author_id: story5.author_id,
+    story_id: story5.id
+  })
+
+  comment6 = Comment.create({
+    body: "UGh Fine ... ders keepers!",
+    author_id: commenter.id,
+    story_id: story5.id
+  })
 
 story2 = Story.create({
   title: "Mountain Climbing",

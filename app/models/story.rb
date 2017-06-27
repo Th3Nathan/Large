@@ -27,6 +27,11 @@ class Story < ActiveRecord::Base
   foreign_key: :author_id,
   class_name: 'User'
 
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :story_id,
+  class_name: 'Comment'
+
   def add_date
     self.date = Date.today
   end

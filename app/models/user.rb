@@ -29,6 +29,11 @@ class User < ActiveRecord::Base
   foreign_key: :author_id,
   class_name: 'Story'
 
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: 'Comment'
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

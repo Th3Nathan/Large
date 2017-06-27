@@ -30,17 +30,10 @@ class StoryForm extends React.Component {
   componentDidMount(){
     if (this.props.formType === "edit"){
       this.props.fetchSingleStory(this.props.storyId)
-        .then(({story}) => this.props.updateDraft(story))
-          .then(() => this.quillRef.getEditor().pasteHTML(this.props.draft.body));
-    }
-    else if (!this.props.draft && !this.props.draft.body){
-      this.props.updateDraft({body: "sdfsdfds"});
-    }
-    else {
-      debugger
-      this.quillRef.getEditor().pasteHTML(this.props.draft.body);
+        .then(({story}) => this.props.updateDraft(story));
     }
   }
+
 
   linkHandler(value){
       if (value) {
@@ -74,6 +67,7 @@ class StoryForm extends React.Component {
     let fileReader = new FileReader();
     fileReader.onloadend = function() {
       const newDraft = Object.assign({}, this.props.draft, { imageFile: file, image_url: fileReader.result} );
+      debugger
       this.props.updateDraft(newDraft);
     }.bind(this);
 
@@ -83,13 +77,23 @@ class StoryForm extends React.Component {
   }
 
   updateBody(html){
-    this.props.updateDraft(this.state);
     const newDraft = Object.assign({}, this.props.draft, { body: html })
+    this.props.updateDraft(newDraft);
   }
 
   render(){
-    if (!this.props.draft) return null;
-    const { title, body, description, image_url } = this.props.draft;
+    let title = "";
+    let body = "";
+    let description = "";
+    let image_url = "";
+
+    if (this.props.draft) {
+      title = this.props.draft.title;
+      body = this.props.draft.body;
+      description = this.props.draft.description;
+      image_url = this.props.draft.image_url;
+    }
+
     return (
       <section id="new-story">
       <NewAuthorBox
@@ -118,7 +122,7 @@ class StoryForm extends React.Component {
       <img id="story-image-preview" src={image_url} />
       <div id="text-editor">
         <ReactQuill
-          ref={(el) => this.quillRef = el}
+          val={body}
           theme="bubble"
           placeholder={"Tell your story"}
           onChange={this.updateBody}

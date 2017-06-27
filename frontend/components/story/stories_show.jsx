@@ -35,7 +35,7 @@ class StoriesShow extends React.Component {
         {
           ({ style, isSticky, wasSticky, distanceFromTop, distanceFromBottom, calculatedHeight }) => {
             if (distanceFromTop  < 10)
-              return ( <ShareBar /> );
+              return ( <div id="share-bar-div"><ShareBar /></div> );
             else
               return <div></div>;
            }
