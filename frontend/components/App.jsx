@@ -16,7 +16,7 @@ const App = () => {
   <div>
     <Header />
     <Switch>
-    <Route exact path="/stories/new" component={NewStory} />
+    <ProtectedRoute exact path="/stories/new" component={NewStory} />
     <Route path="/stories/edit/:story_id" component={EditStory} />
     <Route exact path="/users/:id" component={UserShow} />
     <Route exact path="/stories/:story_id/" component={StoriesShowContainer} />

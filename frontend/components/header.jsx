@@ -91,6 +91,7 @@ class Header extends React.Component {
     let newStoryBlock;
     if (
       (this.props.location.pathname.slice(1, 8) === "stories") &&
+        (this.props.currentUser) &&
           (this.props.currentUser.story_ids.includes(parseInt(this.props.location.pathname.split("/")[2])))
         ){
       newStoryBlock = <EditHeader handler={this.toEditHandler} />;

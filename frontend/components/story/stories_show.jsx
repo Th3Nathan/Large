@@ -11,7 +11,6 @@ class StoriesShow extends React.Component {
   }
 
   render(){
-    //IF STORY RENDER ELSE NULL
     if (this.props.story){
       const backgroundImage = {"backgroundImage": `url(${this.props.story.image_url})`};
       return(

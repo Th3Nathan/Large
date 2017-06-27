@@ -11,9 +11,11 @@ const mapStateToProps = ({ session }) => {
 };
 
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    logOut: () => dispatch(logOut()).then(() => turnOnModalAnimation()),
+    logOut: () => dispatch(logOut())
+      .then(() => turnOnModalAnimation())
+        .then(() => ownProps.history.push('/login')),
     turnOnModalAnimation: () => dispatch(turnOnModalAnimation())
   };
 };
