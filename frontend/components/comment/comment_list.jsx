@@ -4,7 +4,6 @@ import Comment from './comment';
 
 class CommentList extends React.Component {
   render(){
-    debugger
     const comments = this.props.comments.map(comment => {
       return (
         <Comment
@@ -13,6 +12,7 @@ class CommentList extends React.Component {
           date={comment.date}
           author_image={comment.author_image}
           body={comment.body}
+          comment_id={comment.id}
         />
       );
     });

@@ -1,5 +1,5 @@
 import {
-  RECEIVE_SINGLE_COMMENT,
+  RECEIVE_COMMENT,
   UPDATE_COMMENT,
   DELETE_COMMENT,
   CREATE_COMMENT
@@ -21,8 +21,8 @@ const commentsReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_STORY:
     return action.story.comments || {};
 
-    case RECEIVE_SINGLE_COMMENT:
-      return merge(newState, { [action.comment.id]: action.comment } );
+    case RECEIVE_COMMENT:
+      return merge(newState, action.comment  );
 
     case UPDATE_COMMENT:
       newState[action.comment.id] = action.comment;

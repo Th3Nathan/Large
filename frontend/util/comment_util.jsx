@@ -24,6 +24,6 @@ export const removeComment = (id) => {
 export const fetchSingleComment = (id) => {
   return $.ajax({
     method: "GET",
-    url: `/api/comments/`,
+    url: `/api/comments/${id}`,
   });
 };

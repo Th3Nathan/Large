@@ -10,12 +10,14 @@ import StoriesShowContainer from './story/stories_show_container';
 import NewStory from './story/new_story_container';
 import EditStory from './story/edit_story_container';
 import UserShow from './users/user_show_container';
+import CommentShow from './comment/comment_show_container';
 
 const App = () => {
   return (
   <div>
     <Header />
     <Switch>
+    <Route path="/comments/:comment_id" component={CommentShow} />
     <ProtectedRoute exact path="/stories/new" component={NewStory} />
     <Route path="/stories/edit/:story_id" component={EditStory} />
     <Route exact path="/users/:id" component={UserShow} />
