@@ -7,4 +7,8 @@
     json.image_url @story.author.image.url
     json.bio @story.author.bio
   end
-  json.comments @story.comments, :body, :date, :author
+  json.comments do
+     @story.comments.each do |comment|
+       json.partial! "/api/comments/comment", comment: comment
+     end
+  end

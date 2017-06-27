@@ -1,10 +1,10 @@
 class Api::StoriesController < ApplicationController
   def index
-    @stories = Story.all
+    @stories = Story.includes(:author)
   end
 
   def show
-    @story = Story.find(params[:id])
+    @story = Story.includes(:comments, :author, :comment_authors).find(params[:id])
   end
 
   def create

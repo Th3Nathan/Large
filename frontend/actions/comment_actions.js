@@ -5,11 +5,21 @@ export const CREATE_COMMENT = 'CREATE_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
+export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
+
+
 
 export const addComment = comment => {
   return {
     type: CREATE_COMMENT,
     comment
+  };
+};
+
+export const receiveComments = comments => {
+  return {
+    type: RECEIVE_COMMENTS,
+    comments
   };
 };
 
