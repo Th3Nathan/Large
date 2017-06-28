@@ -10,6 +10,8 @@ class CommentShow extends React.Component {
     };
     this.toggleEditing = this.toggleEditing.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.updateCommentHandler = this.updateCommentHandler.bind(this);
+    this.deleteCommentHandler = this.deleteCommentHandler.bind(this);
   }
 //handlers
   //delete
@@ -37,13 +39,28 @@ class CommentShow extends React.Component {
     });
   }
 
+  updateCommentHandler(e){
+    e.preventDefault();
+    let updated = this.props.comment;
+    updated.body = this.state.body;
+    this.props.updateComment(updated, updated.id)
+      .then(() => {this.setState({editing: false});})
+      .then(() => { this.props.fetchSingleComment(updated.id);});
+  }
+
+  deleteCommentHandler(e){
+    e.preventDefault();
+    this.props.destroyComment(this.props.comment.id)
+      .then(this.props.history.push(`/stories/${this.props.comment.story_id}`));
+  }
+
   render(){
     if (!this.props.comment) return null;
 
     let editButton;
     if (this.state.editing){
       editButton = (
-        <a  href="#" className="lock">
+        <a onClick={ this.updateCommentHandler }  href="#" className="lock">
           <i className=" fa fa-check-circle-o icon-unlock"></i>
           <i className=" fa fa-check-circle icon-lock"></i>
         </a>
@@ -67,7 +84,7 @@ class CommentShow extends React.Component {
       );
     } else {
       confirmButton = (
-        <a href="#" className="lock">
+        <a onClick={ this.deleteCommentHandler } href="#" className="lock">
           <i className=" fa fa-trash-o icon-unlock"></i>
           <i className=" fa fa-trash icon-lock"></i>
         </a>

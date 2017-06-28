@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CommentShow from './comment_show';
-import { fetchSingleComment } from '../../actions/comment_actions';
+import {
+  fetchSingleComment,
+  destroyComment,
+  updateComment
+} from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const commentId = ownProps.match.params.comment_id;
@@ -16,7 +20,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const commentId = ownProps.match.params.comment_id;
   return {
-    fetchSingleComment: (id) => dispatch(fetchSingleComment(id))
+    fetchSingleComment: (id) => dispatch(fetchSingleComment(id)),
+    destroyComment: (id) => dispatch(destroyComment(id)),
+    updateComment: (comment, id) => dispatch(updateComment(comment, id)),
   };
 };
 
