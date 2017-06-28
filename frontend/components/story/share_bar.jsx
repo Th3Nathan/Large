@@ -15,7 +15,7 @@ class ShareBar extends React.Component {
         </div>
 
         <a className="story-like-count" href="">
-          68
+          {this.props.like_count}
         </a>
 
         <a href="">

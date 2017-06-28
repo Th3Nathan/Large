@@ -27,3 +27,7 @@ export const fetchSingleComment = (id) => {
     url: `/api/comments/${id}`,
   });
 };
+
+ // addLike() {
+ //   this.props.updateComment({ likes_attributes: {likeable_id: this.props.comment.id, likeable_type: "Comment"}})
+ // }

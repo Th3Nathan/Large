@@ -7,6 +7,8 @@ import { StickyContainer, Sticky } from 'react-sticky';
 import Comments from '../comment/comment_list_container';
 
 class StoriesShow extends React.Component {
+
+
   componentDidMount(){
     this.props.fetchSingleStory(this.props.match.params.story_id);
   }
@@ -46,7 +48,15 @@ class StoriesShow extends React.Component {
         {
           ({ style, isSticky, wasSticky, distanceFromTop, distanceFromBottom, calculatedHeight }) => {
             if (distanceFromTop  < 10)
-              return ( <div id="share-bar-div"><ShareBar /></div> );
+              return (
+                <div id="share-bar-div">
+                  <ShareBar
+                    updateStory={this.props.updateStory}
+                    likeCount={this.props.story.like_count}
+                    likedByCurrentUser={this.props.liked_by_current_user}
+                  />
+                </div>
+              );
             else
               return <div></div>;
            }

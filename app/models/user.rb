@@ -24,6 +24,14 @@ class User < ActiveRecord::Base
   has_attached_file :image, styles: { thumb: ["32x32#", :png] }, default_url: "/images/logo.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  has_many :likes,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: 'Like'
+
+  has_many :liked_stories, through: :likes, source: :likeable, source_type: 'Story'
+  has_many :liked_comments, through: :likes, source: :likeable, source_type: 'Comment'
+
   has_many :stories,
   primary_key: :id,
   foreign_key: :author_id,

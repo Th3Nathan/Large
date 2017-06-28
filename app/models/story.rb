@@ -22,6 +22,13 @@ class Story < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   after_initialize :add_date
 
+
+  has_many :likes, as: :likeable
+  accepts_nested_attributes_for :likes
+  has_many :likers,
+    through: :likes,
+    source: :user
+
   belongs_to :author,
   primary_key: :id,
   foreign_key: :author_id,
@@ -34,7 +41,8 @@ class Story < ActiveRecord::Base
 
   has_many :comment_authors,
   through: :comments,
-  source: :author 
+  source: :author
+
 
   def add_date
     self.date = Date.today

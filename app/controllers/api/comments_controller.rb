@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def show
-    @comment = Comment.find(params[:id])
+    @comment = Comment.includes(:likes).find(params[:id])
   end
 
   def create
@@ -20,7 +20,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def update
-    @comment = Comment.find(params[:id])
+    @comment = Comment.includes(:likes).find(params[:id])
     if @comment.update(comment_params)
       render :show
     else

@@ -1,6 +1,6 @@
 class Api::StoriesController < ApplicationController
   def index
-    @stories = Story.includes(:author)
+    @stories = Story.includes(:author, :likes)
   end
 
   def show
@@ -32,6 +32,6 @@ class Api::StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:id, :body, :title, :image, :description, :date, :author_id)
+    params.require(:story).permit(:id, :body, :title, :image, :description, :date, :author_id, likes_attributes: [])
   end
 end

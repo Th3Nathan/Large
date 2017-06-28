@@ -1,20 +1,21 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CommentList from './comment_list';
-import { createComment } from '../../actions/comment_actions';
+import { createComment, updateComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
   return {
     currentUser: state.session.currentUser,
     comments: Object.keys(state.comments).map(k => state.comments[k])
-      .reverse()
+      .reverse(),
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    createComment: (comment) => dispatch(createComment(comment))
+    createComment: (comment) => dispatch(createComment(comment)),
+    updateComment: (comment, id) => dispatch(updateComment(comment, id))
   };
 };
 

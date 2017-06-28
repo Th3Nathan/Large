@@ -8,5 +8,7 @@
       json.username story.author.username
       json.image_url story.author.image.url
     end
+    json.like_count story.likes.count
+    json.liked_by_current_user current_user_liked?(story)
   end
 end
