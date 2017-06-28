@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NewAuthorBox from './new_author_box';
 import ReactQuill, { Quill } from 'react-quill';
-import renderHTML from 'react-render-html';
-
+// import renderHTML from 'react-render-html';
+//dangerouslysetinnerhtml
 class StoryForm extends React.Component {
   constructor(props){
     super(props);
@@ -116,7 +116,6 @@ class StoryForm extends React.Component {
         type="text" value={description}
         placeholder="Enter a description">
       </input>
-
 
       <label htmlFor="files"><i className="fa fa-picture-o" aria-hidden="true"></i></label>
       <img id="story-image-preview" src={image_url} />
