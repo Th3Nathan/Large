@@ -14,7 +14,15 @@ class StoriesShow extends React.Component {
   //will receive props nextprops !== current url then refetch
 
   render(){
+
+
+
     if (this.props.story){
+      const createMarkup = () => {
+        return {__html: `${this.props.story.body}`};
+      };
+
+
       const backgroundImage = {"backgroundImage": `url(${this.props.story.image_url})`};
       return(
 
@@ -44,7 +52,7 @@ class StoriesShow extends React.Component {
            }
          }
         </Sticky>
-
+        <div dangerouslySetInnerHTML={createMarkup()} />
 
       <Comments />
       </section>
@@ -56,4 +64,3 @@ class StoriesShow extends React.Component {
   }
 
 export default StoriesShow;
-// {renderHTML(this.props.story.body)}

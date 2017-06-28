@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class AuthorBox extends React.Component {
 
   render (){
-    debugger
     return (
       <div className="author-box comment-author-box">
         <div className="author-box-image comment-author-box-image">

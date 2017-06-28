@@ -33,7 +33,7 @@ const commentsReducer = (state = defaultState, action) => {
        return newState;
 
     case CREATE_COMMENT:
-      newState[action.comment.id] = action.comment;
+      merge(newState,  action.comment);
       return newState;
 
     default:

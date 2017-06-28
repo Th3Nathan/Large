@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NewAuthorBox from './new_author_box';
 import ReactQuill, { Quill } from 'react-quill';
-// import renderHTML from 'react-render-html';
-//dangerouslysetinnerhtml
+// import renderHTML from 'react-render-html'; THis was breaking heroku
 class StoryForm extends React.Component {
   constructor(props){
     super(props);
@@ -37,7 +36,7 @@ class StoryForm extends React.Component {
 
   linkHandler(value){
       if (value) {
-        var href = prompt('Enter the URL');
+        let href = prompt('Enter the URL');
         this.quillRef.getEditor().format('link', href);
       } else {
         this.quillRef.getEditor().format('link', false);
@@ -45,8 +44,8 @@ class StoryForm extends React.Component {
     }
 
   imageHandler(image, callback){
-      var range = this.quillRef.getEditor().getSelection();
-      var value = prompt('What is the image URL');
+      let range = this.quillRef.getEditor().getSelection();
+      let value = prompt('What is the image URL');
       if(value) {
           this.quillRef.getEditor().insertEmbed(range.index, 'image', value, "user");
       }
@@ -67,7 +66,6 @@ class StoryForm extends React.Component {
     let fileReader = new FileReader();
     fileReader.onloadend = function() {
       const newDraft = Object.assign({}, this.props.draft, { imageFile: file, image_url: fileReader.result} );
-      debugger
       this.props.updateDraft(newDraft);
     }.bind(this);
 
