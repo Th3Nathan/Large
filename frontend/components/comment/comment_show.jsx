@@ -58,39 +58,36 @@ class CommentShow extends React.Component {
     if (!this.props.comment) return null;
 
     let editButton;
-    if (this.state.editing){
-      editButton = (
-        <a onClick={ this.updateCommentHandler }  href="#" className="lock">
-          <i className=" fa fa-check-circle-o icon-unlock"></i>
-          <i className=" fa fa-check-circle icon-lock"></i>
-        </a>
-      );
-    } else {
-      editButton = (
-        <a onClick={ this.toggleEditing } href="#" className="lock">
-          <i className=" fa fa-pencil-square-o icon-unlock"></i>
-          <i className=" fa fa-pencil-square icon-lock"></i>
-        </a>
-      );
-    }
-
     let confirmButton;
-    if (this.state.editing){
-      confirmButton = (
-        <a onClick={ this.toggleEditing } href="#" className="lock">
-          <i className=" fa fa-times-circle-o icon-unlock"></i>
-          <i className=" fa fa-times-circle icon-lock"></i>
-        </a>
-      );
-    } else {
-      confirmButton = (
-        <a onClick={ this.deleteCommentHandler } href="#" className="lock">
-          <i className=" fa fa-trash-o icon-unlock"></i>
-          <i className=" fa fa-trash icon-lock"></i>
-        </a>
-      );
+    if (this.props.isLoggedUser) {
+      if (this.state.editing){
+        editButton = (
+          <a onClick={ this.updateCommentHandler }  href="#" className="lock">
+            <i className=" fa fa-check-circle-o icon-unlock"></i>
+            <i className=" fa fa-check-circle icon-lock"></i>
+          </a>
+        );
+        confirmButton = (
+          <a onClick={ this.toggleEditing } href="#" className="lock">
+            <i className=" fa fa-times-circle-o icon-unlock"></i>
+            <i className=" fa fa-times-circle icon-lock"></i>
+          </a>
+        );
+      }  else {
+        editButton = (
+          <a onClick={ this.toggleEditing } href="#" className="lock">
+            <i className=" fa fa-pencil-square-o icon-unlock"></i>
+            <i className=" fa fa-pencil-square icon-lock"></i>
+          </a>
+        );
+        confirmButton = (
+          <a onClick={ this.deleteCommentHandler } href="#" className="lock">
+            <i className=" fa fa-trash-o icon-unlock"></i>
+            <i className=" fa fa-trash icon-lock"></i>
+          </a>
+        );
+      }
     }
-
 
     let disabled = this.state.editing ? false : true;
 
@@ -114,8 +111,6 @@ class CommentShow extends React.Component {
       <div className="comment-wrap">
         <input onChange={this.handleChange} disabled={disabled} className="show-body" type="text" value={this.state.body}></input>
       </div>
-
-      { userActions }
 
       <div className="comment-footer show-footer">
         <div className="comment-like-wrapper">

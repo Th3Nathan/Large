@@ -8,9 +8,9 @@ import {
 } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const commentId = ownProps.match.params.comment_id;
+  const commentId = parseInt(ownProps.match.params.comment_id);
   return {
-    isLoggedUser: state.session.currentUser.id === commentId,
+    isLoggedUser: state.session.currentUser.comment_ids.includes(commentId),
     currentUser: state.session.currentUser,
     comment: state.comments[commentId],
   };
