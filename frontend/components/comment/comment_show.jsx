@@ -8,6 +8,8 @@ class CommentShow extends React.Component {
       editing: false,
       body: "",
     };
+    this.toggleEditing = this.toggleEditing.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 //handlers
   //delete
@@ -15,34 +17,90 @@ class CommentShow extends React.Component {
   //like
 
   componentDidMount(){
-    this.props.fetchSingleComment(parseInt(this.props.match.params.comment_id));
+    this.props.fetchSingleComment(parseInt(this.props.match.params.comment_id))
+      .then(() => {this.setState({body: this.props.comment.body});
+    });
+  }
+
+  toggleEditing(e){
+    e.preventDefault();
+    this.setState({
+      editing: this.state.editing ? false : true,
+      body: this.props.comment.body
+    });
+  }
+
+  handleChange(e){
+    e.preventDefault();
+    this.setState({
+      body: e.target.value
+    });
   }
 
   render(){
     if (!this.props.comment) return null;
+
+    let editButton;
+    if (this.state.editing){
+      editButton = (
+        <a  href="#" className="lock">
+          <i className=" fa fa-check-circle-o icon-unlock"></i>
+          <i className=" fa fa-check-circle icon-lock"></i>
+        </a>
+      );
+    } else {
+      editButton = (
+        <a onClick={ this.toggleEditing } href="#" className="lock">
+          <i className=" fa fa-pencil-square-o icon-unlock"></i>
+          <i className=" fa fa-pencil-square icon-lock"></i>
+        </a>
+      );
+    }
+
+    let confirmButton;
+    if (this.state.editing){
+      confirmButton = (
+        <a onClick={ this.toggleEditing } href="#" className="lock">
+          <i className=" fa fa-times-circle-o icon-unlock"></i>
+          <i className=" fa fa-times-circle icon-lock"></i>
+        </a>
+      );
+    } else {
+      confirmButton = (
+        <a href="#" className="lock">
+          <i className=" fa fa-trash-o icon-unlock"></i>
+          <i className=" fa fa-trash icon-lock"></i>
+        </a>
+      );
+    }
+
+
+    let disabled = this.state.editing ? false : true;
+
     let userActions;
     if (this.props.isLoggedUser) {
       userActions = (
-            <div className="user-buttons">
-              <button>Edit</button>
-              <button>Delete</button>
-            </div>
-          );
+        <div className="user-buttons">
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+      );
     }
 
     return (
       <section className="comment-show">
         <AuthorBox
           comment={this.props.comment}
+          followPresent={this.props.comment.author.id !== this.props.currentUser.id}
         />
 
       <div className="comment-wrap">
-        <p className="comment-body comment-show-body">{this.props.body}</p>
+        <input onChange={this.handleChange} disabled={disabled} className="show-body" type="text" value={this.state.body}></input>
       </div>
 
       { userActions }
 
-      <div className="comment-footer">
+      <div className="comment-footer show-footer">
         <div className="comment-like-wrapper">
           <a href="/" className="lock comment-lock" id="comment-heart-unclicked">
             <i className="fa fa-heart icon-lock comment-icon"></i>
@@ -51,9 +109,11 @@ class CommentShow extends React.Component {
           <span className="comment-num-likes">9</span>
         </div>
         <div className="comment-author-box-icons">
+          { editButton }
+          { confirmButton }
           <a href="#" className="lock">
-            <i className=" fa fa-bookmark icon-lock"></i>
             <i className=" fa fa-bookmark-o icon-unlock"></i>
+            <i className=" fa fa-bookmark icon-lock"></i>
           </a>
           <a href="#" className="lock">
             <i className="fa fa-angle-down icon-unlock"></i>
