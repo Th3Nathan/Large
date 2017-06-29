@@ -24,7 +24,8 @@ class Story < ActiveRecord::Base
 
 
   has_many :likes, as: :likeable
-  accepts_nested_attributes_for :likes
+  accepts_nested_attributes_for :likes, allow_destroy: true
+
   has_many :likers,
     through: :likes,
     source: :user

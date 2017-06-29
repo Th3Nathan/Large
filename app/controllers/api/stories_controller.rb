@@ -23,6 +23,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def update
+    debugger
     @story = Story.find(params[:id])
     if @story.update(story_params)
       render :show
@@ -32,6 +33,6 @@ class Api::StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:id, :body, :title, :image, :description, :date, :author_id, likes_attributes: [])
+    params.require(:story).permit(:id, :body, :title, :image, :description, :date, :author_id, likes_attributes: [:_destroy, :id, :user_id, :likeable_id, :likeable_type])
   end
 end

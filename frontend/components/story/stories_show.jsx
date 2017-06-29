@@ -7,7 +7,9 @@ import { StickyContainer, Sticky } from 'react-sticky';
 import Comments from '../comment/comment_list_container';
 
 class StoriesShow extends React.Component {
-
+  constructor(props){
+    super(props);
+  }
 
   componentDidMount(){
     this.props.fetchSingleStory(this.props.match.params.story_id);
@@ -18,7 +20,7 @@ class StoriesShow extends React.Component {
   render(){
 
 
-
+    if (!this.props.story) return null;
     if (this.props.story){
       const createMarkup = () => {
         return {__html: `${this.props.story.body}`};
@@ -51,9 +53,10 @@ class StoriesShow extends React.Component {
               return (
                 <div id="share-bar-div">
                   <ShareBar
-                    updateStory={this.props.updateStory}
-                    likeCount={this.props.story.like_count}
-                    likedByCurrentUser={this.props.liked_by_current_user}
+                    userId={this.props.currentUser.id}
+                    updateStoryLikes={this.props.updateStoryLikes}
+                    story={this.props.story}
+                    fetchSingleStory={this.props.fetchSingleStory}
                   />
                 </div>
               );

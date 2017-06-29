@@ -18,6 +18,14 @@ export const updateStory = (formData, id) => {
   });
 };
 
+export const updateStoryLikes = (newLike, id) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/stories/${id}`,
+    data: {story: { likes_attributes: newLike }  },
+  });
+};
+
 export const removeStory = (id) => {
   return $.ajax({
     method: "DELETE",

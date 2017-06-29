@@ -60,11 +60,33 @@ story5 = Story.create({
   image: "https://s3.amazonaws.com/large-dev/story1.jpg"
 })
 
+# like1 = Like.create({
+#   user_id: guest.id,
+#   likeable_id: story1.id,
+#   likeable_type: "Story"
+# })
+# like2 = Like.create({
+#   user_id: commenter.id,
+#   likeable_id: story1.id,
+#   likeable_type: "Story"
+# })
+
   comment4 = Comment.create({
     body: "Not again yo",
     author_id: commenter.id,
     story_id: story5.id
   })
+  #
+  # like3 = Like.create({
+  #   user_id: guest.id,
+  #   likeable_id: comment1.id,
+  #   likeable_type: "Comment"
+  # })
+  # like4 = Like.create({
+  #   user_id: commenter.id,
+  #   likeable_id: comment2.id,
+  #   likeable_type: "Comment"
+  # })
 
   comment5 = Comment.create({
     body: "You know I like sushi, comon man",

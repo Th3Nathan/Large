@@ -70,6 +70,13 @@ export const updateStory = (newStory, id) => dispatch => {
     });
 };
 
+export const updateStoryLikes = (newStory, id) => dispatch => {
+  return APIUtil.updateStoryLikes(newStory, id)
+    .then(story => {
+      return dispatch(update(story));
+    });
+};
+
 export const createStory = (story) => dispatch => {
   return APIUtil.createStory(story)
     .then(story => {return dispatch(addStory(story));

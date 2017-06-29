@@ -14,3 +14,4 @@
   end
   json.like_count @story.likes.count
   json.liked_by_current_user current_user_liked?(@story)
+  json.like_id like_id(@story)
