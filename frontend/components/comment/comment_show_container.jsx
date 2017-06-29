@@ -4,7 +4,8 @@ import CommentShow from './comment_show';
 import {
   fetchSingleComment,
   destroyComment,
-  updateComment
+  updateComment,
+  updateCommentLikes
 } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchSingleComment: (id) => dispatch(fetchSingleComment(id)),
     destroyComment: (id) => dispatch(destroyComment(id)),
     updateComment: (comment, id) => dispatch(updateComment(comment, id)),
+    updateCommentLikes: (comment, id) => dispatch(updateCommentLikes(comment, id)),
   };
 };
 

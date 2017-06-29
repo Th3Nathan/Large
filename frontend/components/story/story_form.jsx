@@ -119,7 +119,7 @@ class StoryForm extends React.Component {
       <img id="story-image-preview" src={image_url} />
       <div id="text-editor">
         <ReactQuill
-          val={body}
+          value={body}
           ref={(el) => this.quillRef = el}
           theme="bubble"
           placeholder={"Tell your story"}

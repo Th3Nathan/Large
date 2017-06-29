@@ -29,6 +29,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:author_id, :story_id, :body)
+    params.require(:comment).permit(:author_id, :story_id, :body, likes_attributes: [:_destroy, :id, :user_id, :likeable_id, :likeable_type])
   end
 end

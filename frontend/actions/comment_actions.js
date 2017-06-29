@@ -44,6 +44,13 @@ export const receiveSingleComment = comment => {
   };
 };
 
+export const updateCommentLikes = (newComment, id) => dispatch => {
+  return APIUtil.updateCommentLikes(newComment, id)
+    .then(comment => {
+      return dispatch(update(comment));
+    });
+};
+
 export const fetchSingleComment = (id) => dispatch => {
   return APIUtil.fetchSingleComment(id)
     .then(comment => {

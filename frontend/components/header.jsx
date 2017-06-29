@@ -51,8 +51,8 @@ class Header extends React.Component {
     formData.append("story[description]", story.description);
     this.props.createStory(formData)
       .then(() => {this.props.refresh(this.props.currentUser.id);})
-        .then(() => { this.props.removeDraft();})
-          .then(() => { this.props.history.push('/stories');});
+      .then(() => { this.props.history.push('/stories');})
+        .then(() => { this.props.removeDraft();});
   }
 
   deleteDraft(e){

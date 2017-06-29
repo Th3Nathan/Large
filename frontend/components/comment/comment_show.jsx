@@ -12,16 +12,28 @@ class CommentShow extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.updateCommentHandler = this.updateCommentHandler.bind(this);
     this.deleteCommentHandler = this.deleteCommentHandler.bind(this);
+    this.addLike = this.addLike.bind(this);
+    this.removeLike = this.removeLike.bind(this);
   }
-//handlers
-  //delete
-  //edit
-  //like
 
   componentDidMount(){
     this.props.fetchSingleComment(parseInt(this.props.match.params.comment_id))
       .then(() => {this.setState({body: this.props.comment.body});
     });
+  }
+
+  addLike(e){
+    e.preventDefault();
+    const newAttributes = [{user_id: this.props.currentUser.id, likeable_id: this.props.comment.id, likeable_type: "Comment"}];
+    this.props.updateCommentLikes(newAttributes, this.props.comment.id)
+      .then(() => this.props.fetchSingleComment(this.props.comment.id));
+  }
+
+  removeLike(e){
+    e.preventDefault();
+    const newAttributes = [{id: this.props.comment.like_id, _destroy: true}];
+    this.props.updateCommentLikes(newAttributes, this.props.comment.id)
+      .then(() => this.props.fetchSingleComment(this.props.comment.id));
   }
 
   toggleEditing(e){
@@ -56,6 +68,27 @@ class CommentShow extends React.Component {
 
   render(){
     if (!this.props.comment) return null;
+
+    let heart;
+    if (this.props.comment.liked_by_current_user){
+        heart = (
+        <div onClick={this.removeLike} className="comment-like-wrapper">
+          <a href="/" className="lock" id="heart-unclicked">
+            <i className="fa fa-heart icon-lock comment-icon"></i>
+            <i className="fa fa-heart icon-unlock comment-icon"></i>
+          </a>
+        </div>
+      );
+    } else {
+      heart = (
+        <div onClick={this.addLike} className="comment-like-wrapper">
+          <a href="/" className="lock" id="heart-unclicked">
+            <i className="fa fa-heart icon-lock comment-icon"></i>
+            <i className="fa fa-heart-o icon-unlock comment-icon"></i>
+          </a>
+        </div>
+      );
+    }
 
     let editButton;
     let confirmButton;
@@ -113,13 +146,10 @@ class CommentShow extends React.Component {
       </div>
 
       <div className="comment-footer show-footer">
-        <div className="comment-like-wrapper">
-          <a href="/" className="lock comment-lock" id="comment-heart-unclicked">
-            <i className="fa fa-heart icon-lock comment-icon"></i>
-            <i className="fa fa-heart-o icon-unlock comment-icon"></i>
-          </a>
-          <span className="comment-num-likes">9</span>
-        </div>
+        { heart }
+        <a className="comment-like-count">
+          {`${this.props.comment.like_count}`}
+        </a>
         <div className="comment-author-box-icons">
           { editButton }
           { confirmButton }

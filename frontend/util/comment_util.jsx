@@ -28,6 +28,14 @@ export const fetchSingleComment = (id) => {
   });
 };
 
+export const updateCommentLikes = (newLike, id) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/comments/${id}`,
+    data: {comment: { likes_attributes: newLike }  },
+  });
+};
+
  // addLike() {
  //   this.props.updateComment({ likes_attributes: {likeable_id: this.props.comment.id, likeable_type: "Comment"}})
  // }

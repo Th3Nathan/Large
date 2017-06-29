@@ -9,11 +9,10 @@ class CommentList extends React.Component {
       return (
         <Comment
           key={comment.id}
-          author={comment.author}
-          date={comment.date}
-          author_image={comment.author_image}
-          body={comment.body}
-          comment_id={comment.id}
+          comment={comment}
+          userId={this.props.currentUser.id}
+          updateCommentLikes={this.props.updateCommentLikes}
+          fetchSingleComment={this.props.fetchSingleComment}
         />
       );
     });

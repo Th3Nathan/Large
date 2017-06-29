@@ -25,7 +25,7 @@ const commentsReducer = (state = defaultState, action) => {
       return merge(newState, action.comment  );
 
     case UPDATE_COMMENT:
-      newState[action.comment.id] = action.comment;
+      merge(newState, action.comment);
       return newState;
 
     case DELETE_COMMENT:
