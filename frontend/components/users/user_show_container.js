@@ -10,7 +10,7 @@ import { fetchStories } from '../../actions/story_actions';
 const mapStateToProps = (state, ownProps) => {
   const storiesArray = Object.keys(state.stories.all).map(key => state.stories.all[key]);
   return {
-    loggedInUser: state.session.currentUser,
+    currentUser: state.session.currentUser,
     showedUser: state.users.showed,
     storiesByUser: storiesArray.filter(story => story.author_id === parseInt(ownProps.match.params.id))
   };

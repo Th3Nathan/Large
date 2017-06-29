@@ -3,7 +3,8 @@ import StoryBlurb from "./blurb";
 
 class StoriesIndex extends React.Component {
   componentDidMount(){
-    this.props.fetchStories();
+    // There was no need for this, stories are being fetched in parent
+    // this.props.fetchStories();
   }
 
   render(){

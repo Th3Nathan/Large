@@ -24,7 +24,6 @@ class UserShow extends React.Component {
 
 
   componentDidMount(){
-    //WHY DOES THIS WORK????!!!
     this.props.fetchStories()
     .then(() => this.props.fetchSingleUser(this.props.match.params.id)
       .then(response => {
@@ -62,7 +61,7 @@ class UserShow extends React.Component {
 
   save(e){
     e.preventDefault();
-    let user = this.props.loggedInUser;
+    let user = this.props.currentUser;
     user.username = this.state.username;
     user.bio = this.state.bio;
     let formData = new FormData();
@@ -71,7 +70,7 @@ class UserShow extends React.Component {
     if (this.state.image_file){
       formData.append("user[image]", this.state.image_file);
     }
-    this.props.updateUser(formData, this.props.loggedInUser.id)
+    this.props.updateUser(formData, this.props.currentUser.id)
       .then(() => this.props.fetchSingleUser(this.props.match.params.id))
         .then(() => this.setState({editing: false}));
   }
@@ -79,35 +78,34 @@ class UserShow extends React.Component {
   cancel(){
     this.setState({
       editing: false,
-      username: this.props.loggedInUser.username,
-      bio: this.props.loggedInUser.bio,
-      image_url: this.props.loggedInUser.image_url,
+      username: this.props.currentUser.username,
+      bio: this.props.currentUser.bio,
+      image_url: this.props.currentUser.image_url,
     });
   }
 
   render(){
 
-
-
+    if (!this.props.showedUser ) return null;
 
     let disabled = this.state.editing ? false : true;
 
     let editButtons;
-    if (!this.props.loggedInUser || !this.props.showedUser)
+    if (!this.props.currentUser || !this.props.showedUser)
       editButtons = null;
-    else if (this.props.loggedInUser.id !== this.props.showedUser.id){
-      if (!this.props.showedUser.followed_by_current_user){
+    else if (this.props.currentUser.id !== this.props.showedUser.id){
+      if (this.props.showedUser.followed_by_current_user){
         editButtons = (
-          <button className="user-show-editing-save">
+          <button className="user-show-unfollow">
             Unfollow
           </button>
         );
       }
       else {
         editButtons = (
-          <div className="user-show-not-editing">
-            <button>Follow</button>
-          </div>
+          <button className="user-show-editing-save">
+          Follow
+          </button>
         );
       }
     } else if (!this.state.editing){
@@ -142,8 +140,8 @@ class UserShow extends React.Component {
             <br />
             <input disabled={disabled} onChange={this.update('bio')} type="text" className="user-show-bio" value={this.state.bio} />
             <div className="user-show-following">
-              <h2 className="follow-info"><b>{this.state.following}</b> Following&nbsp;&nbsp;</h2>
-              <h2 className="follow-info"><b>{this.state.followers}</b> Follower</h2>
+              <h2 className="follow-info"><b>{this.props.showedUser.following_count}</b> Following&nbsp;&nbsp;</h2>
+              <h2 className="follow-info"><b>{this.props.showedUser.followed_by_count}</b> Followers</h2>
             </div>
             { editButtons }
           </div>

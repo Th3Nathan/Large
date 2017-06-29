@@ -100,6 +100,25 @@
   border: 1px solid #00ab6b;;
 }
 
+.user-show-unfollow {
+  font-size: 15px;
+  background: #1c9963;
+  color: white;
+  transition: all .3s;
+  border: 1px solid #02b875;
+  border-radius: 50px;
+  outline: none;
+  width: 80px;
+  height: 45px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.user-show-unfollow:hover {
+  border: 1px solid #00ab6b;;
+}
+
 .user-show-editing button:hover {
 }
 
