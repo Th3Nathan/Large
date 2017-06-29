@@ -18,7 +18,9 @@ class StoryAuthorBox extends React.Component {
   }
 
 
+
   render (){
+
     return (
       <div className="story-author-box">
         <div className="story-author-box-image">

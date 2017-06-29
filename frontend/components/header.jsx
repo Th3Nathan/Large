@@ -112,7 +112,7 @@ class Header extends React.Component {
     return (
       <header>
       <img src="https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" ></img>
-        <Link to="/">
+        <Link to="/stories">
           <div id="title">
             <h1>Large</h1>
           </div>
