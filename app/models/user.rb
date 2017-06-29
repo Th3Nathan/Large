@@ -42,6 +42,26 @@ class User < ActiveRecord::Base
   foreign_key: :author_id,
   class_name: 'Comment'
 
+  has_many :followed_author_follows,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: 'Follow'
+
+  has_many :followed_authors,
+  through: :followed_author_follows,
+  source: :author
+
+  has_many :following_user_follows,
+  primary_key: :id,
+  foreign_key: :follower_id,
+  class_name: 'Follow'
+
+  has_many :following_users,
+  through: :following_user_follows,
+  source: :follower
+
+  accepts_nested_attributes_for :followed_author_follows, allow_destroy: true
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

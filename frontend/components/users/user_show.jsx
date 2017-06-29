@@ -86,14 +86,30 @@ class UserShow extends React.Component {
   }
 
   render(){
+
+
+
+
     let disabled = this.state.editing ? false : true;
 
     let editButtons;
-
     if (!this.props.loggedInUser || !this.props.showedUser)
       editButtons = null;
     else if (this.props.loggedInUser.id !== this.props.showedUser.id){
-      editButtons = null;
+      if (!this.props.showedUser.followed_by_current_user){
+        editButtons = (
+          <button className="user-show-editing-save">
+            Unfollow
+          </button>
+        );
+      }
+      else {
+        editButtons = (
+          <div className="user-show-not-editing">
+            <button>Follow</button>
+          </div>
+        );
+      }
     } else if (!this.state.editing){
       editButtons = (
         <div className="user-show-not-editing">

@@ -89,8 +89,9 @@
   background: white;
   border-radius: 50px;
   outline: none;
-  width: 65px;
+  width: 80px;
   height: 45px;
+  cursor: pointer;
   margin-top: 15px;
   margin-right: 10px;
 }
@@ -110,6 +111,7 @@
   position: relative;
   right: -80px;
   top: 20px;
+  object-fit: cover;
 }
 
 .user-display-image img {

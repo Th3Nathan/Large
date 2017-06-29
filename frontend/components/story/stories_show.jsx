@@ -65,11 +65,12 @@ class StoriesShow extends React.Component {
            }
          }
         </Sticky>
-        <div dangerouslySetInnerHTML={createMarkup()} />
+
+        <div className="story-body" dangerouslySetInnerHTML={createMarkup()} />
 
       <Comments
         updateCommentLikes={this.props.updateCommentLikes}
-        
+
       />
       </section>
       </StickyContainer>

@@ -27,6 +27,6 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :image, :bio)
+    params.require(:user).permit(:username, :password, :image, :bio, followed_author_follow_attributes: [:_destroy, :id, :follower_id, :author_id])
   end
 end

@@ -1,7 +1,6 @@
-class Follow < ActiveRecord::Base
-end
 
-class Like < ActiveRecord::Base
+
+class Follow < ActiveRecord::Base
   validates :follower_id, :author_id, presence: true
 
   validates :follower, :uniqueness => {
@@ -18,5 +17,5 @@ class Like < ActiveRecord::Base
   foreign_key: :author_id,
   class_name: 'User'
 
-  
+
 end

@@ -9,6 +9,7 @@ class StoryForm extends React.Component {
    this.quilModules = {
             toolbar: {
                 container: [
+                    [{ 'header': 1 }, { 'header': 2 }],    
                     ['bold', 'italic', 'blockquote'],
                     ['link', 'image'],
                 ],
