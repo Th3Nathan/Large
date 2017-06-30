@@ -56,11 +56,30 @@
   left: 120px;
 }
 
+.story-author-box-unfollow {
+  border-radius: 50px;
+  color: white;
+  width: 59px;
+  padding: 0px 8px 0px 8px;
+  line-height: 1.35;
+  font-size: 12px;
+  border: 1px solid #02B875;
+  cursor: pointer;
+  text-align: center;
+  position: absolute;
+  top: 4px;
+  left: 120px;
+    background: #1c9963;
+  border: 1px solid #02b875;
+}
+
 
 .story-author-box-follow:hover {
   color: #02B875;
   border: 1px solid #1c9963;
 }
+
+
 
 .story-author-box-datetime {
   display: flex;

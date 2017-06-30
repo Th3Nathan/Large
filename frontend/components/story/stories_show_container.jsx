@@ -4,7 +4,7 @@ import { refresh } from '../../actions/session_actions';
 import { storiesSelector } from "../../reducers/selectors";
 import { withRouter } from 'react-router-dom';
 import StoriesShow from './stories_show';
-
+import { follow, unFollow } from './../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,9 +16,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-  fetchSingleStory: id => dispatch (fetchSingleStory(id)),
   updateStoryLikes: (story, id) => dispatch (updateStoryLikes(story, id)),
-  fetchSingleStory: (id) => dispatch(fetchSingleStory(id))
+  fetchSingleStory: (id) => dispatch(fetchSingleStory(id)),
+  follow: (id) => dispatch(follow(id)),
+  unFollow: (id) => dispatch(unFollow(id)),
   };
 };
 

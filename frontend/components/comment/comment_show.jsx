@@ -147,7 +147,7 @@ class CommentShow extends React.Component {
 
       <div className="comment-footer show-footer">
         { heart }
-        <a className="comment-like-count">
+        <a className="comment-like-count-show">
           {`${this.props.comment.like_count}`}
         </a>
         <div className="comment-author-box-icons">

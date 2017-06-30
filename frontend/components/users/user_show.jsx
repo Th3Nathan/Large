@@ -168,7 +168,7 @@ class UserShow extends React.Component {
 
 
         </div>
-        <StoriesIndex title={"Stories"} fetchStories={this.props.fetchStories} stories={this.props.storiesByUser} />
+        <StoriesIndex title={"Stories"} fetchStories={this.props.fetchStories} location={this.props.location} stories={this.props.storiesByUser} />
       </section>
     );
   }

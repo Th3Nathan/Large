@@ -3,8 +3,8 @@ import StoryBlurb from "./blurb";
 
 class StoriesIndex extends React.Component {
   componentDidMount(){
-    // There was no need for this, stories are being fetched in parent
-    // this.props.fetchStories();
+    if (this.props.location.pathname === "/stories")
+      this.props.fetchStories();
   }
 
   render(){

@@ -37,6 +37,9 @@ class StoriesShow extends React.Component {
           author_id={this.props.story.author_id}
           story={this.props.story.body}
           date={this.props.story.date}
+          follow={this.props.follow}
+          unFollow={this.props.unFollow}
+          currentUser={this.props.currentUser}
         />
 
 
