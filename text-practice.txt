@@ -12,4 +12,9 @@ WOW!
 lots
 
 
-bugs, my users cannot update thier profile image 
+bugs, my users cannot update thier profile image
+
+items
+I want log in page to show up when user visits site,
+feed stories fetch should clear old stories so unfollowed sotires dont appear again
+seeds
