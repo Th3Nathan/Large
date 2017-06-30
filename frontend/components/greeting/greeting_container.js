@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     logOut: () => dispatch(logOut())
       .then(() => turnOnModalAnimation())
-        .then(() => ownProps.history.push('/login')),
+        .then(() => ownProps.history.push('/signin')),
     turnOnModalAnimation: () => dispatch(turnOnModalAnimation())
   };
 };
