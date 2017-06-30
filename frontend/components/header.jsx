@@ -111,7 +111,7 @@ class Header extends React.Component {
 
     return (
       <header>
-      <img src="https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" ></img>
+      <img src="https://i0.wp.com/loitokitok.com/wp-content/uploads/2016/02/New-Loitokitok-L-Logo-Transparent-512x512.png?fit=512%2C512" ></img>
         <Link to="/">
           <div id="title">
             <h1>Large</h1>
