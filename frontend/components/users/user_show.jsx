@@ -20,6 +20,8 @@ class UserShow extends React.Component {
     this.update = this.update.bind(this);
     this.cancel = this.cancel.bind(this);
     this.save = this.save.bind(this);
+    this.follow = this.follow.bind(this);
+    this.unFollow = this.unFollow.bind(this);
   }
 
 
@@ -84,26 +86,36 @@ class UserShow extends React.Component {
     });
   }
 
+  follow(e){
+    e.preventDefault();
+    this.props.follow(this.props.showedUser.id);
+  }
+
+  unFollow(e){
+    e.preventDefault();
+    this.props.unFollow(this.props.showedUser.id);
+  }
+  // WHen I chain this on to update current use to reflect new state (do I even have to bother), it destroyes my showedUser...
+  // .then(() => this.props.refresh(this.props.currentUser.id));
+
   render(){
 
-    if (!this.props.showedUser ) return null;
+    if (!this.props.showedUser || !this.props.currentUser ) return null;
 
     let disabled = this.state.editing ? false : true;
 
     let editButtons;
-    if (!this.props.currentUser || !this.props.showedUser)
-      editButtons = null;
-    else if (this.props.currentUser.id !== this.props.showedUser.id){
+    if (this.props.currentUser.id !== this.props.showedUser.id){
       if (this.props.showedUser.followed_by_current_user){
         editButtons = (
-          <button className="user-show-unfollow">
+          <button onClick={this.unFollow} className="user-show-unfollow">
             Unfollow
           </button>
         );
       }
       else {
         editButtons = (
-          <button className="user-show-editing-save">
+          <button onClick={this.follow} className="user-show-editing-save">
           Follow
           </button>
         );

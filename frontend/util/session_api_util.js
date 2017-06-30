@@ -49,3 +49,19 @@ export const updateUser = (formData, id) => {
     data: formData
   });
 };
+
+export const updateUserFollows = (userAttributes, id) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/users/${id}`,
+    data: {user: { followed_author_follows_attributes: userAttributes }  },
+  });
+};
+
+export const follow = (id) => {
+  return $.ajax({method: "POST", url: `api/users/${id}/follow`});
+};
+
+export const unFollow = (id) => {
+  return $.ajax({method: "POST", url: `api/users/${id}/unfollow`});
+};

@@ -6,6 +6,7 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const SCRUB_ERRORS = 'SCRUB_ERRORS';
 export const UPDATE_DRAFT = 'UPDATE_DRAFT';
 export const REMOVE_DRAFT = 'REMOVE_DRAFT';
+export const UPDATE_SHOWED_USER = "UPDATE_USER";
 
 export const updateDraft = newDraft => {
   return {

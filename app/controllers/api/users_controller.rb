@@ -17,6 +17,23 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def follow
+    @user = User.find(params[:id])
+    follower = @user.follower_follows.new({follower_id: current_user.id})
+    if follower.save
+      render :show
+    else
+      render json: "Already follows"
+    end
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    follow = current_user.followee_follows.where({author_id: params[:id]}).destroy_all
+    render :show
+
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
@@ -27,6 +44,6 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :image, :bio, followed_author_follow_attributes: [:_destroy, :id, :follower_id, :author_id])
+    params.require(:user).permit(:username, :password, :image, :bio, followed_author_follows_attributes: [:_destroy, :id, :follower_id, :author_id])
   end
 end

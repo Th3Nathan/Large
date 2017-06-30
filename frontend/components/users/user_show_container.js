@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { logOut } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 import UserShow from './user_show';
-import { fetchSingleUser } from '../../actions/user_actions';
-import { updateUser } from '../../actions/session_actions';
+import { fetchSingleUser, follow, unFollow } from '../../actions/user_actions';
+import { updateUser, refresh } from '../../actions/session_actions';
 import { fetchStories } from '../../actions/story_actions';
 
 
@@ -20,7 +20,11 @@ const mapDispatchToProps = dispatch => {
   return {
     updateUser: (user, id) => dispatch(updateUser(user, id)),
     fetchSingleUser: (id) => dispatch(fetchSingleUser(id)),
-    fetchStories: () => dispatch(fetchStories())
+    fetchStories: () => dispatch(fetchStories()),
+    updateUserFollows: (attributes, id) => dispatch(updateUserFollows(attributes, id)),
+    refresh: (id) => dispatch(refresh(id)),
+    follow: (id) => dispatch(follow(id)),
+    unFollow: (id) => dispatch(unFollow(id)),
   };
 };
 

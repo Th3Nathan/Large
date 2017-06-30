@@ -42,25 +42,26 @@ class User < ActiveRecord::Base
   foreign_key: :author_id,
   class_name: 'Comment'
 
-  has_many :followed_author_follows,
-  primary_key: :id,
-  foreign_key: :author_id,
-  class_name: 'Follow'
-
-  has_many :followed_authors,
-  through: :followed_author_follows,
-  source: :author
-
-  has_many :following_user_follows,
+  has_many :followee_follows,
   primary_key: :id,
   foreign_key: :follower_id,
   class_name: 'Follow'
 
-  has_many :following_users,
-  through: :following_user_follows,
+  has_many :followees,
+  through: :followee_follows,
+  source: :author
+
+#these are the follows that follow us, self
+  has_many :follower_follows,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: 'Follow'
+
+  has_many :followers,
+  through: :follower_follows,
   source: :follower
 
-  accepts_nested_attributes_for :followed_author_follows, allow_destroy: true
+  # accepts_nested_attributes_for :followed_author_follows, allow_destroy: true
 
   attr_reader :password
 
