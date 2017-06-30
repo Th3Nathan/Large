@@ -6,10 +6,18 @@ export const UPDATE_STORY = 'UPDATE_STORY';
 export const DELETE_STORY = 'DELETE_STORY';
 export const CREATE_STORY = 'CREATE_STORY';
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_FEED = "RECEIVE_FEED";
 
 export const receiveStories = (stories) => {
   return {
     type: RECEIVE_STORIES,
+    stories
+  };
+};
+
+export const receiveFeed = stories => {
+  return {
+    type: RECEIVE_FEED,
     stories
   };
 };
@@ -86,5 +94,11 @@ export const createStory = (story) => dispatch => {
 export const destroyStory = id => dispatch => {
   return APIUtil.removeStory(id).then((story) => {
     return dispatch(deleteStory(id));
+  });
+};
+
+export const feed = () => dispatch => {
+  return APIUtil.feed().then((stories) => {
+    return dispatch(receiveFeed(stories));
   });
 };

@@ -11,20 +11,22 @@ import NewStory from './story/new_story_container';
 import EditStory from './story/edit_story_container';
 import UserShow from './users/user_show_container';
 import CommentShow from './comment/comment_show_container';
+import FeedContainer from './story/feed_index_container';
 
 const App = () => {
   return (
   <div>
     <Header />
     <Switch>
-    <Route path="/comments/:comment_id" component={CommentShow} />
-    <ProtectedRoute exact path="/stories/new" component={NewStory} />
-    <Route path="/stories/edit/:story_id" component={EditStory} />
-    <Route exact path="/users/:id" component={UserShow} />
-    <Route exact path="/stories/:story_id/" component={StoriesShowContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <AuthRoute path="/signin" component={SessionFormContainer} />
-    <ProtectedRoute exact path="/stories/" component={StoriesIndexContainer} />
+    <ProtectedRoute path="/comments/:comment_id" component={CommentShow} />
+    <ProtectedRoute exact path="/stories/new" component={NewStory} />
+    <ProtectedRoute path="/stories/edit/:story_id" component={EditStory} />
+    <ProtectedRoute exact path="/users/:id" component={UserShow} />
+    <ProtectedRoute exact path="/stories/:story_id/" component={StoriesShowContainer} />
+    <ProtectedRoute exact path="/" component={StoriesIndexContainer} />
+    <ProtectedRoute exact path="/stories" component={FeedContainer} />
     </Switch>
 
   </div>

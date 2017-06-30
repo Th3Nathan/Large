@@ -1,13 +1,13 @@
 import React from "react";
 import StoryBlurb from "./blurb";
 
-class StoriesIndex extends React.Component {
+class FeedIndex extends React.Component {
   componentDidMount(){
-    if (this.props.location.pathname === "/stories" || this.props.location.pathname === "/")
-      this.props.fetchStories();
+      this.props.feed();
   }
 
   render(){
+    if (!this.props.stories) return null;
     const stories = this.props.stories.map(story => {
       return (
         <StoryBlurb key={story.id} story={story} />
@@ -15,7 +15,7 @@ class StoriesIndex extends React.Component {
     });
   return (
   <section className="stories">
-    <h1>{this.props.title || "Featured Stories"}</h1>
+    <h1>{this.props.title || "Your Feed"}</h1>
     <div className="story-index">
       {stories}
     </div>
@@ -24,4 +24,4 @@ class StoriesIndex extends React.Component {
   }
 }
 
-export default StoriesIndex;
+export default FeedIndex;

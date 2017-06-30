@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
   through: :followee_follows,
   source: :author
 
+  has_many :feed_stories,
+  through: :followees,
+  source: :stories 
+
 #these are the follows that follow us, self
   has_many :follower_follows,
   primary_key: :id,

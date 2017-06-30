@@ -7,5 +7,6 @@ Rails.application.routes.draw do
      resource :session, only: [:create, :destroy]
      post "users/:id/follow", to: "users#follow"
      post "users/:id/unfollow", to: "users#unfollow"
+     post "stories/feed", to: "stories#feed"
    end
 end

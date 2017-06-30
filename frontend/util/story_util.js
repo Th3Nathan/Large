@@ -46,3 +46,10 @@ export const fetchSingleStory = (id) => {
     url: `api/stories/${id}`,
   });
 };
+
+export const feed = () => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/stories/feed'
+  });
+};

@@ -31,6 +31,11 @@ class Api::StoriesController < ApplicationController
     end
   end
 
+  def feed
+    @stories = current_user.feed_stories 
+    render :index
+  end
+
   def story_params
     params.require(:story).permit(:id, :body, :title, :image, :description, :date, :author_id, likes_attributes: [:_destroy, :id, :user_id, :likeable_id, :likeable_type])
   end

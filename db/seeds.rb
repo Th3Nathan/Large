@@ -19,12 +19,18 @@ guest = User.create({
   bio: "Thanks for checking out my site!"
 })
 
+
 commenter = User.create({
   image: "https://s3.amazonaws.com/large-dev/dog.jpg",
   username: "Commenter",
   password: "password",
   bio: "I like to comment on stuff"
   });
+  
+  follow1 = Follow.create({
+    follower_id: guest.id,
+    author_id: commenter.id
+    })
 
 user3 = User.create({
   image: "https://s3.amazonaws.com/large-dev/dog.jpg",

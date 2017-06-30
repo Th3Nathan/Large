@@ -3,20 +3,25 @@ import {
   RECEIVE_SINGLE_STORY,
   UPDATE_STORY,
   DELETE_STORY,
-  CREATE_STORY
+  CREATE_STORY,
+  RECEIVE_FEED
 } from '../actions/story_actions';
 import { merge } from 'lodash';
 import { receiveComments } from '../actions/comment_actions';
 
 
 const defaultState = {
-  all: {}
+  all: {},
+  feed: {}
 };
 
 const storiesReducer = (state = defaultState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch (action.type) {
+
+    case RECEIVE_FEED:
+      return merge({}, newState, { feed : action.stories });
 
     case RECEIVE_STORIES:
       return merge({}, newState, { all : action.stories });
