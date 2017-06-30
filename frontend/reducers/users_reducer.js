@@ -8,7 +8,7 @@ const defaultState = {all: {}, showed: {}};
 
 const usersReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  let newState = merge({}, state.users);
+  let newState = merge({}, state);
 
   switch (action.type) {
     case RECEIVE_USERS:

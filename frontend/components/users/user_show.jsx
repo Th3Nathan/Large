@@ -88,12 +88,13 @@ class UserShow extends React.Component {
 
   follow(e){
     e.preventDefault();
-    this.props.follow(this.props.showedUser.id);
+    this.props.follow(this.props.showedUser.id).then(() => this.props.refresh(this.props.currentUser.id));
   }
 
   unFollow(e){
     e.preventDefault();
-    this.props.unFollow(this.props.showedUser.id);
+    this.props.unFollow(this.props.showedUser.id).then(() => this.props.refresh(this.props.currentUser.id))
+      .then(() => this.props.fetchSingleUser(this.props.showedUser.id));
   }
   // WHen I chain this on to update current use to reflect new state (do I even have to bother), it destroyes my showedUser...
   // .then(() => this.props.refresh(this.props.currentUser.id));

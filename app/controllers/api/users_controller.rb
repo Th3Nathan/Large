@@ -18,9 +18,11 @@ class Api::UsersController < ApplicationController
   end
 
   def follow
-    @user = User.find(params[:id])
-    follower = @user.follower_follows.new({follower_id: current_user.id})
-    if follower.save
+    @user = User.includes(:comments, :followees, :followers).find(params[:id])
+
+    follow = Follow.new({author_id: @user.id, follower_id: current_user.id})
+    if follow.save
+
       render :show
     else
       render json: "Already follows"
@@ -28,8 +30,9 @@ class Api::UsersController < ApplicationController
   end
 
   def unfollow
-    @user = User.find(params[:id])
-    follow = current_user.followee_follows.where({author_id: params[:id]}).destroy_all
+    @user = User.includes(:comments, :followees, :followers).find(params[:id])
+    @follow = Follow.where({author_id: @user.id, follower_id: current_user.id })[0]
+    Follow.destroy(@follow.id)
     render :show
 
   end

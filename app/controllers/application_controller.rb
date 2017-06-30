@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_followed?(author)
+
     current_user.followee_ids.include?(author.id)
   end
 
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def follow_id(showed_user)
     # current_user.followees.find_by({author_id: showed_user.id})
-    current_user.followee_follows.where({author_id: showed_user.id}).destroy_all
+    current_user.followee_follows.where({author_id: showed_user.id})
   end
 
   #another route take showeed user id and user.follow.where

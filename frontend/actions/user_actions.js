@@ -3,6 +3,7 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_SINGLE_USER = 'RECEIVE_SINGLE_USER';
 export const UPDATE_USER = 'UPDATE_USER';
+import { receiveCurrentUser } from './session_actions';
 
 export const receiveUsers = users => {
   return {

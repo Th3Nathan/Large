@@ -32,7 +32,8 @@ class Api::StoriesController < ApplicationController
   end
 
   def feed
-    @stories = current_user.feed_stories 
+    @stories = current_user.feed_stories
+
     render :index
   end
 
