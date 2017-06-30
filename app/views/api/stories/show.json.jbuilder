@@ -6,6 +6,8 @@
     json.username @story.author.username
     json.image_url @story.author.image.url
     json.bio @story.author.bio
+    json.followed_by_current_user current_user_followed?(@story.author)
+    json.id @story.author.id
   end
   json.comments do
      @story.comments.each do |comment|

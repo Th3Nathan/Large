@@ -40,6 +40,7 @@ class StoriesShow extends React.Component {
           follow={this.props.follow}
           unFollow={this.props.unFollow}
           currentUser={this.props.currentUser}
+          refetch={() => this.props.fetchSingleStory(this.props.match.params.story_id)}
         />
 
 
