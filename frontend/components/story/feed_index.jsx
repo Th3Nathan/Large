@@ -1,5 +1,6 @@
 import React from "react";
 import StoryBlurb from "./blurb";
+import {Link} from "react-router-dom";
 
 class FeedIndex extends React.Component {
   componentDidMount(){
@@ -15,7 +16,7 @@ class FeedIndex extends React.Component {
     });
   return (
   <section className="stories">
-    <h1>{this.props.title || "Your Feed"}</h1>
+    <Link className="index-title" to="/">To Featured Stories</Link>
     <div className="story-index">
       {stories}
     </div>
