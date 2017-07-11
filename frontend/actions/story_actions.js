@@ -85,6 +85,13 @@ export const updateStoryLikes = (newStory, id) => dispatch => {
     });
 };
 
+export const updateStoryBookmarks = (newStory, id) => dispatch => {
+  return APIUtil.updateStoryBookmarks(newStory, id)
+    .then(story => {
+      return dispatch(update(story));
+    });
+};
+
 export const createStory = (story) => dispatch => {
   return APIUtil.createStory(story)
     .then(story => {return dispatch(addStory(story));
@@ -100,5 +107,11 @@ export const destroyStory = id => dispatch => {
 export const feed = () => dispatch => {
   return APIUtil.feed().then((stories) => {
     return dispatch(receiveFeed(stories));
+  });
+};
+
+export const bookmarked = () => dispatch => {
+  return APIUtil.bookmarked().then((stories) => {
+    return dispatch(receiveBookmarked(stories));
   });
 };

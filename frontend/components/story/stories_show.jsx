@@ -53,6 +53,7 @@ class StoriesShow extends React.Component {
                   <ShareBar
                     userId={this.props.currentUser.id}
                     updateStoryLikes={this.props.updateStoryLikes}
+                    updateStoryBookmarks={this.props.updateStoryBookmarks}
                     story={this.props.story}
                     fetchSingleStory={this.props.fetchSingleStory}
                   />

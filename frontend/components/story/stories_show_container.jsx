@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchSingleStory, updateStoryLikes } from '../../actions/story_actions';
+import { fetchSingleStory, updateStoryLikes, updateStoryBookmarks } from '../../actions/story_actions';
 import { refresh } from '../../actions/session_actions';
 import { storiesSelector } from "../../reducers/selectors";
 import { withRouter } from 'react-router-dom';
@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
   updateStoryLikes: (story, id) => dispatch (updateStoryLikes(story, id)),
+  updateStoryBookmarks: (story, id) => dispatch (updateStoryBookmarks(story, id)),
   fetchSingleStory: (id) => dispatch(fetchSingleStory(id)),
   follow: (id) => dispatch(follow(id)),
   unFollow: (id) => dispatch(unFollow(id)),

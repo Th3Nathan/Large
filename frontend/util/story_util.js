@@ -26,6 +26,14 @@ export const updateStoryLikes = (newLike, id) => {
   });
 };
 
+export const updateStoryBookmarks = (newStory, id) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/stories/${id}`,
+    data: {story: { bookmarks_attributes: newStory }  },
+  });
+};
+
 export const removeStory = (id) => {
   return $.ajax({
     method: "DELETE",
@@ -51,5 +59,12 @@ export const feed = () => {
   return $.ajax({
     method: 'POST',
     url: 'api/stories/feed'
+  });
+};
+
+export const bookmarked = () => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/stories/bookmarked'
   });
 };

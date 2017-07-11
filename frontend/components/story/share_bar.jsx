@@ -8,6 +8,8 @@ class ShareBar extends React.Component {
     super(props);
     this.addLike = this.addLike.bind(this);
     this.removeLike = this.removeLike.bind(this);
+    this.addBookmark = this.addBookmark.bind(this);
+    this.removeBookmark = this.removeBookmark.bind(this);
   }
 
   addLike(e){
@@ -24,6 +26,19 @@ class ShareBar extends React.Component {
       .then(() => this.props.fetchSingleStory(this.props.story.id));
   }
 
+  addBookmark(e){
+    e.preventDefault();
+    const newAttributes = [{user_id: this.props.userId, story_id: this.props.story.id}];
+    this.props.updateStoryBookmarks(newAttributes, this.props.story.id)
+      .then(() => this.props.fetchSingleStory(this.props.story.id));
+  }
+
+  removeBookmark(e){
+    e.preventDefault();
+    const newAttributes = [{id: this.props.story.bookmark_id, _destroy: true}];
+    this.props.updateStoryBookmarks(newAttributes, this.props.story.id)
+      .then(() => this.props.fetchSingleStory(this.props.story.id));
+  }
 
   render(){
     let heart;
@@ -46,6 +61,22 @@ class ShareBar extends React.Component {
         </div>
       );
     }
+    let bookmark;
+    if (this.props.story.bookmarked_by_current_user){
+      bookmark = (
+        <a onClick={this.removeBookmark} className="lock">
+          <i className="fa fa-bookmark icon-lock share-icon"></i>
+          <i className="fa fa-bookmark icon-unlock share-icon"></i>
+        </a>
+      );
+    } else {
+      bookmark = (
+        <a onClick={this.addBookmark} className="lock">
+          <i className="fa fa-bookmark icon-lock share-icon"></i>
+          <i className="fa fa-bookmark-o icon-unlock share-icon"></i>
+        </a>
+      );
+    }
 
     return(
       <section id="share-bar">
@@ -64,10 +95,7 @@ class ShareBar extends React.Component {
           <i className="fa fa-facebook share-icon" aria-hidden="true"></i>
         </a>
 
-        <a href="#" className="lock">
-          <i className="fa fa-bookmark icon-lock share-icon"></i>
-          <i className="fa fa-bookmark-o icon-unlock share-icon"></i>
-        </a>
+        {bookmark}
       </section>
     );
   }

@@ -26,6 +26,7 @@ class Story < ActiveRecord::Base
   has_many :likes, as: :likeable
   accepts_nested_attributes_for :likes, allow_destroy: true
 
+
   has_many :likers,
     through: :likes,
     source: :user
@@ -49,9 +50,11 @@ class Story < ActiveRecord::Base
   foreign_key: :story_id,
   class_name: 'Bookmark'
 
+  accepts_nested_attributes_for :bookmarks, allow_destroy: true
+
   has_many :bookmarking_users,
   through: :bookmarks,
-  source: 'User'
+  source: :user
 
   def add_date
     self.date = Date.today

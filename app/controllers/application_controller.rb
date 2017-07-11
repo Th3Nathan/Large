@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_followed?(author)
-
     current_user.followee_ids.include?(author.id)
   end
 

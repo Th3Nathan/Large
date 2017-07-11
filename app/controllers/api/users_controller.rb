@@ -34,8 +34,8 @@ class Api::UsersController < ApplicationController
     @follow = Follow.where({author_id: @user.id, follower_id: current_user.id })[0]
     Follow.destroy(@follow.id)
     render :show
-
   end
+
 
   def update
     @user = User.find(params[:id])
