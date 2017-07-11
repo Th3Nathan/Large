@@ -176,8 +176,8 @@ class SessionForm extends React.Component {
           <input type="password" onChange={this.update("password")}></input>
         </label>
         <br/>
-        <input type="submit" value="GO" onClick={this.submit}></input>
-        <input type="submit" value="DEMO" onClick={this.demoLogin}></input>
+        <input className="modal-button" type="submit" value="GO" onClick={this.submit}></input>
+        <input className="modal-button" type="submit" value="DEMO" onClick={this.demoLogin}></input>
         <br/>
       </form>
       <Link id="toggle-sign-button" to={`/${destination}`}>{destination}</Link>
