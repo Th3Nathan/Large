@@ -44,6 +44,14 @@ class Story < ActiveRecord::Base
   through: :comments,
   source: :author
 
+  has_many :bookmarks,
+  primary_key: :id,
+  foreign_key: :story_id,
+  class_name: 'Bookmark'
+
+  has_many :bookmarking_users,
+  through: :bookmarks,
+  source: 'User'
 
   def add_date
     self.date = Date.today

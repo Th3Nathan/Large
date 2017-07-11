@@ -65,6 +65,14 @@ class User < ActiveRecord::Base
   through: :follower_follows,
   source: :follower
 
+  has_many :bookmarks,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: 'Bookmark'
+
+  has_many :bookmarked_stories,
+  through: :bookmarks,
+  source: :story
   # accepts_nested_attributes_for :followed_author_follows, allow_destroy: true
 
   attr_reader :password
