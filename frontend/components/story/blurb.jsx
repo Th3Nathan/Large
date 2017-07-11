@@ -1,8 +1,8 @@
 import React from 'react';
 import AuthorBox from './author_box';
 import { Link } from 'react-router-dom';
-class Blurb extends React.Component {
 
+class Blurb extends React.Component {
   readTime(){
     return `${Math.floor(this.props.story.body.length / 1375)} minutes`;
   }
@@ -18,10 +18,10 @@ class Blurb extends React.Component {
             <p className='blurb-description'>{this.props.story.description}</p>
           </Link>
           <AuthorBox
-            author={this.props.story.author}
-            author_id={this.props.story.author_id}
-            story={this.props.story.body}
-            date={this.props.story.date}
+            updateStoryBookmarks={this.props.updateStoryBookmarks}
+            story={this.props.story}
+            user_id={this.props.user_id}
+            fetchSingleStory={this.props.fetchSingleStory}
           />
         </div>
       </div>
