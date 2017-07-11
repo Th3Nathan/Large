@@ -16,7 +16,7 @@
 class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_bio
 
   validates :session_token, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
 
   has_many :feed_stories,
   through: :followees,
-  source: :stories 
+  source: :stories
 
 #these are the follows that follow us, self
   has_many :follower_follows,
@@ -93,5 +93,9 @@ class User < ActiveRecord::Base
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
+  end
+
+  def ensure_bio
+    self.bio ||= ""
   end
 end
