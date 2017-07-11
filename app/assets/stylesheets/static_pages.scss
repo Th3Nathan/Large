@@ -36,3 +36,12 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+input {
+  background: white;
+}
+textarea {
+  background: white;
+  resize:none;
+  cols:5;
+}

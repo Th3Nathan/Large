@@ -151,7 +151,7 @@ class UserShow extends React.Component {
           <div className="user-show-info">
             <input disabled={disabled} onChange={this.update('username')} type="text" className="user-show-name" value={this.state.username} />
             <br />
-            <input disabled={disabled} onChange={this.update('bio')} type="text" className="user-show-bio" value={this.state.bio} />
+            <textarea disabled={disabled} onChange={this.update('bio')} type="text" className="user-show-bio" value={this.state.bio} />
             <div className="user-show-following">
               <h2 className="follow-info"><b>{this.props.showedUser.following_count}</b> Following&nbsp;&nbsp;</h2>
               <h2 className="follow-info"><b>{this.props.showedUser.followed_by_count}</b> Followers</h2>

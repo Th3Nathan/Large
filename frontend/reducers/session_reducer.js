@@ -34,7 +34,6 @@ const sessionReducer = (state = defaultState, action) => {
       return newState;
 
     case RECEIVE_COMMENT:
-    debugger
       newState.currentUser.comment_ids.push(parseInt(Object.keys(action.comment)))
       return newState;
 
