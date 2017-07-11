@@ -11,6 +11,9 @@ import {
   updateDraft,
   removeDraft
 } from '../actions/session_actions';
+import {
+  RECEIVE_COMMENT
+} from '../actions/comment_actions'
 
 import { merge } from 'lodash';
 
@@ -28,6 +31,11 @@ const sessionReducer = (state = defaultState, action) => {
     case RECEIVE_CURRENT_USER:
       newState.currentUser = action.currentUser;
       newState.errors = [];
+      return newState;
+
+    case RECEIVE_COMMENT:
+    debugger
+      newState.currentUser.comment_ids.push(parseInt(Object.keys(action.comment)))
       return newState;
 
     case RECEIVE_ERRORS:
