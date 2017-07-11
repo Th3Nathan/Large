@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import StoryAuthorBox from './story_author_box';
 import ShareBar from './share_bar';
 import { StickyContainer, Sticky } from 'react-sticky';
-// import renderHTML from 'react-render-html';
 import Comments from '../comment/comment_list_container';
 
 class StoriesShow extends React.Component {
@@ -15,17 +14,12 @@ class StoriesShow extends React.Component {
     this.props.fetchSingleStory(this.props.match.params.story_id);
   }
 
-  //will receive props nextprops !== current url then refetch
 
   render(){
-
-
     if (!this.props.story) return null;
-    if (this.props.story){
       const createMarkup = () => {
         return {__html: `${this.props.story.body}`};
       };
-
 
       const backgroundImage = {"backgroundImage": `url(${this.props.story.image_url})`};
       return(
@@ -79,7 +73,6 @@ class StoriesShow extends React.Component {
       </section>
       </StickyContainer>
     );
-  } else return null;
     }
 
   }

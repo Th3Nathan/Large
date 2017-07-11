@@ -30,21 +30,21 @@ class StoryAuthorBox extends React.Component {
 
   unFollow(e){
     e.preventDefault();
-    this.props.unFollow(this.props.author_id);
+    this.props.unFollow(this.props.author_id).then(() => this.props.refetch());
   }
 
   render (){
 
     let followButton;
-    // if (this.props.author_id !== this.props.currentUser.id){
-    //   if (this.props.author.followed_by_current_user){
-    //     followButton = <span onClick={this.unFollow} className="story-author-box-unfollow">Unfollow</span>;
-    //   }
-    //   else {
-    //
-    //     followButton = <span onClick={this.follow} className="story-author-box-follow">Follow</span>;
-    //   }
-    // }
+    if (this.props.author_id !== this.props.currentUser.id){
+      if (this.props.author.followed_by_current_user){
+        followButton = <span onClick={this.unFollow} className="story-author-box-unfollow">Unfollow</span>;
+      }
+      else {
+
+        followButton = <span onClick={this.follow} className="story-author-box-follow">Follow</span>;
+      }
+    }
 
     return (
       <div className="story-author-box">
