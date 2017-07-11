@@ -39,6 +39,10 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    if @user.username = "Guest"
+      render :show
+      return
+    end
     if @user.update(user_params)
       render :show
     else
