@@ -68,10 +68,6 @@ class Comment extends React.Component {
               {`${this.props.comment.like_count}`}
             </a>
           <div className="comment-author-box-icons">
-            <a href="#" className="lock">
-              <i className=" fa fa-bookmark icon-lock"></i>
-              <i className=" fa fa-bookmark-o icon-unlock"></i>
-            </a>
           </div>
         </div>
       </section>
@@ -81,6 +77,10 @@ class Comment extends React.Component {
 // <a href="#" className="lock">
 //   <i className="fa fa-angle-down icon-unlock"></i>
 //   <i className="fa fa-angle-down icon-lock"></i>
+// </a>
+// <a href="#" className="lock">
+//   <i className=" fa fa-bookmark icon-lock"></i>
+//   <i className=" fa fa-bookmark-o icon-unlock"></i>
 // </a>
 
 export default withRouter(Comment);
