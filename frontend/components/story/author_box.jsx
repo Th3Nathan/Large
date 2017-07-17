@@ -10,7 +10,7 @@ class AuthorBox extends React.Component {
   }
 
   readTime(){
-    return `${Math.floor(this.props.story.length / 1375)} minutes`;
+    return `${Math.floor(this.props.story.body.length / 1075)} minutes`;
   }
 
   addBookmark(e){
