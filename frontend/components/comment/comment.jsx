@@ -72,15 +72,15 @@ class Comment extends React.Component {
               <i className=" fa fa-bookmark icon-lock"></i>
               <i className=" fa fa-bookmark-o icon-unlock"></i>
             </a>
-            <a href="#" className="lock">
-              <i className="fa fa-angle-down icon-unlock"></i>
-              <i className="fa fa-angle-down icon-lock"></i>
-            </a>
           </div>
         </div>
       </section>
     );
   }
 }
+// <a href="#" className="lock">
+//   <i className="fa fa-angle-down icon-unlock"></i>
+//   <i className="fa fa-angle-down icon-lock"></i>
+// </a>
 
 export default withRouter(Comment);

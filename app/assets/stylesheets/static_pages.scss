@@ -95,7 +95,7 @@ textarea {
    -webkit-animation-fill-mode: forwards;
 }
 
-.like-wrapper:active, .lock:active, .fa:active {
+.like-wrapper:active, .lock:active, .fa:active, .comment-like-wrapper:active {
   animation: doit 0.2s;
   -moz-animation: doit 1s; /* Firefox */
   -webkit-animation: doit 0.2s; /* Safari and Chrome */

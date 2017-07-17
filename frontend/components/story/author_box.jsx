@@ -63,14 +63,14 @@ class AuthorBox extends React.Component {
         </div>
         <div className="author-box-icons">
           {bookmark}
-          <a href="#" className="lock">
-            <i className="fa fa-angle-down icon-unlock"></i>
-            <i className="fa fa-angle-down icon-lock"></i>
-          </a>
         </div>
       </div>
     );
   }
 }
 
+// <a href="#" className="lock">
+//   <i className="fa fa-angle-down icon-unlock"></i>
+//   <i className="fa fa-angle-down icon-lock"></i>
+// </a>
 export default AuthorBox;
