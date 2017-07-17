@@ -75,7 +75,8 @@ class ShareBar extends React.Component {
         </a>
       );
     }
-
+    const twitterUrl =
+    `https://twitter.com/intent/tweet?text=I%20love%20the%20story%20${this.props.story.title}%20by%20${this.props.story.author.username}&url=http://large-blog.site/${this.props.story.id}`;
     return(
       <section id="share-bar">
         <h1 id="share-bar-title">SHARE</h1>
@@ -85,9 +86,9 @@ class ShareBar extends React.Component {
           {`${this.props.story.like_count}`}
         </a>
 
-        <a href="">
-          <i className="fa fa-twitter share-icon" aria-hidden="true"></i>
-        </a>
+        <a target="_blank" className="twitter-share-button"
+          href={twitterUrl}>
+        <i className="fa fa-twitter share-icon" aria-hidden="true"></i></a>
 
         <a>
           <i className="fa fa-facebook share-icon" aria-hidden="true"></i>
