@@ -27,21 +27,20 @@ class AuthorBox extends React.Component {
       .then(() => this.props.fetchSingleStory(this.props.story.id));
   }
 
+
   render (){
     if (!this.props.story) return null;
 
     let bookmark;
     if (this.props.story.bookmarked_by_current_user){
       bookmark = (
-        <a onClick={this.removeBookmark} className="lock">
-          <i className="fa fa-bookmark icon-lock share-icon"></i>
+        <a onClick={this.removeBookmark} className="">
           <i className="fa fa-bookmark icon-unlock share-icon"></i>
         </a>
       );
     } else {
       bookmark = (
-        <a onClick={this.addBookmark} className="lock">
-          <i className="fa fa-bookmark icon-lock share-icon"></i>
+        <a onClick={this.addBookmark} className="">
           <i className="fa fa-bookmark-o icon-unlock share-icon"></i>
         </a>
       );
