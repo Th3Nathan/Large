@@ -41,6 +41,8 @@ class ShareBar extends React.Component {
   }
 
   render(){
+
+
     let heart;
     if (this.props.story.liked_by_current_user){
         heart = (
@@ -90,9 +92,7 @@ class ShareBar extends React.Component {
           href={twitterUrl}>
         <i className="fa fa-twitter share-icon" aria-hidden="true"></i></a>
 
-        <a>
-          <i className="fa fa-facebook share-icon" aria-hidden="true"></i>
-        </a>
+      
 
         {bookmark}
       </section>

@@ -25,6 +25,26 @@ class StoriesShow extends React.Component {
       return(
 
       <StickyContainer>
+        <Sticky disableCompensation>
+          {
+            ({ style, isSticky, wasSticky, distanceFromTop, distanceFromBottom, calculatedHeight }) => {
+              if (distanceFromTop  < 10)
+              return (
+                <div id="share-bar-div">
+                  <ShareBar
+                    userId={this.props.currentUser.id}
+                    updateStoryLikes={this.props.updateStoryLikes}
+                    updateStoryBookmarks={this.props.updateStoryBookmarks}
+                    story={this.props.story}
+                    fetchSingleStory={this.props.fetchSingleStory}
+                    />
+                </div>
+              );
+              else
+              return <div></div>;
+              }
+            }
+          </Sticky>
       <section className="story-show">
         <StoryAuthorBox
           author={this.props.story.author}
@@ -44,26 +64,6 @@ class StoriesShow extends React.Component {
           <img className="stories-show-image" src={`${this.props.story.image_url}`} />
         </div>
 
-        <Sticky disableCompensation>
-        {
-          ({ style, isSticky, wasSticky, distanceFromTop, distanceFromBottom, calculatedHeight }) => {
-            if (distanceFromTop  < 10)
-              return (
-                <div id="share-bar-div">
-                  <ShareBar
-                    userId={this.props.currentUser.id}
-                    updateStoryLikes={this.props.updateStoryLikes}
-                    updateStoryBookmarks={this.props.updateStoryBookmarks}
-                    story={this.props.story}
-                    fetchSingleStory={this.props.fetchSingleStory}
-                  />
-                </div>
-              );
-            else
-              return <div></div>;
-           }
-         }
-        </Sticky>
 
         <div className="story-body" dangerouslySetInnerHTML={createMarkup()} />
 
