@@ -25,6 +25,8 @@ class Comment extends React.Component {
   }
   routeToShow(e){
     e.preventDefault();
+    if (e.target.className.slice(0, 10) === "author-box")
+      return;
     this.props.history.push(`/comments/${this.props.comment.id}`);
   }
   render(){
@@ -53,7 +55,7 @@ class Comment extends React.Component {
 
 
     return(
-      <section className="comment">
+      <section onClick={this.routeToShow} className="comment">
         <AuthorBox
           author={this.props.comment.author}
           date={this.props.comment.date}
