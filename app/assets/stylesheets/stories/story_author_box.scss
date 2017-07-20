@@ -60,7 +60,6 @@
 .story-author-box-unfollow {
   border-radius: 50px;
   color: white;
-  width: 59px;
   padding: 0px 8px 0px 8px;
   line-height: 1.35;
   font-size: 12px;
@@ -76,8 +75,11 @@
 
 
 .story-author-box-follow:hover {
-  color: #02B875;
   border: 1px solid #1c9963;
+}
+
+.story-author-box-unfollow:hover {
+  color: white;
 }
 
 
