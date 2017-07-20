@@ -14,8 +14,10 @@ class Blurb extends React.Component {
         <div style={backgroundImage} className="blurb-image"></div>
         <div className="blurb-text">
           <Link to={`/stories/${this.props.story.id}`}>
-            <h3 className="blurb-title">{this.props.story.title}</h3>
-            <p className='blurb-description'>{this.props.story.description}</p>
+            <div className="story-text-wrapper">
+              <h3 className="blurb-title">{this.props.story.title}</h3>
+              <p className='blurb-description'>{this.props.story.description}</p>
+            </div>
           </Link>
           <AuthorBox
             removeBookmark={this.props.removeBookmark === true}
