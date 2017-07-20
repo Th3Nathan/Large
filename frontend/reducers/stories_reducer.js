@@ -4,7 +4,8 @@ import {
   UPDATE_STORY,
   DELETE_STORY,
   CREATE_STORY,
-  RECEIVE_FEED
+  RECEIVE_FEED,
+  RECEIVE_SINGLE_FEED
 } from '../actions/story_actions';
 import { merge } from 'lodash';
 import { receiveComments } from '../actions/comment_actions';
@@ -31,6 +32,12 @@ const storiesReducer = (state = defaultState, action) => {
       return merge(
         newState,
         { all: { [action.story.id]: action.story } }
+      );
+
+    case RECEIVE_SINGLE_FEED:
+      return merge(
+        newState,
+        { feed: { [action.story.id]: action.story } }
       );
 
     case UPDATE_STORY:

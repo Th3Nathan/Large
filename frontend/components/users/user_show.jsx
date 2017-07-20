@@ -1,5 +1,5 @@
 import React from 'react';
-import StoriesIndex from './../story/stories_index';
+import StoriesIndex from './../story/stories_index_container';
 
 class UserShow extends React.Component {
 
@@ -169,7 +169,13 @@ class UserShow extends React.Component {
 
 
         </div>
-        <StoriesIndex title={"Stories"} fetchStories={this.props.fetchStories} location={this.props.location} stories={this.props.storiesByUser} />
+        <StoriesIndex
+           title={"Stories"}
+           user_id={this.props.user_id}
+           fetchStories={this.props.fetchStories}
+           location={this.props.location}
+           stories={this.props.storiesByUser}
+        />
       </section>
     );
   }

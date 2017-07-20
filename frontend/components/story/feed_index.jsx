@@ -11,7 +11,11 @@ class FeedIndex extends React.Component {
     if (!this.props.stories) return null;
     const stories = this.props.stories.map(story => {
       return (
-        <StoryBlurb key={story.id} story={story} />
+        <StoryBlurb key={story.id}
+             story={story}
+             updateStoryBookmarks={this.props.updateStoryBookmarks}
+             user_id={this.props.user_id}
+             fetchSingleStory={this.props.fetchSingleStory}/>
       );
     });
   return (

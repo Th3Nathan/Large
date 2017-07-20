@@ -18,6 +18,7 @@ class Blurb extends React.Component {
             <p className='blurb-description'>{this.props.story.description}</p>
           </Link>
           <AuthorBox
+            removeBookmark={this.props.removeBookmark === true}
             updateStoryBookmarks={this.props.updateStoryBookmarks}
             story={this.props.story}
             user_id={this.props.user_id}
