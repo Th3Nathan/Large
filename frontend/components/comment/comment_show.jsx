@@ -142,7 +142,7 @@ class CommentShow extends React.Component {
         />
 
       <div className="comment-wrap">
-        <textarea onChange={this.handleChange} disabled={disabled} className="show-body" type="text" value={this.state.body}></textarea>
+        <textarea spellCheck="false" onChange={this.handleChange} disabled={disabled} className="show-body" type="text" value={this.state.body}></textarea>
       </div>
 
       <div className="comment-footer show-footer">
