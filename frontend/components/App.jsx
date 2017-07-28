@@ -12,6 +12,7 @@ import EditStory from './story/edit_story_container';
 import UserShow from './users/user_show_container';
 import CommentShow from './comment/comment_show_container';
 import FeedContainer from './story/feed_index_container';
+import Footer from './footer';
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
     <ProtectedRoute exact path="/" component={StoriesIndexContainer} />
     <ProtectedRoute exact path="/stories" component={FeedContainer} />
     </Switch>
-
+    <Footer />
   </div>
   );
 };
