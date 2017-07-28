@@ -1,5 +1,5 @@
 import React from 'react';
-import StoriesIndex from './../story/stories_index_container';
+import StoriesIndex from './../story/stories_index';
 
 class UserShow extends React.Component {
 
@@ -96,12 +96,11 @@ class UserShow extends React.Component {
     this.props.unFollow(this.props.showedUser.id).then(() => this.props.refresh(this.props.currentUser.id))
       .then(() => this.props.fetchSingleUser(this.props.showedUser.id));
   }
-  // WHen I chain this on to update current use to reflect new state (do I even have to bother), it destroyes my showedUser...
-  // .then(() => this.props.refresh(this.props.currentUser.id));
+
 
   render(){
 
-    if (!this.props.showedUser || !this.props.currentUser ) return null;
+    if (!this.props.showedUser.id || !this.props.currentUser ) return null;
 
     let disabled = this.state.editing ? false : true;
 
@@ -163,7 +162,7 @@ class UserShow extends React.Component {
             type="file"
             id="files"
             className="hidden"
-          />
+          ></input>
             { overlay }
             <img className="user-display-image" src={this.state.image_url} />
 
@@ -171,6 +170,8 @@ class UserShow extends React.Component {
         </div>
         <StoriesIndex
            title={"Stories"}
+           updateStoryBookmarks={this.props.updateStoryBookmarks}
+           fetchSingleStory={this.props.fetchSingleStory}
            user_id={this.props.user_id}
            fetchStories={this.props.fetchStories}
            location={this.props.location}
