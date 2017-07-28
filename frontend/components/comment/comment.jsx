@@ -12,6 +12,7 @@ class Comment extends React.Component {
 
   addLike(e){
     e.preventDefault();
+    e.stopPropagation();
     const newAttributes = [{user_id: this.props.userId, likeable_id: this.props.comment.id, likeable_type: "Comment"}];
     this.props.updateCommentLikes(newAttributes, this.props.comment.id)
       .then(() => this.props.fetchSingleComment(this.props.comment.id));
@@ -19,6 +20,7 @@ class Comment extends React.Component {
 
   removeLike(e){
     e.preventDefault();
+    e.stopPropagation();
     const newAttributes = [{id: this.props.comment.like_id, _destroy: true}];
     this.props.updateCommentLikes(newAttributes, this.props.comment.id)
       .then(() => this.props.fetchSingleComment(this.props.comment.id));
@@ -61,7 +63,7 @@ class Comment extends React.Component {
           date={this.props.comment.date}
           author_image={this.props.comment.author_image}
         />
-      <div onClick={this.routeToShow} className="comment-body-wrapper">
+        <div onClick={this.routeToShow} className="comment-body-wrapper">
           <p className="comment-body">{this.props.comment.body}</p>
         </div>
         <div className="comment-footer">
