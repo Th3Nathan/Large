@@ -24,6 +24,16 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.location.pathname !== newProps.location.pathname){
+      this.props.scrubErrors()
+      this.setState({
+        userErrors: "",
+        passwordErrors: "",
+      })
+    }
+  }
+
   componentWillUnmount(){
     this.props.scrubErrors();
   }
