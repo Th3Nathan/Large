@@ -51,19 +51,20 @@ class Header extends React.Component {
     formData.append("story[description]", story.description);
     this.props.createStory(formData)
       .then(() => {this.props.refresh(this.props.currentUser.id);})
-      .then(() => { this.props.history.push('/stories');})
+      .then(() => { this.props.history.push('/');})
         .then(() => { this.props.removeDraft();});
   }
 
   deleteDraft(e){
     e.preventDefault();
     this.props.removeDraft();
-    this.props.history.push('/stories');
+    this.props.history.push('/');
   }
 
   deleteStoryHandler(e){
     const storyId = parseInt(this.props.location.pathname.split("/")[3]);
     this.props.destroyStory(storyId)
+      .then(() => this.props.removeDraft())
       .then(() => this.props.history.push("/"));
   }
 

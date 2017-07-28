@@ -8,7 +8,6 @@ class Blurb extends React.Component {
   }
 
   render (){
-    debugger
     const backgroundImage = {"backgroundImage": `url(${this.props.story.image_url})`};
     return (
       <div className="blurb">
