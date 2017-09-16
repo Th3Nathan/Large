@@ -2,7 +2,7 @@
 
 Large is a blogging web app based on Medium. It was built using a Rails backend with a React/Redux frontend.
 
-Check it out at at [nathanlarge.herokuapp.com](http://nathanlarge.herokuapp.com/)
+Check it out at at [www.large-blog.site](http://large-blog.site/)
 
 ### User View:
 
