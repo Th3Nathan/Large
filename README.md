@@ -14,7 +14,7 @@ Check it out at at [www.large-blog.site](http://large-blog.site/)
 
 ### Technical Details:
 
-* Both stories and comments can be liked by users. In order to preserve the consistancy of state between the server and client, I decided to implement liking by updating either story or comment like associations. I did this by hitting the update action of the story or comment controller with nested attributes containing like associaion information.
+* Both stories and comments can be liked by users. In order to reduce duplicate code, I did using a polymorphic association, both stories and comments are able to update their corresponding like information through updating thier own associations. I did this by hitting the update action of the story or comment controller with nested attributes containing like associaion information.
 
 ```
       #Story and Comment model
