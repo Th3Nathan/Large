@@ -143,29 +143,20 @@ class SessionForm extends React.Component {
     redirect = <Redirect to="/" />;
   }
 
-  const colors = {
-    red: {color: "#f00"},
-    orange: {color: "orange"},
-    purple: {color: "purple"},
-    green: {color: "#5f0"},
-    blue: {color: "blue"}
-  };
-
   return (
   <div>
   <div onClick={this.leaveModal} id="overlay"></div>
     <section id="session-form" className={this.state.classname}>
       {redirect}
       {imagePreview}
-      <div id="form-header-box">
-        <div id="rainbow-title">
-          <span style={colors.green}>L</span>
-          <span style={colors.purple}>a</span>
-          <span style={colors.orange}>r</span>
-          <span style={colors.blue}>g</span>
-          <span style={colors.red}>e</span>
+      <header className="form-header">
+      <img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glowing-purple-neon-icons-alphanumeric/112638-glowing-purple-neon-icon-alphanumeric-letter-ll.png" ></img>
+      <Link to="/">
+        <div id="title">
+          <h1>Large</h1>
         </div>
-      </div>
+      </Link>
+      </header>
       {header}
       <form>
 

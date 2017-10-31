@@ -112,7 +112,7 @@ class Header extends React.Component {
 
     return (
       <header>
-      <img src="https://i0.wp.com/loitokitok.com/wp-content/uploads/2016/02/New-Loitokitok-L-Logo-Transparent-512x512.png?fit=512%2C512" ></img>
+      <img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glowing-purple-neon-icons-alphanumeric/112638-glowing-purple-neon-icon-alphanumeric-letter-ll.png" ></img>
         <Link to="/">
           <div id="title">
             <h1>Large</h1>

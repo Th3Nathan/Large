@@ -58,9 +58,17 @@
 }
 
 .form-header {
+  display: flex;
+  justify-content: center;
+  height: 90px;
   margin-bottom: 2px;
 }
 
+.form-header a div h1 {
+  font-size: 32px;
+  margin-top: 26px;
+  margin-left: 1px;
+}
 #errors-list {
   list-style-type: none;
   color: darkred;
