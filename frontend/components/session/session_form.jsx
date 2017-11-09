@@ -150,7 +150,6 @@ class SessionForm extends React.Component {
       {redirect}
       {imagePreview}
       <header className="form-header">
-      <img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glowing-purple-neon-icons-alphanumeric/112638-glowing-purple-neon-icon-alphanumeric-letter-ll.png" ></img>
       <Link to="/">
         <div id="title">
           <h1>Large</h1>
@@ -177,11 +176,11 @@ class SessionForm extends React.Component {
           <input type="password" onChange={this.update("password")}></input>
         </label>
         <br/>
-        <input className="modal-button" type="submit" value="GO" onClick={this.submit}></input>
-        <input className="modal-button" type="submit" value="DEMO" onClick={this.demoLogin}></input>
+        <input className="modal-button" type="submit" value="Go" onClick={this.submit}></input>
+        <input className="modal-button" type="submit" value="Demo" onClick={this.demoLogin}></input>
         <br/>
       </form>
-      <Link id="toggle-sign-button" to={`/${destination}`}>{destination}</Link>
+      <Link id="toggle-sign-button" to={`/${destination}`}>sign{" " + destination.slice(4, 7)}</Link>
     </section>
     </div>
   );
