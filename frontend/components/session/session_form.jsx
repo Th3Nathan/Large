@@ -129,7 +129,7 @@ class SessionForm extends React.Component {
   if (this.props.formType === "signup")
     imagePreview = <img id="image-preview" src={this.state.imageUrl} />;
   else
-    imagePreview = <img></img>;
+    imagePreview = <div id="image-preview"></div>;
 
   let header;
   if (this.props.formType === "signup")
