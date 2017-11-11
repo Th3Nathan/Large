@@ -1142,3 +1142,50 @@ Command :: file -b --mime '/tmp/92877af70a45fd6a2ed7fe81e1236b7820171111-31466-r
   [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:56.962254"], ["updated_at", "2017-11-11 22:59:56.962254"]]
   [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (6.2ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-11 23:36:04.655396"], ["updated_at", "2017-11-11 23:36:04.655396"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Exists (1.6ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."id" != 1 AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-11 23:36:06.076572"], ["updated_at", "2017-11-11 23:36:06.076572"]]
+  [1m[36m (1.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (0.9ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" IS NULL AND "likes"."id" != 2 AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (0.8ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-11 23:36:06.095791"], ["updated_at", "2017-11-11 23:36:06.095791"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."id" != 3 AND "likes"."likeable_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-11 23:36:06.114714"], ["updated_at", "2017-11-11 23:36:06.114714"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLike Load (1.4ms)[0m  SELECT  "likes".* FROM "likes"  ORDER BY "likes"."id" ASC LIMIT 1
+  [1m[36mLike Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35mLike Exists (0.8ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'sTORY' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mLike Load (0.6ms)[0m  [1mSELECT "likes".* FROM "likes"[0m
+  [1m[35mLike Exists (0.9ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 2) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (1.0ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-11 23:36:06.151666"], ["updated_at", "2017-11-11 23:36:06.151666"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (1.0ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-11 23:36:06.166807"], ["updated_at", "2017-11-11 23:36:06.166807"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
