@@ -13,7 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'annotate'
 gem 'bcrypt'
-gem 'rails_12factor'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem "paperclip", "~> 5.0.0.beta1"
@@ -35,10 +34,26 @@ gem 'aws-sdk', '>= 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production, :development do 
+  gem 'rails_12factor'
+end 
+
+group :development do 
+  gem 'web-console', '~> 2.0'
+end 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'pry-rails'
   gem 'spring'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+end
+
+group :test do
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'shoulda-matchers', '~> 3.1'
 end

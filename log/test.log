@@ -1,0 +1,194 @@
+  [1m[36mActiveRecord::SchemaMigration Load (3.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (3.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'session token' LIMIT 1[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (1.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'session token' LIMIT 1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'username' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'iI2dOeh9b1ppenbpMoutEw' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$K3q5zETvgwAXvtVX/DcDPeOUsBtOEgrKYrMqt1Lu.qzf.yjFvt6kG"], ["session_token", "iI2dOeh9b1ppenbpMoutEw"], ["bio", ""]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'RxtXQnI4d9fo2xIZ-oCrQg' LIMIT 1
+  [1m[36mUser Exists (1.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$9QzLDsbjpR4Q4A2xsRhdk.PUevQ5V35.SHqScJgni/BoxdGZV2LFy"], ["session_token", "RxtXQnI4d9fo2xIZ-oCrQg"], ["bio", ""]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '4LrYqB3vEpF0a2vzA98YVw' LIMIT 1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$EtRvG8hNW7x1C5kNGy5zbu9N.OtiPw15ThH/mqGImXB8lJK/Xk2oK"], ["session_token", "4LrYqB3vEpF0a2vzA98YVw"], ["bio", ""]]
+  [1m[35m (0.9ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '9bWsY7OWUh4RaLoLrOYF6Q' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$qq5EruEeKxKEG5l4QzIeD.QU69H5T.VR3ot0MUMr2fRkYWAWntm5."], ["session_token", "9bWsY7OWUh4RaLoLrOYF6Q"], ["bio", ""]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'SZc-Ct_zJ_yoOi96fgbRNw' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$8SYk7PFjwvYMZ6bomQHRouxopm298mwAQ1VZ9Az39vW0xWxXJrDru"], ["session_token", "SZc-Ct_zJ_yoOi96fgbRNw"], ["bio", ""]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "nathan"]]
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'f5Wy6tbPOKGv0lxPTcnv8A' LIMIT 1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$qS6dkidxmr96vnTAZhaiH.0WN1D799M2HdcBYvIFuQyJ8uy3MN992"], ["session_token", "f5Wy6tbPOKGv0lxPTcnv8A"], ["bio", ""]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "nathan"]]
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (2.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'session token' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'session token' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'username' LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'tUZ160jVaGTPsJmgaxOm6Q' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$IC7jlL5eP.lc.EXWe/sJgOe5uQ//lw5HYYYmb/60lT/fmWtIxXKMK"], ["session_token", "tUZ160jVaGTPsJmgaxOm6Q"], ["bio", ""]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (2.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 't-thR6bnFMggC7DEb4TZ1w' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$Leko8EefgxPvFuNc7Eg2xe.UjjMY0..LYittPuQzJ9fe1R5eTLP76"], ["session_token", "t-thR6bnFMggC7DEb4TZ1w"], ["bio", ""]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'W8ZuOPz9XXRYahQ2QWOZwg' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$LpUQDp8waAeKVUXpzp5/..gpDEiSEr2uiYL3vrR9I5r3CXk9cKVue"], ["session_token", "W8ZuOPz9XXRYahQ2QWOZwg"], ["bio", ""]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '8PkLc_ppN706URIE0KNlQw' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$T/buBm7S/UX6zJiE2AyXreanU.SAzrW2CK7tDfAMbcFztn4vyrF/y"], ["session_token", "8PkLc_ppN706URIE0KNlQw"], ["bio", ""]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Ob5l9TiJDj4h4iSPD2Kb6Q' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$YG3bbiwLODuBnBPcaO61vebPolH35OEx2dD/ltDaF6HTLGU4SehSS"], ["session_token", "Ob5l9TiJDj4h4iSPD2Kb6Q"], ["bio", ""]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "nathan"]]
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '0GQ0PvsPJPT2y9Qwdt1FzQ' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$9eZFbdZYQHwmR9iPsd5l.u79BypprwIrLKKX8S58vrrbqyekB9ND6"], ["session_token", "0GQ0PvsPJPT2y9Qwdt1FzQ"], ["bio", ""]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "nathan"]]
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (3.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'session token' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '7EzNvd0z4QCF38cyGQ7tzg' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$5a/TWIqii9altZTi4Ik.I.KV8cs0JG.3MXCsIh4IkkdW5HESHNQZu"], ["session_token", "7EzNvd0z4QCF38cyGQ7tzg"], ["bio", ""]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '7EzNvd0z4QCF38cyGQ7tzg' AND "users"."id" != 19) LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" IS NULL AND "users"."id" != 19) LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'nthiJSYFlNZwQtGoZwhIfA' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$mPbruri.XFgsLTvmddFHVeLlzds4yc.ZTybgSMtvt4yA7rZ6qiza."], ["session_token", "nthiJSYFlNZwQtGoZwhIfA"], ["bio", ""]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'nthiJSYFlNZwQtGoZwhIfA' AND "users"."id" != 20) LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'nathan' AND "users"."id" != 20) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'session token' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'username' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'O2ng02lSZ_z7NfRe5EqOCw' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$iXpVDUp3g6vsrjpy3LEPm.8n/b2FYpLtKaYrOzmJ93uvBkN54pn5y"], ["session_token", "O2ng02lSZ_z7NfRe5EqOCw"], ["bio", ""]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'KbgYDvm8dYrRfQH0FrHYNA' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$Hjo/IRP8mfj7oFhN6JRvsuGg3HFU3javDJ//GOLpZ7YyB9u1janMS"], ["session_token", "KbgYDvm8dYrRfQH0FrHYNA"], ["bio", ""]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'dUkNdiddqs9PQrK6HygmFQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$gWG75BZ1h.OnEomh7jXKOem.TXdcljXIF/hiXTaf3L1Q3g8gx4xA6"], ["session_token", "dUkNdiddqs9PQrK6HygmFQ"], ["bio", ""]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'i0G4qYnbk55gV_x6J7ORWQ' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "nathan"], ["password_digest", "$2a$10$iLNMQ/r91dYKYIti.VhEIOY94gnWF7V16.wr9zVqxEaq8/xJZSNcG"], ["session_token", "i0G4qYnbk55gV_x6J7ORWQ"], ["bio", ""]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'O5EfjBuCczDV6p-xJz70sw' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$7Gn1gKBASmEr/QMuWLcU1.ntZzE/NRtnyW/oIn4lOQZOIHxvG4.fe"], ["session_token", "O5EfjBuCczDV6p-xJz70sw"], ["bio", ""]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "nathan"]]
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (2.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'R-q4UiHLLDuSTDo8UTUiYw' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "nathan"], ["password_digest", "$2a$10$w7M02BWsGJ8NzUacaU/NveWJxBZNCsbdtRmO889sJmiJ.hIGKmvzS"], ["session_token", "R-q4UiHLLDuSTDo8UTUiYw"], ["bio", ""]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "nathan"]]
+  [1m[35m (0.5ms)[0m  ROLLBACK
