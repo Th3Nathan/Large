@@ -17,7 +17,7 @@
 #
 
 class Story < ActiveRecord::Base
-  validates :title, :body, :author_id, :description, presence: true
+  validates :title, :date, :body, :author_id, :description, presence: true
   has_attached_file :image, default_url: "/images/logo.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   after_initialize :add_date
