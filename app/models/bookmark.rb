@@ -1,8 +1,12 @@
 class Bookmark < ActiveRecord::Base
   validates :user_id, :story_id, presence: true
 
-  validates :user, :uniqueness => {
-    scope: [:user_id, :story_id]
+  # validates :user, :uniqueness => {
+  #   scope: [:user_id, :story_id]
+  # }
+
+  validates :user_id, :uniqueness => {
+    scope: [:story_id]
   }
 
   belongs_to :story,

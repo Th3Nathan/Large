@@ -866,3 +866,279 @@ Command :: file -b --mime '/tmp/92877af70a45fd6a2ed7fe81e1236b7820171111-31466-r
   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.4ms)[0m  BEGIN
   [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mBookmark Exists (5.7ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  BEGIN
+  [1m[36mBookmark Exists (1.7ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (1.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mBookmark Exists (4.6ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (1.9ms)[0m  ROLLBACK
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (2.4ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (1.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mBookmark Exists (2.6ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36mBookmark Exists (6.1ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (1.6ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mBookmark Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:51:37.251729"], ["updated_at", "2017-11-11 22:51:37.251729"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (2.3ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."id" != 1 AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mBookmark Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:51:37.275494"], ["updated_at", "2017-11-11 22:51:37.275494"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.2ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."id" != 2 AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mBookmark Exists (3.6ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (1.8ms)[0m  ROLLBACK
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mBookmark Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:52:25.214367"], ["updated_at", "2017-11-11 22:52:25.214367"]]
+  [1m[36m (0.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.4ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."id" != 3 AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBookmark Exists (1.2ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mBookmark Exists (2.3ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (1.4ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBookmark Exists (1.1ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:52:58.571906"], ["updated_at", "2017-11-11 22:52:58.571906"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36mBookmark Exists (3.1ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (1.1ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:53:32.561673"], ["updated_at", "2017-11-11 22:53:32.561673"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mBookmark Load (3.3ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks"[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:54:15.955573"], ["updated_at", "2017-11-11 22:54:15.955573"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Load (1.7ms)[0m  SELECT "bookmarks".* FROM "bookmarks"
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mBookmark Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mBookmark Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:55:54.376902"], ["updated_at", "2017-11-11 22:55:54.376902"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mBookmark Exists (2.4ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (1.2ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (2.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mBookmark Load (1.5ms)[0m  [1mSELECT  "bookmarks".* FROM "bookmarks"  ORDER BY "bookmarks"."id" ASC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "bookmarks" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2017-11-11 22:56:28.650371"], ["updated_at", "2017-11-11 22:56:28.650371"]]
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mBookmark Exists (5.7ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."id" != 1001 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mBookmark Exists (1.2ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."id" != 1002 AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mBookmark Load (1.7ms)[0m  [1mSELECT  "bookmarks".* FROM "bookmarks"  ORDER BY "bookmarks"."id" ASC LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (2.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:02.240016"], ["updated_at", "2017-11-11 22:59:02.240016"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."id" != 9 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:03.648896"], ["updated_at", "2017-11-11 22:59:03.648896"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."id" != 10 AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:03.667580"], ["updated_at", "2017-11-11 22:59:03.667580"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBookmark Load (1.3ms)[0m  [1mSELECT  "bookmarks".* FROM "bookmarks"  ORDER BY "bookmarks"."id" ASC LIMIT 1[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mBookmark Load (0.6ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks"[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 2) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.7ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:03.698358"], ["updated_at", "2017-11-11 22:59:03.698358"]]
+  [1m[35m (2.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:03.741632"], ["updated_at", "2017-11-11 22:59:03.741632"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (2.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:55.462374"], ["updated_at", "2017-11-11 22:59:55.462374"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (2.0ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."id" != 14 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35m (1.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:56.866044"], ["updated_at", "2017-11-11 22:59:56.866044"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.7ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."id" != 15 AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.7ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:56.885619"], ["updated_at", "2017-11-11 22:59:56.885619"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBookmark Load (1.1ms)[0m  [1mSELECT  "bookmarks".* FROM "bookmarks"  ORDER BY "bookmarks"."id" ASC LIMIT 1[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mBookmark Load (0.6ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks"[0m
+  [1m[35mBookmark Exists (0.9ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 2) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:56.919067"], ["updated_at", "2017-11-11 22:59:56.919067"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.1ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-11 22:59:56.962254"], ["updated_at", "2017-11-11 22:59:56.962254"]]
+  [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
