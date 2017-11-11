@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: bookmarks
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  story_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Bookmark < ActiveRecord::Base
   validates :user_id, :story_id, presence: true
 

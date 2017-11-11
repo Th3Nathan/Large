@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: likes
+#
+#  id            :integer          not null, primary key
+#  likeable_id   :integer
+#  likeable_type :string
+#  created_at    :datetime
+#  updated_at    :datetime
+#  user_id       :integer          not null
+#
+
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: likes
+#
+#  id            :integer          not null, primary key
+#  likeable_id   :integer
+#  likeable_type :string
+#  created_at    :datetime
+#  updated_at    :datetime
+#  user_id       :integer          not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the
