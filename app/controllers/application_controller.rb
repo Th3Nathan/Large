@@ -21,15 +21,11 @@ class ApplicationController < ActionController::Base
     current_user.followee_follows.where({author_id: showed_user.id})
   end
 
-  #another route take showeed user id and user.follow.where
-
   def login(user)
     user.reset_session_token!
     session[:session_token] = user.session_token
     @current_user = user
   end
-
-  private
 
   def current_user
     return nil unless session[:session_token]

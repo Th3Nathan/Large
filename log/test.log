@@ -25654,3 +25654,1340 @@ Processing by Api::SessionsController#destroy as JSON
   [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
 Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 2.9ms)
   [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StaticPagesController#root as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 57ms (Views: 56.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (2.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'WgTT1WNC0c9eGevkkHmbNA' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Donella Hornwood' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "WgTT1WNC0c9eGevkkHmbNA"], ["bio", ""], ["username", "Donella Hornwood"], ["password_digest", "$2a$10$BwhYwHOVHHvPtW9einqqK.qO.h3.1pvE/UYc78iDgSEaO5qiAqRxK"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'AVcIk8yVSbkp2nESRNxe9g' AND "users"."id" != 1508) LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Donella Hornwood' AND "users"."id" != 1508) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "AVcIk8yVSbkp2nESRNxe9g"], ["id", 1508]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Bushwick biodiesel organic deep v selfies yolo bitters chillwave. Leggings organic 90's. Chartreuse selvage kickstarter etsy."], ["author_id", 1508], ["story_id", 1], ["created_at", "2017-11-12 22:48:30.994521"], ["updated_at", "2017-11-12 22:48:30.994521"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[35mComment Load (1.6ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36mLike Load (3.4ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (14)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1508]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 14], ["likeable_type", "Comment"]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 14], ["likeable_type", "Comment"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1508]]
+  Rendered api/comments/_comment.json.jbuilder (58.9ms)
+  Rendered api/comments/show.json.jbuilder (76.6ms)
+Completed 200 OK in 150ms (Views: 88.4ms | ActiveRecord: 9.1ms)
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '_a2ycgV2kJdMWX43OfNGig' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Maerie' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "_a2ycgV2kJdMWX43OfNGig"], ["bio", ""], ["username", "Maerie"], ["password_digest", "$2a$10$zqmPjQaVA.y/CXHjh7irPOZjyoj0qzQ9sCdSOPu5lD8UTnzhuOIae"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'GKD6kFZng_lyyqyL3PSvtw' AND "users"."id" != 1509) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Maerie' AND "users"."id" != 1509) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "GKD6kFZng_lyyqyL3PSvtw"], ["id", 1509]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#show as JSON
+  Parameters: {"id"=>"999"}
+  [1m[35mComment Load (0.6ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 999]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Ih5Aw7lHiuOFPKwH-PXjhg' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Maris' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "Ih5Aw7lHiuOFPKwH-PXjhg"], ["bio", ""], ["username", "Maris"], ["password_digest", "$2a$10$SMe.D484WowRZLqgEWHySu1SfnkGNPuQdJXtkM1yzK9abaCTUO3Hu"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'PsipPOo2AKZ76L2dvfLG1A' AND "users"."id" != 1510) LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Maris' AND "users"."id" != 1510) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "PsipPOo2AKZ76L2dvfLG1A"], ["id", 1510]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"author_id"=>1510, "story_id"=>1, "body"=>"valid comment body"}}
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "comments" ("author_id", "story_id", "body", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["author_id", 1510], ["story_id", 1], ["body", "valid comment body"], ["date", "2017-11-12"], ["created_at", "2017-11-12 22:48:31.455329"], ["updated_at", "2017-11-12 22:48:31.455329"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1510]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 15], ["likeable_type", "Comment"]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 15], ["likeable_type", "Comment"]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1510]]
+  [1m[35m (0.8ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 15], ["likeable_type", "Comment"]]
+  Rendered api/comments/_comment.json.jbuilder (19.6ms)
+  Rendered api/comments/show.json.jbuilder (21.8ms)
+Completed 200 OK in 32ms (Views: 17.7ms | ActiveRecord: 7.0ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."body" = $1 LIMIT 1[0m  [["body", "valid comment body"]]
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'i2ltBLoLXSVEv_MKL2cMcQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Jon Pox' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "i2ltBLoLXSVEv_MKL2cMcQ"], ["bio", ""], ["username", "Jon Pox"], ["password_digest", "$2a$10$xN.RJtot7GZz3AKO6BFzcuove5/kOPevjDl9XVVp/H1ZbR2kP27Z."]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '2bgliXEgt8XAtOS4P58xzg' AND "users"."id" != 1511) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Jon Pox' AND "users"."id" != 1511) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "2bgliXEgt8XAtOS4P58xzg"], ["id", 1511]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"author_id"=>1511, "story_id"=>1, "body"=>"valid comment body"}}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "comments" ("author_id", "story_id", "body", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author_id", 1511], ["story_id", 1], ["body", "valid comment body"], ["date", "2017-11-12"], ["created_at", "2017-11-12 22:48:31.634316"], ["updated_at", "2017-11-12 22:48:31.634316"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1511]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  [1m[35m (0.8ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1511]]
+  [1m[36m (0.8ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  Rendered api/comments/_comment.json.jbuilder (17.6ms)
+  Rendered api/comments/show.json.jbuilder (20.6ms)
+Completed 200 OK in 31ms (Views: 17.8ms | ActiveRecord: 5.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'bD69kGmELBWmxU8KwA_oWw' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Alyn' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "bD69kGmELBWmxU8KwA_oWw"], ["bio", ""], ["username", "Alyn"], ["password_digest", "$2a$10$fCWgvCGg.T6zJ11cO6/OVuCxrkVkZoZ7op3cJBhW2rTtfPqaFxMEO"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'ZeVnIPxCBsQwl8w6IqNiOw' AND "users"."id" != 1512) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Alyn' AND "users"."id" != 1512) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "ZeVnIPxCBsQwl8w6IqNiOw"], ["id", 1512]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"bad"=>"justhaxingyaserver"}}
+Unpermitted parameter: bad
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 14ms (Views: 0.5ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'bIRCrsxGgunJ3ORXhT5qgw' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Roone' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "bIRCrsxGgunJ3ORXhT5qgw"], ["bio", ""], ["username", "Roone"], ["password_digest", "$2a$10$buY7NNO.fi52WprjVkUZzeFRZMgh/k7ZJikXNQFRwbM0O8NC7GiCW"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '8rOJIIjqqXgH2FYK2K3tIg' AND "users"."id" != 1513) LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Roone' AND "users"."id" != 1513) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "8rOJIIjqqXgH2FYK2K3tIg"], ["id", 1513]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2017-11-12"], ["body", "Kombucha selfies kogi wayfarers austin sustainable twee gluten-free. Bushwick retro salvia sartorial offal. Pork belly meh tote bag knausgaard franzen lumbersexual vhs hoodie."], ["author_id", 1513], ["story_id", 1], ["created_at", "2017-11-12 22:48:31.951635"], ["updated_at", "2017-11-12 22:48:31.951635"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#update as JSON
+  Parameters: {"comment"=>{"body"=>"Updated Body"}, "id"=>"17"}
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mLike Load (0.8ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (17)
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "comments" SET "body" = $1, "updated_at" = $2 WHERE "comments"."id" = $3  [["body", "Updated Body"], ["updated_at", "2017-11-12 22:48:31.972958"], ["id", 17]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1513]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 17], ["likeable_type", "Comment"]]
+  [1m[35m (0.8ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 17], ["likeable_type", "Comment"]]
+  [1m[36m (0.8ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1513]]
+  Rendered api/comments/_comment.json.jbuilder (13.5ms)
+  Rendered api/comments/show.json.jbuilder (15.9ms)
+Completed 200 OK in 36ms (Views: 14.4ms | ActiveRecord: 5.6ms)
+  [1m[35mComment Load (0.7ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '5AZkGaKZC3BeLGCqmrTCIw' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Rakharo' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "5AZkGaKZC3BeLGCqmrTCIw"], ["bio", ""], ["username", "Rakharo"], ["password_digest", "$2a$10$.s4mwLoQ//b8W/e2rZn3juUGeVl2nYDTef30NjINjUCF6VfmDcp.i"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '3cgDkdrVHonLd_0wRJSc2Q' AND "users"."id" != 1514) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Rakharo' AND "users"."id" != 1514) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "3cgDkdrVHonLd_0wRJSc2Q"], ["id", 1514]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Austin brunch ethical bespoke. Post-ironic thundercats direct trade chicharrones. Plaid lumbersexual iphone pbr&b retro gastropub chartreuse. Freegan craft beer occupy thundercats food truck artisan. Kombucha lumbersexual messenger bag single-origin coffee green juice bespoke."], ["author_id", 1514], ["story_id", 1], ["created_at", "2017-11-12 22:48:32.139415"], ["updated_at", "2017-11-12 22:48:32.139415"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#update as JSON
+  Parameters: {"comment"=>{"body"=>nil}, "id"=>"18"}
+  [1m[35mComment Load (0.7ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mLike Load (0.7ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (18)[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 14ms (Views: 0.4ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'yzyeHjK_hu2gJ1LIFv-BPQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Pearse Caron' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "yzyeHjK_hu2gJ1LIFv-BPQ"], ["bio", ""], ["username", "Pearse Caron"], ["password_digest", "$2a$10$grE6h61xfH7vF51dP2J/G.AzxF9Zjnrl2rLrrUKvO.TdhYD/ieBDq"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Knausgaard sriracha photo booth hella disrupt. Gastropub biodiesel roof pabst. Five dollar toast wolf health knausgaard bitters cred. Franzen art party biodiesel beard celiac. Skateboard kombucha semiotics food truck cred."], ["author_id", 1515], ["story_id", 1], ["created_at", "2017-11-12 22:48:32.290242"], ["updated_at", "2017-11-12 22:48:32.290242"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#destroy as JSON
+  Parameters: {"id"=>"19"}
+  [1m[35mComment Load (0.7ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "comments" WHERE "comments"."id" = $1  [["id", 19]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.3ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'pY8GEPFevXIq8QW5OWmHJg' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Weeper' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "pY8GEPFevXIq8QW5OWmHJg"], ["bio", ""], ["username", "Weeper"], ["password_digest", "$2a$10$gQij1DYokFG8IRqgRpuNKOERD4oqPYIyCdRZkOPKJXhIt34EQl0xS"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Weeper", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Weeper"]]
+  [1m[36m (0.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'gsIl9qWd1nnP7wJBfoBb_g' AND "users"."id" != 1516) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Weeper' AND "users"."id" != 1516) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "gsIl9qWd1nnP7wJBfoBb_g"], ["id", 1516]]
+  [1m[36m (1.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.7ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1516]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1516]]
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1516]]
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1516]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1516]]
+  Rendered api/users/_user.json.jbuilder (41.2ms)
+  [1m[36mFollow Load (0.6ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1516], ["author_id", 1516]]
+  Rendered api/users/show.json.jbuilder (46.3ms)
+Completed 200 OK in 214ms (Views: 46.4ms | ActiveRecord: 17.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'auI3BVLF3qdFcWq780CzSg' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Brea' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "auI3BVLF3qdFcWq780CzSg"], ["bio", ""], ["username", "Brea"], ["password_digest", "$2a$10$QbZOO/LQKAGPaDM/SO/rBOT6H//JfonVkRPCcS8acdG3aMQkW7Uy6"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Brea", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Brea"]]
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'E8hfmpi5X0HcyNYqDI4o2A' AND "users"."id" != 1517) LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Brea' AND "users"."id" != 1517) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "E8hfmpi5X0HcyNYqDI4o2A"], ["id", 1517]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1517]]
+  [1m[35m (0.7ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1517]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1517]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1517]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1517]]
+  Rendered api/users/_user.json.jbuilder (17.5ms)
+  [1m[35mFollow Load (0.8ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1517], ["author_id", 1517]]
+  Rendered api/users/show.json.jbuilder (20.9ms)
+Completed 200 OK in 139ms (Views: 17.1ms | ActiveRecord: 9.4ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'KplQFEpUwPpKy9nXWZ038g' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Antario Jast' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "KplQFEpUwPpKy9nXWZ038g"], ["bio", ""], ["username", "Antario Jast"], ["password_digest", "$2a$10$8FYONu5XaDWGZU10P6HKd.LHiJVJ.bboBDS/7iwgSsI5QJ2H7rStC"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'lTIPzlwTUpFCrw7pdm2Q8w' AND "users"."id" != 1518) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Antario Jast' AND "users"."id" != 1518) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "lTIPzlwTUpFCrw7pdm2Q8w"], ["id", 1518]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::SessionsController#destroy as JSON
+  Parameters: {"id"=>1518}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'bH4pggHmrI8T8F4sEFPuUg' AND "users"."id" != 1518) LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Antario Jast' AND "users"."id" != 1518) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "bH4pggHmrI8T8F4sEFPuUg"], ["id", 1518]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StaticPagesController#root as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'iH6r0Lr2TWmeVR9ZjVm2Xw' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Cossomo' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "iH6r0Lr2TWmeVR9ZjVm2Xw"], ["bio", ""], ["username", "Cossomo"], ["password_digest", "$2a$10$8Kmlq64HsMGViY1VJ/K3ROh4evOQwaOTPmh2uwqUofYx4t2d4NnqK"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'BsAeJ70jWoq9WLUn2FgThw' AND "users"."id" != 1519) LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Cossomo' AND "users"."id" != 1519) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "BsAeJ70jWoq9WLUn2FgThw"], ["id", 1519]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.5ms)[0m  [1mINSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "4713-01-01 BC"], ["title", "church-key"], ["body", "Try-hard goth venmo voluptas kogi eaque excepturi celiac. Wayfarers selfies consequatur sartorial chia. Aut aut keffiyeh distinctio ducimus. Blanditiis sapiente post-ironic tenetur yolo non. Blanditiis animi voluptatum actually. Nihil pinterest vegan art party aut pug chia id. Quae cumque put a bird on it est et marfa cray. Sustainable ad ab hoodie fuga cumque consectetur dreamcatcher. Yuccie dolore shoreditch esse. Totam shabby chic voluptatum quam. Kinfolk goth aesthetic typewriter nam iste pariatur migas. Meh labore 3 wolf moon. Omnis adipisci velit neutra nesciunt. Fixie iphone magni. Yuccie skateboard hashtag dolorem swag vinyl kombucha. Church-key velit nihil."], ["description", "Brooklyn meh muggle magic wes anderson vice cray etsy."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.274870"], ["updated_at", "2017-11-12 22:48:33.274870"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "chicharrones"], ["body", "Quasi quibusdam asymmetrical voluptas cupiditate. Cred bushwick swag helvetica. Magnam pbr&b authentic nihil cupiditate. Disrupt illum est. Laudantium goth fugiat. Fashion axe shabby chic direct trade labore explicabo recusandae. Minima keffiyeh eum mlkshk. Non banjo sustainable mustache facilis. Voluptas pickled repellendus literally bespoke ipsum plaid gluten-free. Totam et et quaerat. Vhs selvage dolores bushwick autem pour-over marfa nisi. Quas delectus aut kickstarter selfies recusandae. Molestiae blue bottle pitchfork helvetica skateboard. Est rerum illum phlogiston wayfarers ea voluptatem. Loko sriracha green juice. Tousled art party goth biodiesel similique repudiandae laboriosam excepturi."], ["description", "Pbr&b ethical wolf migas stumptown microdosing next level."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.292262"], ["updated_at", "2017-11-12 22:48:33.292262"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "4713-01-01 BC"], ["title", "irony"], ["body", "Consectetur cumque voluptatem non loko jean shorts. Repellat minus delectus before they sold out sriracha. Marfa eum cliche swag commodi similique before they sold out crucifix. Goth semiotics dolores autem. Occaecati polaroid officia soluta austin eos paleo. Est ad green juice ipsam et heirloom. Alias voluptates numquam fanny pack laudantium pinterest in. Sit vel quia totam. Single-origin coffee lumbersexual twee esse dreamcatcher hoodie nulla kale chips. Williamsburg kickstarter pabst accusamus tattooed est diy. Nam kombucha unde omnis sed ex blanditiis yuccie. Eaque synth ipsam cupiditate temporibus. Everyday venmo et. Lomo molestias provident. Harum commodi itaque artisan sunt kinfolk."], ["description", "Xoxo mustache church-key cold-pressed fashion axe normcore kogi hella."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.303699"], ["updated_at", "2017-11-12 22:48:33.303699"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "vice"], ["body", "Banh mi wes anderson literally sint synth non incidunt. Et occaecati vinegar distillery nemo ethical. Vegan stumptown try-hard dolores laudantium. Et dolores bespoke assumenda labore eum five dollar toast. Modi truffaut deleniti ea. Nihil farm-to-table dolore ut ipsum. Ratione provident beard ut atque. Viral vel iste. Dolorem similique farm-to-table sequi. Artisan messenger bag food truck alias tofu kombucha green juice natus. Ut tumblr nobis. Voluptate numquam bespoke fuga enim dolores squid lomo. Voluptatem scenester necessitatibus. Distillery salvia porro pickled kogi eligendi. Before they sold out assumenda swag aut sit est humblebrag umami. Aut synth 3 wolf moon nemo."], ["description", "Pitchfork crucifix wes anderson celiac hammock."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.315268"], ["updated_at", "2017-11-12 22:48:33.315268"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "4713-01-01 BC"], ["title", "kogi"], ["body", "Fuga food truck mixtape iure tenetur. Venmo voluptas farm-to-table seitan +1 sequi. Gluten-free est facilis exercitationem. Chia 3 wolf moon quo lo-fi soluta consectetur. Vhs small batch et ratione unde. Velit quasi deleniti. Umami voluptatem est expedita reiciendis soluta id. Chia officiis eius. Architecto mlkshk next level quibusdam messenger bag omnis amet. Quam numquam narwhal provident skateboard. Impedit deserunt beatae consequatur temporibus. Stumptown facilis ratione similique cliche. Quos et brunch beard direct trade voluptatem. Magni et nisi laborum chia. Semiotics minus brunch tousled similique vice. Consequatur amet everyday."], ["description", "Retro paleo 90's mumblecore."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.327028"], ["updated_at", "2017-11-12 22:48:33.327028"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "hella"], ["body", "Aut yolo et pbr&b nobis 3 wolf moon. Quo tofu aut optio pabst sed brooklyn. Rerum porro omnis park. Normcore similique marfa green juice artisan. Asperiores mustache sriracha. Literally authentic quia quia slow-carb williamsburg diy. Wes anderson nobis hella xoxo letterpress lumbersexual. Small batch odio et. Franzen diy vhs freegan perspiciatis. Wes anderson ipsum eum drinking qui voluptas voluptatem. Squid odit retro ethical tousled et. Humblebrag commodi blog et veritatis. Literally tattooed eveniet rerum hoodie commodi ut. Optio fanny pack raw denim. Cliche occupy paleo quasi everyday enim sit. Tattooed eum pbr&b consequuntur twee venmo. Knausgaard wolf kitsch consequatur taxidermy ut whatever."], ["description", "Fixie gentrify hashtag wolf cardigan seitan."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.339553"], ["updated_at", "2017-11-12 22:48:33.339553"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "4713-01-01 BC"], ["title", "bushwick"], ["body", "Franzen venmo delectus consequatur eaque necessitatibus bushwick. Cold-pressed rerum church-key qui voluptas fugit nulla. Blanditiis architecto autem cumque 90's. Architecto quod tofu hella qui goth fuga non. Bitters wolf quisquam. Voluptatem voluptatem tousled gentrify soluta dreamcatcher wolf. Forage aut corrupti sequi jean shorts officia soluta a. Saepe fingerstache cred narwhal sit plaid goth. Vice kitsch est. Listicle cardigan perspiciatis pug hammock kickstarter loko offal. Migas butcher labore qui quinoa non echo. Ea tousled ex incidunt meggings et sed beard. Squid amet blanditiis at qui. Meh qui voluptas. Et illum typewriter et occaecati qui. Eaque asperiores id fashion axe distillery 8-bit."], ["description", "Tousled gastropub +1 occupy."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.352264"], ["updated_at", "2017-11-12 22:48:33.352264"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "franzen"], ["body", "Reiciendis tattooed et. Et organic park nisi. Rerum kitsch ad. Kombucha expedita quia omnis cornhole dignissimos repellat et. Authentic incidunt quis doloremque distinctio pour-over. Dolorem vegan et. Atque ipsum perferendis consequatur soluta. Illo farm-to-table meh wayfarers occaecati saepe hammock iphone. Et dolorem butcher iusto iure quis pickled. Hic keytar accusantium cum jean shorts nemo 3 wolf moon crucifix. Xoxo est shoreditch quaerat marfa health. Dignissimos quinoa nemo chambray seitan. Et schlitz pickled in gastropub. Quia mollitia quidem bespoke vinegar. Pickled lo-fi et distinctio. Vel molestiae street disrupt."], ["description", "Waistcoat bespoke leggings pork belly sriracha semiotics."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.364617"], ["updated_at", "2017-11-12 22:48:33.364617"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "4713-01-01 BC"], ["title", "listicle"], ["body", "Keytar microdosing tumblr sunt franzen. Five dollar toast fingerstache at. Suscipit et thundercats humblebrag sed. Poutine illum laborum. Sit architecto at omnis synth. Quidem tempore aperiam. 8-bit et literally. Qui ipsam est necessitatibus fugiat skateboard. Deserunt cupiditate messenger bag ratione keytar mollitia. Nobis selfies cupiditate soluta bicycle rights. Asperiores kitsch yolo dolores. Health veniam chartreuse ut letterpress velit. Gluten-free knausgaard accusantium. Et letterpress pug crucifix consequatur. Libero schlitz slow-carb."], ["description", "Pbr&b letterpress locavore fanny pack kickstarter."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.376447"], ["updated_at", "2017-11-12 22:48:33.376447"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "sustainable"], ["body", "Culpa park sunt pitchfork heirloom master excepturi exercitationem. Brooklyn tote bag assumenda. Quo animi ramps sapiente nemo totam literally. Nihil rerum migas kale chips kogi voluptatem tempore voluptatem. Labore narwhal nemo excepturi voluptatum. Post-ironic aliquid vinegar drinking. Plaid sint keytar dolores. Sed disrupt single-origin coffee shoreditch quia pork belly. Impedit debitis et. Meggings placeat et maiores vel est. Kale chips facere viral put a bird on it seitan farm-to-table. Fuga kinfolk est franzen voluptatum before they sold out yr. Heirloom iusto bicycle rights qui distillery placeat godard. Crucifix post-ironic et. Ipsam skateboard shoreditch provident. Ipsam non bicycle rights tousled."], ["description", "Chartreuse poutine next level ethical drinking selvage stumptown."], ["author_id", 1519], ["created_at", "2017-11-12 22:48:33.388640"], ["updated_at", "2017-11-12 22:48:33.388640"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StoriesController#index as JSON
+  [1m[35mStory Load (0.7ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1519)[0m
+  [1m[35mLike Load (1.2ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Story' AND "likes"."likeable_id" IN (192, 193, 194, 195, 196, 197, 198, 199, 200, 201)
+  [1m[36m (0.9ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1519]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 192], ["likeable_type", "Story"]]
+  [1m[36m (0.8ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 192], ["likeable_type", "Story"]]
+  [1m[35m (0.6ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (3.5ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.4ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 192]]
+  [1m[36m (0.8ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 192]]
+  [1m[35m (0.8ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1519]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 193], ["likeable_type", "Story"]]
+  [1m[35m (0.8ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 193], ["likeable_type", "Story"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.6ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 193]]
+  [1m[35m (1.0ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 193]]
+  [1m[36m (0.9ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1519]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 194], ["likeable_type", "Story"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 194], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.6ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 194]]
+  [1m[36m (0.8ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 194]]
+  [1m[35m (1.0ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1519]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 195], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 195], ["likeable_type", "Story"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.6ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 195]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 195]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1519]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 196], ["likeable_type", "Story"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 196], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.6ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 196]]
+  [1m[36m (0.8ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 196]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1519]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 197], ["likeable_type", "Story"]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 197], ["likeable_type", "Story"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.7ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 197]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 197]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1519]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 198], ["likeable_type", "Story"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 198], ["likeable_type", "Story"]]
+  [1m[35m (0.6ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.3ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 198]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 198]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1519]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 199], ["likeable_type", "Story"]]
+  [1m[35m (0.6ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 199], ["likeable_type", "Story"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.6ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 199]]
+  [1m[35m (0.6ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 199]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1519]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 200], ["likeable_type", "Story"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 200], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.4ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 200]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 200]]
+  [1m[35m (0.7ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1519]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 201], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 201], ["likeable_type", "Story"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1519]]
+  [1m[35m (0.4ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1  [["user_id", 1519]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 201]]
+  [1m[35m (0.6ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 201]]
+  Rendered api/stories/index.json.jbuilder (238.5ms)
+Completed 200 OK in 246ms (Views: 196.5ms | ActiveRecord: 48.4ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Yv47D46s77hSgCvXd9O9XQ' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Sigfryd Harlaw' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "Yv47D46s77hSgCvXd9O9XQ"], ["bio", ""], ["username", "Sigfryd Harlaw"], ["password_digest", "$2a$10$6cvIPiWUzZYyVDIE6h/TbeZpDaoD7WXBuhiyj9zkZKelYl.w2Ja.S"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'lupmkSSYxSqnHwwX9VeCcw' AND "users"."id" != 1520) LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Sigfryd Harlaw' AND "users"."id" != 1520) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "lupmkSSYxSqnHwwX9VeCcw"], ["id", 1520]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "tattooed"], ["body", "Velit aesthetic expedita voluptas vitae neque. Tenetur ad pabst chia pug magni. Mixtape tenetur nemo heirloom shabby chic autem omnis ut. Quis asperiores roof aut pickled loko food truck officia. Voluptatem muggle magic debitis readymade est fugit. Selfies skateboard ea. Et pabst tattooed eum cold-pressed chartreuse butcher. Lumbersexual crucifix freegan optio enim. Tousled veniam jean shorts sed sapiente synth. Officia quidem yolo dolores. Quae plaid biodiesel accusantium. Repellat aut salvia blanditiis actually beatae twee. Freegan vinyl qui error. Aliquam cumque wayfarers. Etsy vhs tilde."], ["description", "Park poutine microdosing muggle magic neutra blog typewriter meggings yolo."], ["author_id", 1520], ["created_at", "2017-11-12 22:48:33.786123"], ["updated_at", "2017-11-12 22:48:33.786123"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StoriesController#show as JSON
+  Parameters: {"id"=>"202"}
+  [1m[35mStory Load (0.6ms)[0m  SELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1  [["id", 202]]
+  [1m[36mComment Load (0.9ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."story_id" IN (202)[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1520)
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1520]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 202], ["likeable_type", "Story"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 202], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 202]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1520]]
+  [1m[35m (0.6ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 202], ["likeable_type", "Story"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1520]]
+  [1m[35m (0.4ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 202]]
+  Rendered api/stories/show.json.jbuilder (24.0ms)
+Completed 200 OK in 54ms (Views: 23.7ms | ActiveRecord: 6.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '1Ya9yrLMB5EBjui9_AIcwA' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Jon Pox' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "1Ya9yrLMB5EBjui9_AIcwA"], ["bio", ""], ["username", "Jon Pox"], ["password_digest", "$2a$10$SR0/0T2gOiXyeuX1IqY8WujzNCebabnb6.6AkxkKmR0xNL9/e3H72"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'NKOJ79KThC-HXzoaYJGfzg' AND "users"."id" != 1521) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Jon Pox' AND "users"."id" != 1521) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "NKOJ79KThC-HXzoaYJGfzg"], ["id", 1521]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::StoriesController#show as JSON
+  Parameters: {"id"=>"999"}
+  [1m[36mStory Load (0.7ms)[0m  [1mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1[0m  [["id", 999]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'BLs6vRC_a22conBzcI37zQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Lyonel Bentley' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "BLs6vRC_a22conBzcI37zQ"], ["bio", ""], ["username", "Lyonel Bentley"], ["password_digest", "$2a$10$1joDk4ayiWC/6LmaALfk4uTyRdnz4D9e.ZoSbdAd7QFv2KaT3jdiy"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '298DC39iMdgi2YYbsCs7dw' AND "users"."id" != 1522) LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Lyonel Bentley' AND "users"."id" != 1522) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "298DC39iMdgi2YYbsCs7dw"], ["id", 1522]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StoriesController#create as JSON
+  Parameters: {"story"=>{"title"=>"sample Story", "description"=>"sample story description", "body"=>"I am a story blah blah blah", "author_id"=>1522, "date"=>Mon, 01 Jan -4712}}
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("body", "title", "description", "date", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["body", "I am a story blah blah blah"], ["title", "sample Story"], ["description", "sample story description"], ["date", "2017-11-12"], ["author_id", 1522], ["created_at", "2017-11-12 22:48:34.128249"], ["updated_at", "2017-11-12 22:48:34.128249"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1522]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1522]]
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."story_id" = $1[0m  [["story_id", 203]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 203], ["likeable_type", "Story"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 203], ["likeable_type", "Story"]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 203]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1522]]
+  [1m[35m (0.6ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 203], ["likeable_type", "Story"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1522]]
+  [1m[35m (0.4ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 203]]
+  Rendered api/stories/show.json.jbuilder (30.0ms)
+Completed 200 OK in 42ms (Views: 26.1ms | ActiveRecord: 6.9ms)
+  [1m[36mStory Load (0.5ms)[0m  [1mSELECT  "stories".* FROM "stories" WHERE "stories"."title" = $1 LIMIT 1[0m  [["title", "sample Story"]]
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'mJv68NwekwwokR9OEoWmmg' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Richard Lonmouth' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "mJv68NwekwwokR9OEoWmmg"], ["bio", ""], ["username", "Richard Lonmouth"], ["password_digest", "$2a$10$kprvYXlSLKOScdGmMk2AF.0uT39YZ1wbVBJSmHnfXz50akLEuawYi"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'Ik6R_I7S_KUyQa0_EE4Tcw' AND "users"."id" != 1523) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Richard Lonmouth' AND "users"."id" != 1523) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "Ik6R_I7S_KUyQa0_EE4Tcw"], ["id", 1523]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StoriesController#create as JSON
+  Parameters: {"story"=>{"title"=>"sample Story", "description"=>"sample story description", "body"=>"I am a story blah blah blah", "author_id"=>1523, "date"=>Mon, 01 Jan -4712}}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "stories" ("body", "title", "description", "date", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["body", "I am a story blah blah blah"], ["title", "sample Story"], ["description", "sample story description"], ["date", "2017-11-12"], ["author_id", 1523], ["created_at", "2017-11-12 22:48:34.308847"], ["updated_at", "2017-11-12 22:48:34.308847"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1523]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1523]]
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."story_id" = $1[0m  [["story_id", 204]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 204], ["likeable_type", "Story"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 204], ["likeable_type", "Story"]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1  [["story_id", 204]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1523]]
+  [1m[35m (0.7ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 204], ["likeable_type", "Story"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1523]]
+  [1m[35m (0.5ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 204]]
+  Rendered api/stories/show.json.jbuilder (28.1ms)
+Completed 200 OK in 39ms (Views: 23.9ms | ActiveRecord: 6.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '6NNU32kXTwQvAEhvicuLbw' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Trystane Martell' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "6NNU32kXTwQvAEhvicuLbw"], ["bio", ""], ["username", "Trystane Martell"], ["password_digest", "$2a$10$t4WBP0VJylJfjZWbUhD8pe770EWDK1U34KA3ztFq/OA0/xnuvoBDS"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'lIptKqglXv3vBzpx4D34Dw' AND "users"."id" != 1524) LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Trystane Martell' AND "users"."id" != 1524) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "lIptKqglXv3vBzpx4D34Dw"], ["id", 1524]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::StoriesController#create as JSON
+  Parameters: {"story"=>{"bad"=>"justhaxingyaserver"}}
+Unpermitted parameter: bad
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 422 Unprocessable Entity in 14ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'z8XV-b121jt0fQYy4oZRWA' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Eden Risley' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "z8XV-b121jt0fQYy4oZRWA"], ["bio", ""], ["username", "Eden Risley"], ["password_digest", "$2a$10$anuDaFa0Vj58WI7c7nISjuDRwMuOmzFsG29uWBsV/B8EbM0vQpLOK"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'Y4iHpo_WBH2SN3-Npv1fLg' AND "users"."id" != 1525) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Eden Risley' AND "users"."id" != 1525) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "Y4iHpo_WBH2SN3-Npv1fLg"], ["id", 1525]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "aesthetic"], ["body", "Poutine quia quam keffiyeh itaque reprehenderit. Qui laudantium maiores aspernatur sit asymmetrical veniam 8-bit. Everyday molestias hoodie assumenda whatever intelligentsia. Tote bag nam placeat leggings raw denim. Nostrum waistcoat mlkshk sit perferendis. Vinegar crucifix photo booth xoxo yr actually distinctio. Trust fund aperiam lumbersexual. Gentrify tempore meditation selfies nihil. Error tenetur goth. Phlogiston vel nulla corporis. Muggle magic voluptatum aut deep v facere animi helvetica sapiente. Helvetica dolores quia voluptatum itaque next level yolo. Consequatur quia park. Mixtape phlogiston eveniet similique lo-fi. In ut temporibus similique tacos."], ["description", "Gluten-free messenger bag blog gastropub."], ["author_id", 1525], ["created_at", "2017-11-12 22:48:34.634508"], ["updated_at", "2017-11-12 22:48:34.634508"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StoriesController#update as JSON
+  Parameters: {"story"=>{"title"=>"New Title"}, "id"=>"205"}
+  [1m[35mStory Load (1.9ms)[0m  SELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1  [["id", 205]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "stories" SET "date" = $1, "title" = $2, "updated_at" = $3 WHERE "stories"."id" = $4  [["date", "2017-11-12"], ["title", "New Title"], ["updated_at", "2017-11-12 22:48:34.651895"], ["id", 205]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1525]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1525]]
+  [1m[35mComment Load (0.6ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."story_id" = $1  [["story_id", 205]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 205], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 205], ["likeable_type", "Story"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 205]]
+  [1m[35m (0.4ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1525]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 205], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1  [["user_id", 1525]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 205]]
+  Rendered api/stories/show.json.jbuilder (27.3ms)
+Completed 200 OK in 43ms (Views: 23.9ms | ActiveRecord: 7.7ms)
+  [1m[35mStory Load (0.6ms)[0m  SELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1  [["id", 205]]
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'gESLir_odw2vu5JCfck0Tw' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Gorghan of Old Ghis' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "gESLir_odw2vu5JCfck0Tw"], ["bio", ""], ["username", "Gorghan of Old Ghis"], ["password_digest", "$2a$10$C7Ty.TRq2kYeeh7wt.IcP.0/E55gcU7ikliD.MIT4W6F3XgaV6nSe"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'RI3SFNgLT5G3UOvZs1-Zlg' AND "users"."id" != 1526) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Gorghan of Old Ghis' AND "users"."id" != 1526) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "RI3SFNgLT5G3UOvZs1-Zlg"], ["id", 1526]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "synth"], ["body", "Art party et echo placeat. Knausgaard error distinctio. Numquam vel natus ut dolor mustache. Est mollitia mumblecore neque laborum facilis. Fugit non temporibus tenetur assumenda shabby chic qui odio. Banjo park freegan. Corrupti yolo five dollar toast pitchfork aut rerum cray echo. Pop-up diy messenger bag debitis harum chicharrones skateboard soluta. Sequi butcher skateboard non ugh harum eum et. Iusto labore sunt. Swag quinoa pitchfork. Iure omnis salvia provident sartorial eum. Voluptas plaid officiis facilis flannel franzen iusto error. Twee officiis park. Intelligentsia fanny pack dolores street."], ["description", "Hoodie tousled green juice kombucha."], ["author_id", 1526], ["created_at", "2017-11-12 22:48:34.829307"], ["updated_at", "2017-11-12 22:48:34.829307"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StoriesController#update as JSON
+  Parameters: {"story"=>{"title"=>nil}, "id"=>"206"}
+  [1m[35mStory Load (0.8ms)[0m  SELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1  [["id", 206]]
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 422 Unprocessable Entity in 10ms (Views: 0.5ms | ActiveRecord: 1.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'q-8xgCkpNhM1n_SQOjrHVw' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Gormond Drumm' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "q-8xgCkpNhM1n_SQOjrHVw"], ["bio", ""], ["username", "Gormond Drumm"], ["password_digest", "$2a$10$Ttc4QGHnNw.OGtPLkqQnVOZY14IinXfDwG6.NuRC/X9Fxz87irNNi"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "4713-01-01 BC"], ["title", "viral"], ["body", "Blog ut master. Sunt art party venmo veritatis autem pinterest. Butcher pour-over fugit brooklyn ab. Et stumptown mustache tattooed normcore deep v. Eos literally minima officia fixie. Banjo rem fanny pack inventore plaid chartreuse. Libero ducimus disrupt nulla taxidermy master messenger bag cornhole. Franzen repellat ut. Porro natus et non sed est. Sustainable taxidermy id sint quasi tacos. Bitters placeat marfa. Trust fund plaid necessitatibus eaque. Sed quas neque. Shoreditch consequuntur sit quod at amet. Knausgaard goth eum omnis sriracha. Nemo odit et listicle necessitatibus."], ["description", "Listicle migas normcore put a bird on it."], ["author_id", 1527], ["created_at", "2017-11-12 22:48:34.976462"], ["updated_at", "2017-11-12 22:48:34.976462"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::StoriesController#destroy as JSON
+  Parameters: {"id"=>"207"}
+  [1m[36mStory Load (0.8ms)[0m  [1mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1[0m  [["id", 207]]
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "stories" WHERE "stories"."id" = $1[0m  [["id", 207]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+  [1m[36mStory Load (0.6ms)[0m  [1mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1[0m  [["id", 207]]
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'SdAi67chSBv-y2OQtbwzew' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Jon Waters' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "SdAi67chSBv-y2OQtbwzew"], ["bio", ""], ["username", "Jon Waters"], ["password_digest", "$2a$10$FtkRE3LSraThn4RdD75lN.sUeUbZdqGgrcfOrRK56wmcMPmdhhTtW"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'bAb2LJbPvxY94lnYdjGY0w' AND "users"."id" != 1528) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Jon Waters' AND "users"."id" != 1528) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "bAb2LJbPvxY94lnYdjGY0w"], ["id", 1528]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Ijx4jG6tARO5DWfS_fmsZg' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Lyman Beesbury' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "Ijx4jG6tARO5DWfS_fmsZg"], ["bio", ""], ["username", "Lyman Beesbury"], ["password_digest", "$2a$10$XMkWk78hewoYKq4rk6aSe.Xy3yobncOetMrsdnwuULUEXCtRlpAwu"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'KAgXMSfc7zy-rQ2hH6RJiw' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Runcel Hightower' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "KAgXMSfc7zy-rQ2hH6RJiw"], ["bio", ""], ["username", "Runcel Hightower"], ["password_digest", "$2a$10$OQrHowbBVdgsNkTexuVO/Ods1i3ArTznETBdCU8iM7xQDmLk.wToK"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "4713-01-01 BC"], ["title", "master"], ["body", "Alias assumenda quam nam dolor atque cred. Quos pop-up placeat raw denim. Esse cliche authentic eaque blue bottle butcher ipsa. Architecto rerum exercitationem deserunt. Kale chips animi quia cleanse distinctio. Laborum architecto chia sunt. Et humblebrag omnis necessitatibus veritatis facilis squid. Nostrum hammock expedita. Eius shoreditch bespoke pabst ipsam perferendis pour-over. Tenetur fingerstache enim dolore. Photo booth qui et vel bushwick rerum. Numquam everyday thundercats tote bag non natus chicharrones. Similique readymade laborum. Alias poutine master delectus eveniet magni sed. Fanny pack hammock iusto 3 wolf moon."], ["description", "Everyday keytar kogi tattooed chartreuse phlogiston dreamcatcher schlitz."], ["author_id", 1529], ["created_at", "2017-11-12 22:48:35.363151"], ["updated_at", "2017-11-12 22:48:35.363151"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "stories" ("date", "title", "body", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["date", "4713-01-01 BC"], ["title", "cold-pressed"], ["body", "Sit corporis natus eveniet. Next level sustainable swag consequuntur sequi food truck. Vice labore enim banjo qui. Dolores everyday quam sed yolo facilis dicta. Est seitan messenger bag church-key aut sint iure. Fixie omnis ipsam aspernatur repudiandae. Goth selfies eum et tote bag quis quia. Mustache literally tempore. Vel chartreuse pork belly skateboard. Crucifix velit pop-up sit. Shoreditch eum officia hashtag raw denim est. Adipisci et quaerat lo-fi est. Pork belly ipsa tousled blanditiis vero irony. Kombucha rerum sit. Architecto quinoa cardigan aliquid polaroid et blanditiis et."], ["description", "Pork belly echo kickstarter locavore cardigan truffaut hammock vice listicle."], ["author_id", 1530], ["created_at", "2017-11-12 22:48:35.374944"], ["updated_at", "2017-11-12 22:48:35.374944"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1528]]
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (0.9ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1528 AND "follows"."author_id" = 1529) LIMIT 1
+  [1m[36mSQL (5.2ms)[0m  [1mINSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 1528], ["author_id", 1529], ["created_at", "2017-11-12 22:48:35.405161"], ["updated_at", "2017-11-12 22:48:35.405161"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'bAb2LJbPvxY94lnYdjGY0w' AND "users"."id" != 1528) LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Jon Waters' AND "users"."id" != 1528) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::StoriesController#feed as JSON
+  [1m[36mStory Load (1.3ms)[0m  [1mSELECT "stories".* FROM "stories" INNER JOIN "users" ON "stories"."author_id" = "users"."id" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1528]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1529]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 208], ["likeable_type", "Story"]]
+  [1m[35m (0.4ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 208], ["likeable_type", "Story"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1528]]
+  [1m[35m (0.6ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 208], ["likeable_type", "Story"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."user_id" = $1[0m  [["user_id", 1528]]
+  [1m[35m (0.6ms)[0m  SELECT "bookmarks".id FROM "bookmarks" WHERE "bookmarks"."story_id" = $1  [["story_id", 208]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "bookmarks" ON "users"."id" = "bookmarks"."user_id" WHERE "bookmarks"."story_id" = $1[0m  [["story_id", 208]]
+  Rendered api/stories/index.json.jbuilder (28.8ms)
+Completed 200 OK in 33ms (Views: 24.8ms | ActiveRecord: 5.5ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'OsxMTn5IjfNySBrxt4HaIg' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Daeron II Targaryen' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "OsxMTn5IjfNySBrxt4HaIg"], ["bio", ""], ["username", "Daeron II Targaryen"], ["password_digest", "$2a$10$9HtUB.LrKYFLdr8CbKNS7.dLsHpPotzOM2/Wd.p1zCnVRQDhA2T8."]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'pObqSIoqeb4rI6D9h-Ar9w' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Dickon Manwoody' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "pObqSIoqeb4rI6D9h-Ar9w"], ["bio", ""], ["username", "Dickon Manwoody"], ["password_digest", "$2a$10$VAkxO1j1hEaelFErjqfrFeHGJ04OYh8lwFdrgx4S4rN.q47cfMTOq"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '-sodGXzr6p_U2dEEogttKg' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Rodrik Harlaw' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "-sodGXzr6p_U2dEEogttKg"], ["bio", ""], ["username", "Rodrik Harlaw"], ["password_digest", "$2a$10$bXL9A3LeM2i2qFKOHJ1pbe2L9zm7u4PblroHTw2D3qXBu8bFfAiWi"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '60w-KH1Lo0IQq4ZNlq0pxQ' LIMIT 1
+  [1m[36mUser Exists (1.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Pyat Pree' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "60w-KH1Lo0IQq4ZNlq0pxQ"], ["bio", ""], ["username", "Pyat Pree"], ["password_digest", "$2a$10$Mxne71pcPO3zlhPvKbMOqeMt7ch/s5d23gf.gabITREOFhO9BQceO"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '9xKawG081XuapsVEamxGOQ' LIMIT 1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Qos' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "9xKawG081XuapsVEamxGOQ"], ["bio", ""], ["username", "Qos"], ["password_digest", "$2a$10$/SsBBylvPunpOsy55SUNJeH5.VBDOWbJZDBqpbCC.dVyvVsxCMfam"]]
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'zerZoOGhOiwJ7nBMQpBSqg' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Larys Strong' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "zerZoOGhOiwJ7nBMQpBSqg"], ["bio", ""], ["username", "Larys Strong"], ["password_digest", "$2a$10$xs0MftFk/uC9rCsGOh54T.9FR1N4NQZZfe1qWcQVgKBjePRR3lt0S"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'sGW4E0fMwTMX8EMJOXuyiA' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Luceon Frey' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "sGW4E0fMwTMX8EMJOXuyiA"], ["bio", ""], ["username", "Luceon Frey"], ["password_digest", "$2a$10$WmMss8HdcMLVYLCsYhR7f.nIETFjPKuHki9AvyWrPRCWYBecHAQ92"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'cfAg2y9DF8s-Woflqeveow' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Tommen Costayne' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "cfAg2y9DF8s-Woflqeveow"], ["bio", ""], ["username", "Tommen Costayne"], ["password_digest", "$2a$10$5KXBek.CPdVm0ORW..hdVOrl/fh3Wly9E5Nl0h0av8vE2sCLYu28q"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'A-4QRRmgOXLBmOLkz7bZPw' LIMIT 1[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Terrance Lynderly' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "A-4QRRmgOXLBmOLkz7bZPw"], ["bio", ""], ["username", "Terrance Lynderly"], ["password_digest", "$2a$10$aabhfds.RTM5Suaf/gsGwOeyO70tFGtsbJyL8voRHX5UqFjrtIgMu"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'dmmJqKuLgYoTYdTD-tF5yA' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Ryman Frey' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "dmmJqKuLgYoTYdTD-tF5yA"], ["bio", ""], ["username", "Ryman Frey"], ["password_digest", "$2a$10$Acurr10pOTXGXktS0T83W.WLKDGS11/bM53Yjx7xkPp1P0.0ZqjH."]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::UsersController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.6ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1531]]
+  [1m[35m (0.5ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1531]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1531]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1531]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (18.4ms)
+  [1m[35m (0.5ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1532]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1532]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1532]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1532]]
+  [1m[35m (0.4ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (16.5ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1533]]
+  [1m[35m (0.5ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1533]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1533]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1533]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (17.0ms)
+  [1m[35m (0.7ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1534]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1534]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1534]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1534]]
+  [1m[35m (0.6ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (17.5ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1535]]
+  [1m[35m (0.5ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1535]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1535]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1535]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (16.2ms)
+  [1m[35m (0.6ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1536]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1536]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1536]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1536]]
+  [1m[35m (0.7ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (16.1ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1537]]
+  [1m[35m (0.6ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1537]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1537]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1537]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (16.2ms)
+  [1m[35m (0.5ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1538]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1538]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1538]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1538]]
+  [1m[35m (0.6ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (16.2ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1539]]
+  [1m[35m (0.6ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1539]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1539]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1539]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (16.5ms)
+  [1m[35m (0.6ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1540]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1540]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1540]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1540]]
+  [1m[35m (0.6ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1531]]
+  Rendered api/users/_user.json.jbuilder (16.1ms)
+  [1m[36mFollow Load (0.7ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1531], ["author_id", 1531]]
+  [1m[35mFollow Load (0.6ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1531], ["author_id", 1532]]
+  [1m[36mFollow Load (0.8ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1531], ["author_id", 1533]]
+  [1m[35mFollow Load (0.8ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1531], ["author_id", 1534]]
+  [1m[36mFollow Load (0.7ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1531], ["author_id", 1535]]
+  [1m[35mFollow Load (0.6ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1531], ["author_id", 1536]]
+  [1m[36mFollow Load (0.7ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1531], ["author_id", 1537]]
+  [1m[35mFollow Load (0.5ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1531], ["author_id", 1538]]
+  [1m[36mFollow Load (0.7ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1531], ["author_id", 1539]]
+  [1m[35mFollow Load (0.6ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1531], ["author_id", 1540]]
+  Rendered api/users/index.json.jbuilder (199.7ms)
+Completed 200 OK in 205ms (Views: 165.7ms | ActiveRecord: 38.8ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'S4UvAVMzk5nX5ysPQvau1A' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Norren' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest", "id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["session_token", "S4UvAVMzk5nX5ysPQvau1A"], ["bio", ""], ["username", "Norren"], ["password_digest", "$2a$10$x2/pB7g8cl1skiRtLcmilOVqc47W0JJe5HsIl5qQJyzcKD2tcZnB6"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'Ea97Y1S9qHBBVxeQKaf_uQ' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Norren' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "Ea97Y1S9qHBBVxeQKaf_uQ"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1]]
+  Rendered api/users/_user.json.jbuilder (17.6ms)
+  [1m[36mFollow Load (0.4ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1], ["author_id", 1]]
+  Rendered api/users/show.json.jbuilder (20.9ms)
+Completed 200 OK in 26ms (Views: 18.8ms | ActiveRecord: 4.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'IFG4R_QNb28JdTc2ol-CEw' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Borcas' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest", "id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "IFG4R_QNb28JdTc2ol-CEw"], ["bio", ""], ["username", "Borcas"], ["password_digest", "$2a$10$9OdwWAVwaM59VL/cftEIjuueg.lie8iUqa5vHYZM7Cvb5oeDKQJwK"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'QrSgHaxbUqWQ4s-s4AgT6A' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Borcas' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "QrSgHaxbUqWQ4s-s4AgT6A"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"90"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 90]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"validname", "password"=>"[FILTERED]"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'uCEWU7AMQ-DQAH_E-hOtqA' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'validname' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "validname"], ["password_digest", "$2a$10$k50r/HoMBfOI3AlMJyQ2CeJpVSW3Zy0we3L/NYoDsb/dc.UoO7Qna"], ["session_token", "uCEWU7AMQ-DQAH_E-hOtqA"], ["bio", ""]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'u_u0cIvnbOnvb6yhgSfStw' AND "users"."id" != 1541) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'validname' AND "users"."id" != 1541) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "u_u0cIvnbOnvb6yhgSfStw"], ["id", 1541]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1541]]
+  [1m[35m (0.4ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1541]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1541]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1541]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1541]]
+  Rendered api/users/_user.json.jbuilder (15.3ms)
+  [1m[35mFollow Load (0.4ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1541], ["author_id", 1541]]
+  Rendered api/users/show.json.jbuilder (18.7ms)
+Completed 200 OK in 148ms (Views: 17.6ms | ActiveRecord: 7.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"validname", "password"=>"[FILTERED]"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'OvCH0-sHNpxJ9kAcADDNEw' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'validname' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "bio") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "validname"], ["password_digest", "$2a$10$3Mg1uOGQ9e4fjDVurjHO9evkwy7b7G0SxW9xT2GtUbHlWgFpEpgwS"], ["session_token", "OvCH0-sHNpxJ9kAcADDNEw"], ["bio", ""]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'oLztdvo8eNej6kJt8FiiSA' AND "users"."id" != 1542) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'validname' AND "users"."id" != 1542) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "oLztdvo8eNej6kJt8FiiSA"], ["id", 1542]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1542]]
+  [1m[35m (0.6ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1542]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1542]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1542]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1542]]
+  Rendered api/users/_user.json.jbuilder (16.8ms)
+  [1m[35mFollow Load (0.6ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1542], ["author_id", 1542]]
+  Rendered api/users/show.json.jbuilder (20.3ms)
+Completed 200 OK in 146ms (Views: 17.9ms | ActiveRecord: 8.7ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+Unpermitted parameter: bad
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'boEeUd184gBfH6PnEnFotw' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 422 Unprocessable Entity in 16ms (Views: 0.5ms | ActiveRecord: 2.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'XYp8mc-KGxOG3Wrk5BY6FQ' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Talea' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "XYp8mc-KGxOG3Wrk5BY6FQ"], ["bio", ""], ["username", "Talea"], ["password_digest", "$2a$10$xBkNk.oiI4qi1j9D9Vxr7.fK6v2AY1joALE1n3i.HRJVGz5v/B5yC"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '2sPO_UxlFivOrvhrsAVkkA' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Othor' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "2sPO_UxlFivOrvhrsAVkkA"], ["bio", ""], ["username", "Othor"], ["password_digest", "$2a$10$Eje7C5jUI7UwnQp8qOLXn.5IHjZoaPbJt//DN.fHliKzd7RgfYqfe"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::UsersController#follow as JSON
+  Parameters: {"id"=>"1544"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1544]]
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."author_id" IN (1544)
+  [1m[36mFollow Load (0.8ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" IN (1544)[0m
+  [1m[35mFollow Load (0.8ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."author_id" IN (1544)
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (0.9ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1543 AND "follows"."author_id" = 1544) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "follows" ("author_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author_id", 1544], ["follower_id", 1543], ["created_at", "2017-11-12 22:48:37.786126"], ["updated_at", "2017-11-12 22:48:37.786126"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1544]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1544]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1544]]
+  [1m[35m (0.7ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1543]]
+  Rendered api/users/_user.json.jbuilder (15.4ms)
+  [1m[36mFollow Load (0.7ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1543], ["author_id", 1544]]
+  Rendered api/users/show.json.jbuilder (20.5ms)
+Completed 200 OK in 47ms (Views: 18.7ms | ActiveRecord: 9.0ms)
+  [1m[35mUser Exists (2.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1 AND "users"."id" = $2 LIMIT 1  [["follower_id", 1543], ["id", 1544]]
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 't77OeRUkBArbUdpyjQNWhA' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Steffon Hollard' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "t77OeRUkBArbUdpyjQNWhA"], ["bio", ""], ["username", "Steffon Hollard"], ["password_digest", "$2a$10$gF8uJPBpv/mVMXpDFq2jXOlrGyrmesE4qiKbtBOpTMXJl.RqTNxX6"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'dI255Pq600hzb65UI2abfQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Gormond Drumm' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "dI255Pq600hzb65UI2abfQ"], ["bio", ""], ["username", "Gormond Drumm"], ["password_digest", "$2a$10$wLj0GKq8bmsxa2ULcbFRXuS2H0ssJwKGOSPFXEXYKVvsTlChvaSpa"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1545]]
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mFollow Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1545 AND "follows"."author_id" = 1546) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["follower_id", 1545], ["author_id", 1546], ["created_at", "2017-11-12 22:48:38.071000"], ["updated_at", "2017-11-12 22:48:38.071000"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 't77OeRUkBArbUdpyjQNWhA' AND "users"."id" != 1545) LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Steffon Hollard' AND "users"."id" != 1545) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::UsersController#follow as JSON
+  Parameters: {"id"=>"1546"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1546]]
+  [1m[36mComment Load (0.9ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."author_id" IN (1546)[0m
+  [1m[35mFollow Load (0.8ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" IN (1546)
+  [1m[36mFollow Load (0.9ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."author_id" IN (1546)[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1545)
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (1.1ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1545 AND "follows"."author_id" = 1546) LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 6.1ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'bGCnJyisYw5IO8_30CDheA' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Serra Frey' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "bGCnJyisYw5IO8_30CDheA"], ["bio", ""], ["username", "Serra Frey"], ["password_digest", "$2a$10$w5C1VAs8f0pspl/fRqsBZ.Jn9gNHC7G/3pN/IGWm5ssRXqBGy0fO6"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'MKsUZZQjhjEchLKEbmBDMg' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Donnel of Duskendale' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "MKsUZZQjhjEchLKEbmBDMg"], ["bio", ""], ["username", "Donnel of Duskendale"], ["password_digest", "$2a$10$OvRCV2Q8E8gwAeCBMP1USu4o9gj6nLXc4tC2rE3ep0xQ9lF7Faw5m"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1547]]
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (0.8ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1547 AND "follows"."author_id" = 1548) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 1547], ["author_id", 1548], ["created_at", "2017-11-12 22:48:38.362506"], ["updated_at", "2017-11-12 22:48:38.362506"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'bGCnJyisYw5IO8_30CDheA' AND "users"."id" != 1547) LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Serra Frey' AND "users"."id" != 1547) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::UsersController#unfollow as JSON
+  Parameters: {"id"=>"1548"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1548]]
+  [1m[35mComment Load (0.7ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."author_id" IN (1548)
+  [1m[36mFollow Load (0.8ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" IN (1548)[0m
+  [1m[35mFollow Load (0.9ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."author_id" IN (1548)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1547)[0m
+  [1m[35mFollow Load (0.6ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."author_id" = $1 AND "follows"."follower_id" = $2  [["author_id", 1548], ["follower_id", 1547]]
+  [1m[36mFollow Load (0.7ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = $1[0m  [["id", 71]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1548]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1548]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1548]]
+  Rendered api/users/_user.json.jbuilder (12.7ms)
+  [1m[35mFollow Load (0.6ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1547], ["author_id", 1548]]
+  Rendered api/users/show.json.jbuilder (16.3ms)
+Completed 200 OK in 46ms (Views: 15.5ms | ActiveRecord: 8.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1547]]
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1 AND "users"."id" = $2 LIMIT 1  [["follower_id", 1547], ["id", 1548]]
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'bAoIugyW-SaMsmtjIAH9Jw' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Rohanne Webber' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "bAoIugyW-SaMsmtjIAH9Jw"], ["bio", ""], ["username", "Rohanne Webber"], ["password_digest", "$2a$10$Ruf9NTfUX.rK0buZ7KGlKe8vsXk2ORujxb83Ph8EUV09Lnx2YD82C"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'wrVfNO0bNcWXWwlT6lCVcQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Guest' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "wrVfNO0bNcWXWwlT6lCVcQ"], ["bio", ""], ["username", "Guest"], ["password_digest", "$2a$10$LlnPiXFyJo5RCGri.qxjiedF32bm9Y75bh.XYs6/s0j.yq7c2Ce1W"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"username"=>"HAXEST"}, "id"=>"1550"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1550]]
+  [1m[35m (0.5ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1550]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1550]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1550]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1550]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1549]]
+  Rendered api/users/_user.json.jbuilder (17.7ms)
+  [1m[36mFollow Load (0.6ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1549], ["author_id", 1550]]
+  Rendered api/users/show.json.jbuilder (21.5ms)
+Completed 200 OK in 25ms (Views: 19.5ms | ActiveRecord: 3.9ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1550]]
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'zQKijugHUIc0RMPgQ4IxGg' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Walder Haigh' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "zQKijugHUIc0RMPgQ4IxGg"], ["bio", ""], ["username", "Walder Haigh"], ["password_digest", "$2a$10$PtLpNOhFjt/ujRFlDpg9XO8peqJMJwtmEjc6qaVSefFvhJfMmFccK"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"username"=>"New Name"}, "id"=>"1551"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1551]]
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'zQKijugHUIc0RMPgQ4IxGg' AND "users"."id" != 1551) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'New Name' AND "users"."id" != 1551) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "username" = $1 WHERE "users"."id" = $2  [["username", "New Name"], ["id", 1551]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1551]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1551]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1551]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1551]]
+  [1m[35m (0.5ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1551]]
+  Rendered api/users/_user.json.jbuilder (17.3ms)
+  [1m[36mFollow Load (0.4ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1551], ["author_id", 1551]]
+  Rendered api/users/show.json.jbuilder (20.9ms)
+Completed 200 OK in 37ms (Views: 19.5ms | ActiveRecord: 6.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1551]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '9M1dX1FlvqgNfrBbaredHA' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Sefton' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "9M1dX1FlvqgNfrBbaredHA"], ["bio", ""], ["username", "Sefton"], ["password_digest", "$2a$10$r2OS2QkgWWSH/VxFgqpZ9evOutdsegGWocl5QS6Efqb1TGu/4fw52"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"username"=>nil}, "id"=>"1552"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1552]]
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '9M1dX1FlvqgNfrBbaredHA' AND "users"."id" != 1552) LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" IS NULL AND "users"."id" != 1552) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 422 Unprocessable Entity in 13ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-12 22:48:39.024815"], ["updated_at", "2017-11-12 22:48:39.024815"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" IS NULL AND "bookmarks"."id" != 6 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mBookmark Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-12 22:48:39.046869"], ["updated_at", "2017-11-12 22:48:39.046869"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."id" != 7 AND "bookmarks"."story_id" IS NULL) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (0.8ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-12 22:48:39.065213"], ["updated_at", "2017-11-12 22:48:39.065213"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mBookmark Load (1.0ms)[0m  [1mSELECT  "bookmarks".* FROM "bookmarks"  ORDER BY "bookmarks"."id" ASC LIMIT 1[0m
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mBookmark Load (2.0ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks"[0m
+  [1m[35mBookmark Exists (1.0ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 2) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.1ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-12 22:48:39.101183"], ["updated_at", "2017-11-12 22:48:39.101183"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mBookmark Exists (1.1ms)[0m  SELECT  1 AS one FROM "bookmarks" WHERE ("bookmarks"."user_id" = 1 AND "bookmarks"."story_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "bookmarks" ("user_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["story_id", 1], ["created_at", "2017-11-12 22:48:39.116918"], ["updated_at", "2017-11-12 22:48:39.116918"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.9ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (2.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (1.0ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."author_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 1], ["author_id", 1], ["created_at", "2017-11-12 22:48:39.207830"], ["updated_at", "2017-11-12 22:48:39.207830"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mFollow Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" IS NULL AND "follows"."id" != 72 AND "follows"."author_id" = 1) LIMIT 1[0m
+  [1m[35m (2.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mFollow Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."author_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["follower_id", 1], ["author_id", 1], ["created_at", "2017-11-12 22:48:39.228569"], ["updated_at", "2017-11-12 22:48:39.228569"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (0.9ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."id" != 73 AND "follows"."author_id" IS NULL) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (0.8ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."author_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 1], ["author_id", 1], ["created_at", "2017-11-12 22:48:39.246939"], ["updated_at", "2017-11-12 22:48:39.246939"]]
+  [1m[35m (1.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mFollow Load (0.8ms)[0m  [1mSELECT  "follows".* FROM "follows"  ORDER BY "follows"."id" ASC LIMIT 1[0m
+  [1m[35mFollow Exists (0.9ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."author_id" = 1) LIMIT 1
+  [1m[36mFollow Load (0.6ms)[0m  [1mSELECT "follows".* FROM "follows"[0m
+  [1m[35mFollow Exists (1.0ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."author_id" = 2) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (1.0ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."author_id" = 1) LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 1], ["author_id", 1], ["created_at", "2017-11-12 22:48:39.278615"], ["updated_at", "2017-11-12 22:48:39.278615"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mFollow Exists (1.0ms)[0m  SELECT  1 AS one FROM "follows" WHERE ("follows"."follower_id" = 1 AND "follows"."author_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "follows" ("follower_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 1], ["author_id", 1], ["created_at", "2017-11-12 22:48:39.293856"], ["updated_at", "2017-11-12 22:48:39.293856"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (1.0ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-12 22:48:39.317980"], ["updated_at", "2017-11-12 22:48:39.317980"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."id" != 7 AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-12 22:48:39.341455"], ["updated_at", "2017-11-12 22:48:39.341455"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (0.7ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" IS NULL AND "likes"."id" != 8 AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (0.9ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-12 22:48:39.360391"], ["updated_at", "2017-11-12 22:48:39.360391"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."id" != 9 AND "likes"."likeable_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-12 22:48:39.379924"], ["updated_at", "2017-11-12 22:48:39.379924"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLike Load (1.0ms)[0m  SELECT  "likes".* FROM "likes"  ORDER BY "likes"."id" ASC LIMIT 1
+  [1m[36mLike Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1[0m
+  [1m[35mLike Exists (0.8ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'sTORY' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mLike Load (0.7ms)[0m  [1mSELECT "likes".* FROM "likes"[0m
+  [1m[35mLike Exists (1.0ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 2) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (0.9ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-12 22:48:39.416015"], ["updated_at", "2017-11-12 22:48:39.416015"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Exists (0.7ms)[0m  SELECT  1 AS one FROM "likes" WHERE ("likes"."likeable_type" = 'Story' AND "likes"."likeable_id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "likes" ("user_id", "likeable_type", "likeable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["likeable_type", "Story"], ["likeable_id", 1], ["created_at", "2017-11-12 22:48:39.429113"], ["updated_at", "2017-11-12 22:48:39.429113"]]
+  [1m[35m (1.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (2.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (1.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'DkDoUNU12_yEJiXqhwp-Pw' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Coldhands' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "DkDoUNU12_yEJiXqhwp-Pw"], ["bio", ""], ["username", "Coldhands"], ["password_digest", "$2a$10$vYvcRJqZ473LQGRYPOqcceQVceM6w2E2ZfZyptkxxOgeJacqy2ziG"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'DkDoUNU12_yEJiXqhwp-Pw' AND "users"."id" != 1553) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" IS NULL AND "users"."id" != 1553) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'PYgPS4njKeqJsScDCCEJkg' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Nettles' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "PYgPS4njKeqJsScDCCEJkg"], ["bio", ""], ["username", "Nettles"], ["password_digest", "$2a$10$1yGychvSU9FuvmQGgYq5Mu3Y36A4mMPIu07YRG.5OUowggesUtGMS"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'PYgPS4njKeqJsScDCCEJkg' AND "users"."id" != 1554) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Nettles' AND "users"."id" != 1554) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'VOCM8AO8vqhgUSLRwgmIpg' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Wun Weg Wun Dar Wun' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "VOCM8AO8vqhgUSLRwgmIpg"], ["bio", ""], ["username", "Wun Weg Wun Dar Wun"], ["password_digest", "$2a$10$h/1iCi4HY/SfD8BdooDClOZOliBcxBT2.tf3ksP1jjBwNlvYEZC2K"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'PY9IBfT0vftckfqhiJu1bg' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Khrazz' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "PY9IBfT0vftckfqhiJu1bg"], ["bio", ""], ["username", "Khrazz"], ["password_digest", "$2a$10$w2UFfIytjCQtOYqttspPxetlutmphpEV610bgMz2rvsGvtmrvUshm"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '6iiGxcx8afZvE2jhyLt4zQ' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Willam Wythers' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "6iiGxcx8afZvE2jhyLt4zQ"], ["bio", ""], ["username", "Willam Wythers"], ["password_digest", "$2a$10$9F5lLbaMVRYsOwwJ4WF8xO4xH3hWQ.PfLaHG6PpjIqE3FwyRLQgpi"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'VHMZqb8qaTCyHbgcqAezpg' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Harwood Fell' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "VHMZqb8qaTCyHbgcqAezpg"], ["bio", ""], ["username", "Harwood Fell"], ["password_digest", "$2a$10$SiaTiDK04Sye4Ly.JDFGEOy4IyI6NKqtpMUY76AY548K6yPgrkMYG"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1558]]
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'tUrRRBRwkAXqHumBU1n8kg' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Lysa Arryn' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "tUrRRBRwkAXqHumBU1n8kg"], ["bio", ""], ["username", "Lysa Arryn"], ["password_digest", "$2a$10$qpc3Uy1K6tyB9ag3D0eHpuE1LUzuziojbAuFJZOGIzr/aKjhO47VC"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Dp1sapS1uKw-fuZlYkW02A' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Albar Royce' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "Dp1sapS1uKw-fuZlYkW02A"], ["bio", ""], ["username", "Albar Royce"], ["password_digest", "$2a$10$PhKBI.4tDjeHQpQjx8YqguggkXAwwvzZCg3CS5CcEzWU/QDzwivCS"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'KezIBeUt8kNf3o7RYKSfrw' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Bhakaz zo Loraq' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "KezIBeUt8kNf3o7RYKSfrw"], ["bio", ""], ["username", "Bhakaz zo Loraq"], ["password_digest", "$2a$10$ogjPumnlRwaxzRKTVQub4.YdIPUIC3gnFofh1HDjCAPwvF0IvBcIe"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'qUUOtdsRRj4y3Ogi5o3bVw' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Ormond Westerling' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "qUUOtdsRRj4y3Ogi5o3bVw"], ["bio", ""], ["username", "Ormond Westerling"], ["password_digest", "$2a$10$SafMznTkhqd5dv8/wBCNZOe04JY9iZK2tZckZoaweUqaj4fCKJfAG"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'A62fbsmoFNWlinEyySe3bA' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Brella' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "A62fbsmoFNWlinEyySe3bA"], ["bio", ""], ["username", "Brella"], ["password_digest", "$2a$10$RMcn7jVnyPz7ogSxkafpRu/zUm4NWyHQxu1Vo.ZXOgPwOsNwgxAEa"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'l5_RwGvjmlzg3LCNyHDzTA' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Benedar Belmore' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "l5_RwGvjmlzg3LCNyHDzTA"], ["bio", ""], ["username", "Benedar Belmore"], ["password_digest", "$2a$10$osYCE020fHAeMDf4RYBlMuMS/.5rQ0j9oEtBBpZHgW1b8tpmVPMpy"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'XPQNYMw2tLTopZb2HxpEzg' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'All-for-Joffrey' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "XPQNYMw2tLTopZb2HxpEzg"], ["bio", ""], ["username", "All-for-Joffrey"], ["password_digest", "$2a$10$CNgeJTL96BbaxNHijFhrGOZDTCkshjbKYMV0i4/PXyCNmnUedP/TC"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'Lab9Lu_VVBTNFC3GQuibNA' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Josmyn Peckledon' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "Lab9Lu_VVBTNFC3GQuibNA"], ["bio", ""], ["username", "Josmyn Peckledon"], ["password_digest", "$2a$10$sM/EuN1C2Sr5QMj9OfAk4O.01UhEwKhA6XyHD2NFf6XFXzTxbNYmG"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'kbHOFtTSrMOEbK52ktSEfw' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Rennifer Longwaters' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "kbHOFtTSrMOEbK52ktSEfw"], ["bio", ""], ["username", "Rennifer Longwaters"], ["password_digest", "$2a$10$ENlxuRFnBPI4llIUEAlu7.8K/Z6nTUaX89HrBNOfIBUa2sgzjPfVG"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'G5glZN6In8TEbPWPg5RE9A' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Axell Florent' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "G5glZN6In8TEbPWPg5RE9A"], ["bio", ""], ["username", "Axell Florent"], ["password_digest", "$2a$10$b7WUrjaDIkJx32L7cbGJDegISYjmwLJFrubC99LHMmLsoTpQI68ze"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'gpLmMIcXgJakTJujzZVEWw' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Qos' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "gpLmMIcXgJakTJujzZVEWw"], ["bio", ""], ["username", "Qos"], ["password_digest", "$2a$10$sUPvTIEOPLRTICF01O0d4.LvD9omX10V7yO2F6Rs/t/Xio4nOz4IS"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'yJ_zGYGaera5t5tDx9oxfw' LIMIT 1
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Mellei' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "yJ_zGYGaera5t5tDx9oxfw"], ["bio", ""], ["username", "Mellei"], ["password_digest", "$2a$10$68xDKz5D8faj9eQrtf.QEO1QlrSy.q6SyiVwhiaqy1.sQY0IOcbMC"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'BWwBDs4VS0ZqCxzCWoL8aA' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Symon Silver Tongue' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "BWwBDs4VS0ZqCxzCWoL8aA"], ["bio", ""], ["username", "Symon Silver Tongue"], ["password_digest", "$2a$10$wX/1/dXlzEhshajm5piHiOpsFlzWnv.XoaxWmCSlX1MxDOB3fudfG"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Symon Silver Tongue"]]
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'dbot_2XjP6iK9BxECYxyfw' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Arrec Durrandon' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "dbot_2XjP6iK9BxECYxyfw"], ["bio", ""], ["username", "Arrec Durrandon"], ["password_digest", "$2a$10$qzAKc0ANz/IfOly/XGCOHuM3RRfMWkX6XI35C5IAhq.Pq3lOfxAoG"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Arrec Durrandon"]]
+  [1m[35m (1.4ms)[0m  ROLLBACK
