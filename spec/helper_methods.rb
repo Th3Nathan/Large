@@ -15,5 +15,13 @@ module Helpers
           author_id: author_id,
           date: Date.new,
         }
+    end
+    
+    def valid_comment_params 
+        {author_id: user.id, story_id: 1, body: "valid comment body"}
+    end 
+
+    def invalid_params
+        { bad: 'justhaxingyaserver' }
     end 
 end 

@@ -24988,3 +24988,669 @@ Processing by Api::StoriesController#feed as JSON
   Rendered api/stories/index.json.jbuilder (32.3ms)
 Completed 200 OK in 37ms (Views: 26.5ms | ActiveRecord: 7.2ms)
   [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (4.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'eYjIIyVejC7QJ_EHQ_0Cow' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Meha' LIMIT 1[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "eYjIIyVejC7QJ_EHQ_0Cow"], ["bio", ""], ["username", "Meha"], ["password_digest", "$2a$10$lwVPDgyZfeW/AnUL0UKil.qK0q.tCDPt2yQ0a9yVtWFqa8BkStC2q"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '87dIhnvHRJIzTvyGIbKxgA' AND "users"."id" != 1479) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Meha' AND "users"."id" != 1479) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "87dIhnvHRJIzTvyGIbKxgA"], ["id", 1479]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Pork belly crucifix blue bottle. Cleanse yuccie next level raw denim offal gluten-free. Organic thundercats muggle magic meggings lomo venmo chambray messenger bag. Artisan put a bird on it pickled actually. Master yr readymade trust fund."], ["author_id", 1479], ["story_id", 1], ["created_at", "2017-11-12 22:05:35.996909"], ["updated_at", "2017-11-12 22:05:35.996909"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mComment Load (0.8ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (3.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (1)[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1479]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 1], ["likeable_type", "Comment"]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 1], ["likeable_type", "Comment"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1479]]
+  Rendered api/comments/_comment.json.jbuilder (48.9ms)
+  Rendered api/comments/show.json.jbuilder (65.7ms)
+Completed 200 OK in 135ms (Views: 76.6ms | ActiveRecord: 8.2ms)
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'XwX1U01nf7wvc62v_T7RwA' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Stevron Frey' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "XwX1U01nf7wvc62v_T7RwA"], ["bio", ""], ["username", "Stevron Frey"], ["password_digest", "$2a$10$logudFaN1o2J2bG6b.6pIeNkyOAS4RtBnl68cnS1kfNDlH5wjmbsC"]]
+  [1m[35m (0.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'xh7DhIRcX47vvhTQjNziXw' AND "users"."id" != 1480) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Stevron Frey' AND "users"."id" != 1480) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "xh7DhIRcX47vvhTQjNziXw"], ["id", 1480]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#show as JSON
+  Parameters: {"id"=>"999"}
+  [1m[35mComment Load (2.0ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 999]]
+Completed 404 Not Found in 5ms (ActiveRecord: 2.0ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '0-bd88CjKYhoO4cFIUa-Kg' LIMIT 1
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Matt' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "0-bd88CjKYhoO4cFIUa-Kg"], ["bio", ""], ["username", "Matt"], ["password_digest", "$2a$10$qWB3IQr4Vhxx1cp0hDEA8uUPfW0iitE5exfmUeJUki0GgkW/qQU5K"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'kZHSpaEYpM_q9CUcPU1riA' AND "users"."id" != 1481) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Matt' AND "users"."id" != 1481) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "kZHSpaEYpM_q9CUcPU1riA"], ["id", 1481]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"author_id"=>1481, "story_id"=>1, "body"=>"valid comment body"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "comments" ("author_id", "story_id", "body", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["author_id", 1481], ["story_id", 1], ["body", "valid comment body"], ["date", "2017-11-12"], ["created_at", "2017-11-12 22:05:36.477627"], ["updated_at", "2017-11-12 22:05:36.477627"]]
+  [1m[36m (0.9ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1481]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 2], ["likeable_type", "Comment"]]
+  [1m[35m (1.0ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 2], ["likeable_type", "Comment"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1481]]
+  [1m[35m (2.2ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 2], ["likeable_type", "Comment"]]
+  Rendered api/comments/_comment.json.jbuilder (19.2ms)
+  Rendered api/comments/show.json.jbuilder (20.8ms)
+Completed 200 OK in 31ms (Views: 15.3ms | ActiveRecord: 8.5ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'PdYGCckfaP5tlzGgbe-uJA' LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Lucos' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "PdYGCckfaP5tlzGgbe-uJA"], ["bio", ""], ["username", "Lucos"], ["password_digest", "$2a$10$ZRj0XZBAAmeIiLazzPRJae4M.ukgY3PRDtLQIrIuh6L6MZCrZJN7q"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'obuDQjj9S94F0PnURCCUPQ' AND "users"."id" != 1482) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Lucos' AND "users"."id" != 1482) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "obuDQjj9S94F0PnURCCUPQ"], ["id", 1482]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"author_id"=>1482, "story_id"=>1, "body"=>"valid comment body"}}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "comments" ("author_id", "story_id", "body", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["author_id", 1482], ["story_id", 1], ["body", "valid comment body"], ["date", "2017-11-12"], ["created_at", "2017-11-12 22:05:36.647405"], ["updated_at", "2017-11-12 22:05:36.647405"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1482]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Comment"]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 3], ["likeable_type", "Comment"]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1482]]
+  [1m[35m (0.7ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 3], ["likeable_type", "Comment"]]
+  Rendered api/comments/_comment.json.jbuilder (21.1ms)
+  Rendered api/comments/show.json.jbuilder (23.3ms)
+Completed 200 OK in 34ms (Views: 20.5ms | ActiveRecord: 5.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'WNSrxc_fVByJ31j9pB7s6Q' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Chella' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "WNSrxc_fVByJ31j9pB7s6Q"], ["bio", ""], ["username", "Chella"], ["password_digest", "$2a$10$kD7dBC7Md3aKAVhT5jHVmuxexjdfjgZ3GdL9w/sm0u1yToaAy3c7m"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'FvBqjnzijkZNBtshsO-3Xg' AND "users"."id" != 1483) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Chella' AND "users"."id" != 1483) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "FvBqjnzijkZNBtshsO-3Xg"], ["id", 1483]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"bad"=>"justhaxingyaserver"}}
+Unpermitted parameter: bad
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (3.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 422 Unprocessable Entity in 15ms (Views: 0.8ms | ActiveRecord: 3.5ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'qLqcoyfJQXUGaAuNWlGyjg' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Lymond Goodbrook' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "qLqcoyfJQXUGaAuNWlGyjg"], ["bio", ""], ["username", "Lymond Goodbrook"], ["password_digest", "$2a$10$cLQe0.alPIiV9qdt0yrv8uHs/jn8lSyo2IIrRuE2b5x8mF7523XHS"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'IUA7q2BEfSAVYNJmLmXFpg' AND "users"."id" != 1484) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Lymond Goodbrook' AND "users"."id" != 1484) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "IUA7q2BEfSAVYNJmLmXFpg"], ["id", 1484]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Keytar yuccie meh meggings health irony photo booth chambray. Pork belly health schlitz diy. Narwhal banh mi godard vinyl five dollar toast offal. Austin fanny pack muggle magic green juice chicharrones taxidermy thundercats."], ["author_id", 1484], ["story_id", 1], ["created_at", "2017-11-12 22:05:36.967049"], ["updated_at", "2017-11-12 22:05:36.967049"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#update as JSON
+  Parameters: {"comment"=>{"body"=>"Updated Body"}, "id"=>"4"}
+  [1m[35mComment Load (0.6ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mLike Load (0.7ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (4)[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "comments" SET "body" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["body", "Updated Body"], ["updated_at", "2017-11-12 22:05:36.987074"], ["id", 4]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1484]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 4], ["likeable_type", "Comment"]]
+  [1m[36m (0.9ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 4], ["likeable_type", "Comment"]]
+  [1m[35m (0.5ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1484]]
+  Rendered api/comments/_comment.json.jbuilder (14.3ms)
+  Rendered api/comments/show.json.jbuilder (16.0ms)
+Completed 200 OK in 34ms (Views: 14.7ms | ActiveRecord: 4.9ms)
+  [1m[36mComment Load (0.9ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'j2ODtVIkQF8vcBy_8Tkerw' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Grey Worm' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "j2ODtVIkQF8vcBy_8Tkerw"], ["bio", ""], ["username", "Grey Worm"], ["password_digest", "$2a$10$xYgPDRsV8sGYEWQf4fo5JuCG9n45NzneV5IzUU61IYXg5YnH1bqS2"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'geIsfjWAqq_II4dCF2qDEQ' AND "users"."id" != 1485) LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Grey Worm' AND "users"."id" != 1485) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "geIsfjWAqq_II4dCF2qDEQ"], ["id", 1485]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2017-11-12"], ["body", "Everyday ennui plaid. Diy letterpress photo booth. Celiac cliche kale chips salvia waistcoat."], ["author_id", 1485], ["story_id", 1], ["created_at", "2017-11-12 22:05:37.152760"], ["updated_at", "2017-11-12 22:05:37.152760"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#update as JSON
+  Parameters: {"comment"=>{"body"=>nil}, "id"=>"5"}
+  [1m[36mComment Load (0.9ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mLike Load (0.8ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (5)
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 422 Unprocessable Entity in 12ms (Views: 0.5ms | ActiveRecord: 2.2ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'ubbcKxfZvlnSyOlBzdXF0A' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Holger' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "ubbcKxfZvlnSyOlBzdXF0A"], ["bio", ""], ["username", "Holger"], ["password_digest", "$2a$10$GdnI.lv6tKsxRgzKyO6SjeRPY7UFtH3aFNf5fyWcQOpcyBGBHevAi"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2017-11-12"], ["body", "Cornhole ethical yolo occupy wes anderson. Literally 3 wolf moon five dollar toast tattooed jean shorts biodiesel vinyl park. Franzen quinoa retro kickstarter flannel tilde keffiyeh sriracha. Lomo blue bottle tumblr."], ["author_id", 1486], ["story_id", 1], ["created_at", "2017-11-12 22:05:37.303010"], ["updated_at", "2017-11-12 22:05:37.303010"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#destroy as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mComment Load (0.9ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 2.1ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (2.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'HAAelxkzCBqoELCkW-jE1w' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Moryn Tyrell' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "HAAelxkzCBqoELCkW-jE1w"], ["bio", ""], ["username", "Moryn Tyrell"], ["password_digest", "$2a$10$rIpGt5NjeX76nsRbNVRgs.K4BR6CF06m.XJOcMU8yWOH1ub8Om9Jm"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '0Lr1VRCpSDMNdL3VNH4NvA' AND "users"."id" != 1487) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Moryn Tyrell' AND "users"."id" != 1487) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "0Lr1VRCpSDMNdL3VNH4NvA"], ["id", 1487]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Heirloom authentic paleo bicycle rights taxidermy pabst salvia brooklyn. Etsy schlitz slow-carb 90's mixtape. Williamsburg chartreuse wayfarers farm-to-table raw denim cornhole kickstarter. Next level goth polaroid. Wayfarers craft beer hashtag readymade squid tacos."], ["author_id", 1487], ["story_id", 1], ["created_at", "2017-11-12 22:06:52.450208"], ["updated_at", "2017-11-12 22:06:52.450208"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mComment Load (1.9ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mLike Load (5.6ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (7)[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1487]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Comment"]]
+  [1m[35m (1.0ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 7], ["likeable_type", "Comment"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1487]]
+  Rendered api/comments/_comment.json.jbuilder (50.2ms)
+  Rendered api/comments/show.json.jbuilder (63.8ms)
+Completed 200 OK in 135ms (Views: 72.2ms | ActiveRecord: 12.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (1.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (3.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'BlbKFGQ3OujVLfJJ6TcqlQ' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Gyles Farwynd' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "BlbKFGQ3OujVLfJJ6TcqlQ"], ["bio", ""], ["username", "Gyles Farwynd"], ["password_digest", "$2a$10$Tl94MAKKa24SO.VRpWmRxed4T7gMWzrtckP03H0VWvsf.8CzwFrbu"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'E8tJxjkVcX-JREDeu_lD2g' AND "users"."id" != 1488) LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Gyles Farwynd' AND "users"."id" != 1488) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "E8tJxjkVcX-JREDeu_lD2g"], ["id", 1488]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Intelligentsia hashtag 3 wolf moon deep v. Schlitz chillwave pabst cornhole crucifix. Mustache bespoke salvia wayfarers."], ["author_id", 1488], ["story_id", 1], ["created_at", "2017-11-12 22:09:17.152664"], ["updated_at", "2017-11-12 22:09:17.152664"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[35mComment Load (1.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mLike Load (6.4ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (8)[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1488]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 8], ["likeable_type", "Comment"]]
+  [1m[35m (1.3ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 8], ["likeable_type", "Comment"]]
+  [1m[36m (1.4ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1488]]
+  Rendered api/comments/_comment.json.jbuilder (50.7ms)
+  Rendered api/comments/show.json.jbuilder (64.3ms)
+Completed 200 OK in 132ms (Views: 71.8ms | ActiveRecord: 14.0ms)
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'p7T1BnZx_YmrSjxXYneGJQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Laena Velaryon' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "p7T1BnZx_YmrSjxXYneGJQ"], ["bio", ""], ["username", "Laena Velaryon"], ["password_digest", "$2a$10$v3tiVs2X/YvZs6pvnZVf4eHrRRQeY4/55vDsYIYkbPwDtVbvb5BQy"]]
+  [1m[35m (0.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'RW4g9vuB9V7O8tXqMu-RNQ' AND "users"."id" != 1489) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Laena Velaryon' AND "users"."id" != 1489) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "RW4g9vuB9V7O8tXqMu-RNQ"], ["id", 1489]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#show as JSON
+  Parameters: {"id"=>"999"}
+  [1m[35mComment Load (0.8ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 999]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'DC7X2H1KWEdxVYalXAGNlQ' LIMIT 1
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Maelor Targaryen' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "DC7X2H1KWEdxVYalXAGNlQ"], ["bio", ""], ["username", "Maelor Targaryen"], ["password_digest", "$2a$10$.GY3TUwrBKEIPXKduIxme.m28Si.XoahY/AX0IfvSq8GolaHf3XlO"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'gBJOqiIg1uCkpDI4jOsK_A' AND "users"."id" != 1490) LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Maelor Targaryen' AND "users"."id" != 1490) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "gBJOqiIg1uCkpDI4jOsK_A"], ["id", 1490]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"author_id"=>1490, "story_id"=>1, "body"=>"valid comment body"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "comments" ("author_id", "story_id", "body", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["author_id", 1490], ["story_id", 1], ["body", "valid comment body"], ["date", "2017-11-12"], ["created_at", "2017-11-12 22:09:17.588065"], ["updated_at", "2017-11-12 22:09:17.588065"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1490]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 9], ["likeable_type", "Comment"]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 9], ["likeable_type", "Comment"]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1490]]
+  [1m[35m (0.6ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 9], ["likeable_type", "Comment"]]
+  Rendered api/comments/_comment.json.jbuilder (17.3ms)
+  Rendered api/comments/show.json.jbuilder (19.2ms)
+Completed 200 OK in 29ms (Views: 15.4ms | ActiveRecord: 6.8ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."body" = $1 LIMIT 1[0m  [["body", "valid comment body"]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'MlGF-FMsxLlJmLH5pAsK4w' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Gretchel' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "MlGF-FMsxLlJmLH5pAsK4w"], ["bio", ""], ["username", "Gretchel"], ["password_digest", "$2a$10$n5nriOwb.D7zKtGWB9T96..wElMff6RBby5f.xNybhpE0RLlNUQJW"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'nJlAPXwBy-kcQgi1CyNPHw' AND "users"."id" != 1491) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Gretchel' AND "users"."id" != 1491) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "nJlAPXwBy-kcQgi1CyNPHw"], ["id", 1491]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"author_id"=>1491, "story_id"=>1, "body"=>"valid comment body"}}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "comments" ("author_id", "story_id", "body", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["author_id", 1491], ["story_id", 1], ["body", "valid comment body"], ["date", "2017-11-12"], ["created_at", "2017-11-12 22:09:17.762235"], ["updated_at", "2017-11-12 22:09:17.762235"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1491]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 10], ["likeable_type", "Comment"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 10], ["likeable_type", "Comment"]]
+  [1m[35m (0.7ms)[0m  SELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1  [["user_id", 1491]]
+  [1m[36m (2.4ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 10], ["likeable_type", "Comment"]]
+  Rendered api/comments/_comment.json.jbuilder (17.3ms)
+  Rendered api/comments/show.json.jbuilder (19.1ms)
+Completed 200 OK in 30ms (Views: 14.8ms | ActiveRecord: 8.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'eoD7hpbuJtYiUDa9A8LlIA' LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Maddy' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "eoD7hpbuJtYiUDa9A8LlIA"], ["bio", ""], ["username", "Maddy"], ["password_digest", "$2a$10$eMPIWFe7VgISI1/XH0tP/eO91fftcLo8swFidjePHgmafuAMauiQC"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'K73mF2gZIi6aKT89CCphag' AND "users"."id" != 1492) LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Maddy' AND "users"."id" != 1492) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "K73mF2gZIi6aKT89CCphag"], ["id", 1492]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"comment"=>{"bad"=>"justhaxingyaserver"}}
+Unpermitted parameter: bad
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '0G1yaaD-Yyk3NqnGW0U8Mw' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Harmune' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "0G1yaaD-Yyk3NqnGW0U8Mw"], ["bio", ""], ["username", "Harmune"], ["password_digest", "$2a$10$2pd45t6J/D5.qfww40xVvO/7oA6/CqGTTQl.OayYSpZGv6VYA5q8q"]]
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '9jwkXUeqqspJVs4dHogsEg' AND "users"."id" != 1493) LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Harmune' AND "users"."id" != 1493) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "9jwkXUeqqspJVs4dHogsEg"], ["id", 1493]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2017-11-12"], ["body", "Swag 8-bit stumptown. Knausgaard fingerstache kickstarter. Art party bicycle rights vegan brunch diy tattooed. Franzen street fingerstache pop-up keffiyeh."], ["author_id", 1493], ["story_id", 1], ["created_at", "2017-11-12 22:09:18.070173"], ["updated_at", "2017-11-12 22:09:18.070173"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#update as JSON
+  Parameters: {"comment"=>{"body"=>"Updated Body"}, "id"=>"11"}
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mLike Load (0.8ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (11)
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "comments" SET "body" = $1, "updated_at" = $2 WHERE "comments"."id" = $3  [["body", "Updated Body"], ["updated_at", "2017-11-12 22:09:18.088517"], ["id", 11]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1493]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 11], ["likeable_type", "Comment"]]
+  [1m[35m (1.1ms)[0m  SELECT "users".id FROM "users" INNER JOIN "likes" ON "users"."id" = "likes"."user_id" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2  [["likeable_id", 11], ["likeable_type", "Comment"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "likes".id FROM "likes" WHERE "likes"."user_id" = $1[0m  [["user_id", 1493]]
+  Rendered api/comments/_comment.json.jbuilder (15.6ms)
+  Rendered api/comments/show.json.jbuilder (17.5ms)
+Completed 200 OK in 39ms (Views: 16.9ms | ActiveRecord: 5.9ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '_dPqD6k3pifRVkBnszCJgQ' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Moryn Tyrell' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "_dPqD6k3pifRVkBnszCJgQ"], ["bio", ""], ["username", "Moryn Tyrell"], ["password_digest", "$2a$10$/JIEGg1is9CbgT5NEz6lI.E6pJiy7mZev5muY/fYvcZDthOVoJjM6"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'xWX4AybQhJOMumShdCH2Hg' AND "users"."id" != 1494) LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Moryn Tyrell' AND "users"."id" != 1494) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "xWX4AybQhJOMumShdCH2Hg"], ["id", 1494]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Irony swag drinking xoxo small batch. Salvia butcher kickstarter. Chia iphone cornhole selfies meh kogi tote bag everyday. Meggings pinterest squid offal lo-fi. Before they sold out fixie letterpress church-key stumptown loko keffiyeh fingerstache."], ["author_id", 1494], ["story_id", 1], ["created_at", "2017-11-12 22:09:18.262214"], ["updated_at", "2017-11-12 22:09:18.262214"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#update as JSON
+  Parameters: {"comment"=>{"body"=>nil}, "id"=>"12"}
+  [1m[35mComment Load (0.9ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mLike Load (0.8ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_type" = 'Comment' AND "likes"."likeable_id" IN (12)[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 15ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'L1ZloIRkblJbkw4TExsVSQ' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Symon Hollard' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "L1ZloIRkblJbkw4TExsVSQ"], ["bio", ""], ["username", "Symon Hollard"], ["password_digest", "$2a$10$3FC3VBxZX/gUC5XbRXFnGOPH6qZBKNr.nbg5j.30DiYUOE3nbU.yC"]]
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "comments" ("date", "body", "author_id", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "2017-11-12"], ["body", "Slow-carb selvage kinfolk kale chips. Kale chips cliche cold-pressed loko pickled kitsch sartorial. Humblebrag letterpress meh yr gluten-free pop-up. Polaroid muggle magic art party irony sartorial jean shorts authentic."], ["author_id", 1495], ["story_id", 1], ["created_at", "2017-11-12 22:09:18.411032"], ["updated_at", "2017-11-12 22:09:18.411032"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#destroy as JSON
+  Parameters: {"id"=>"13"}
+  [1m[35mComment Load (0.8ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "comments" WHERE "comments"."id" = $1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+  [1m[35mComment Load (0.4ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (1.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (2.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'dNPEtCb_OBGeJMsIvIs2gg' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Kraznys mo Nakloz' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "dNPEtCb_OBGeJMsIvIs2gg"], ["bio", ""], ["username", "Kraznys mo Nakloz"], ["password_digest", "$2a$10$qrs7R3kjpJRVM7lqYbQAuu77eR0EPEmZz.IjB4xEJRMp.oIzlZ8ma"]]
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Kraznys mo Nakloz", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 17ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'LybVQTBn-qNxwCXFURhkVA' LIMIT 1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Aemma Arryn' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "LybVQTBn-qNxwCXFURhkVA"], ["bio", ""], ["username", "Aemma Arryn"], ["password_digest", "$2a$10$XOKd9qmk8asZ7V7s0a2W0uDmr0fUcWomiJ2kObrk.LQYgQ8eGNLKK"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Aemma Arryn", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::CommentsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'IDVcgX7o5dicsajBInUGEw' LIMIT 1
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Annara Farring' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "IDVcgX7o5dicsajBInUGEw"], ["bio", ""], ["username", "Annara Farring"], ["password_digest", "$2a$10$RG7TNTJrlve1uWRPz60rc.8alH7W9tXcV6nBedBwwzY5quZb9K8qa"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::CommentsController#destroy as JSON
+  Parameters: {"id"=>"1498"}
+  [1m[35mComment Load (2.5ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 1498]]
+Completed 404 Not Found in 29ms (ActiveRecord: 6.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (2.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'S-wOQBh7oimSRs62v1RQZA' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Jothos Slynt' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "S-wOQBh7oimSRs62v1RQZA"], ["bio", ""], ["username", "Jothos Slynt"], ["password_digest", "$2a$10$zg.DKdosvFm0kE8IkABUSO9Yi0n42hPTWOJtYPx2dvrpmNRpWzHjK"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Jothos Slynt", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Jothos Slynt"]]
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'X_R97defjlRXQZx23PUVUg' AND "users"."id" != 1499) LIMIT 1
+  [1m[36mUser Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Jothos Slynt' AND "users"."id" != 1499) LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "X_R97defjlRXQZx23PUVUg"], ["id", 1499]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (4.1ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1499]]
+  [1m[36m (0.9ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1499]]
+  [1m[35m (3.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1499]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1499]]
+  [1m[35m (0.8ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1499]]
+  Rendered api/users/_user.json.jbuilder (123.9ms)
+  [1m[36mFollow Load (0.5ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1499], ["author_id", 1499]]
+  Rendered api/users/show.json.jbuilder (142.2ms)
+Completed 200 OK in 310ms (Views: 157.0ms | ActiveRecord: 21.2ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'k8fn8WrrC9AKxhtoDiFSZA' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Lysa Meadows' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "k8fn8WrrC9AKxhtoDiFSZA"], ["bio", ""], ["username", "Lysa Meadows"], ["password_digest", "$2a$10$HCLGchOpnLl0VpJTeG50Kuzbd00dCxnyTjwPX3PKUAGdlrAdTVkOu"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Lysa Meadows", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Lysa Meadows"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'yhWtIIfEI1JwPCxGXEL-Tg' AND "users"."id" != 1500) LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Lysa Meadows' AND "users"."id" != 1500) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "yhWtIIfEI1JwPCxGXEL-Tg"], ["id", 1500]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1500]]
+  [1m[35m (0.6ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1500]]
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1500]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1500]]
+  [1m[36m (1.6ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1500]]
+  Rendered api/users/_user.json.jbuilder (22.0ms)
+  [1m[35mFollow Load (0.7ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1500], ["author_id", 1500]]
+  Rendered api/users/show.json.jbuilder (25.6ms)
+Completed 200 OK in 147ms (Views: 21.2ms | ActiveRecord: 9.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+Completed 422 Unprocessable Entity in 6ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+  [1m[35m (1.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[35mUser Load (4.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 422 Unprocessable Entity in 8ms (Views: 0.6ms | ActiveRecord: 4.3ms)
+  [1m[36m (3.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'MjX_dY6pKIWPQuj0zfYdIA' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Melaquin' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "MjX_dY6pKIWPQuj0zfYdIA"], ["bio", ""], ["username", "Melaquin"], ["password_digest", "$2a$10$fZLfJOiVDGYzHaTE0bsKQewTd3joGpixZXdrwZNtG5Ap2.9z7PxuW"]]
+  [1m[36m (2.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::SessionsController#destroy as JSON
+  Parameters: {"id"=>1501}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (3.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '6elCKtbCy1bGSVrF-Hickg' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Dick Crabb' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "6elCKtbCy1bGSVrF-Hickg"], ["bio", ""], ["username", "Dick Crabb"], ["password_digest", "$2a$10$BlTgiDib/CCZTYkxsqEtnO7cQ9cPBTNj2CQzfXFtvzH8qnl9U7VCe"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Dick Crabb", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Dick Crabb"]]
+  [1m[36m (1.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'rP1EmUaRv47MqNiUOveprw' AND "users"."id" != 1502) LIMIT 1
+  [1m[36mUser Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Dick Crabb' AND "users"."id" != 1502) LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "rP1EmUaRv47MqNiUOveprw"], ["id", 1502]]
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.7ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1502]]
+  [1m[36m (3.2ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1502]]
+  [1m[35m (2.9ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1502]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1502]]
+  [1m[35m (1.6ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1502]]
+  Rendered api/users/_user.json.jbuilder (132.4ms)
+  [1m[36mFollow Load (0.5ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1502], ["author_id", 1502]]
+  Rendered api/users/show.json.jbuilder (147.7ms)
+Completed 200 OK in 314ms (Views: 155.1ms | ActiveRecord: 25.8ms)
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'zpfV-XDn2_KrkNYRwOw7Zg' LIMIT 1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Alyn Stackspear' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "zpfV-XDn2_KrkNYRwOw7Zg"], ["bio", ""], ["username", "Alyn Stackspear"], ["password_digest", "$2a$10$C7TunewbqY.nPmIFHT6KVeEMyfBJU3FWQ4aMOqWkm0vKiQB0Mv4UO"]]
+  [1m[35m (0.8ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Alyn Stackspear", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Alyn Stackspear"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'R6kMSrYzGB7fCaKtvcE9CQ' AND "users"."id" != 1503) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Alyn Stackspear' AND "users"."id" != 1503) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "R6kMSrYzGB7fCaKtvcE9CQ"], ["id", 1503]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1503]]
+  [1m[35m (0.5ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1503]]
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1503]]
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1503]]
+  [1m[36m (1.3ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1503]]
+  Rendered api/users/_user.json.jbuilder (19.1ms)
+  [1m[35mFollow Load (1.0ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1503], ["author_id", 1503]]
+  Rendered api/users/show.json.jbuilder (22.7ms)
+Completed 200 OK in 141ms (Views: 16.8ms | ActiveRecord: 10.7ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'w6EZG42bKfF1p-t1SPdtqg' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Patrek Vance' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "w6EZG42bKfF1p-t1SPdtqg"], ["bio", ""], ["username", "Patrek Vance"], ["password_digest", "$2a$10$W1ql.1dfNlI9Jjosjtpyv.rWRGoDEDga3DcEc4Ko21L5SA0D.paFu"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'aHLIcXYVKNEwwCq2wrTfMQ' AND "users"."id" != 1504) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Patrek Vance' AND "users"."id" != 1504) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "aHLIcXYVKNEwwCq2wrTfMQ"], ["id", 1504]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::SessionsController#destroy as JSON
+  Parameters: {"id"=>1504}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'ibJepfXTLIv7deQG4MjeVg' AND "users"."id" != 1504) LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Patrek Vance' AND "users"."id" != 1504) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "ibJepfXTLIv7deQG4MjeVg"], ["id", 1504]]
+  [1m[36m (0.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 3.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (2.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'EWbPeubJogJDbUgPQwv4RQ' LIMIT 1
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Merrett Frey' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "EWbPeubJogJDbUgPQwv4RQ"], ["bio", ""], ["username", "Merrett Frey"], ["password_digest", "$2a$10$meh3HSsLQua5CS4NIsIhk.uljtsxbvSl9htKW9OcPYXDf/YONODhu"]]
+  [1m[36m (0.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Merrett Frey", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Merrett Frey"]]
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'TquEQbAk591C1Lr9lIbALg' AND "users"."id" != 1505) LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Merrett Frey' AND "users"."id" != 1505) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "TquEQbAk591C1Lr9lIbALg"], ["id", 1505]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.4ms)[0m  SELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1  [["author_id", 1505]]
+  [1m[36m (1.9ms)[0m  [1mSELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1[0m  [["author_id", 1505]]
+  [1m[35m (2.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1505]]
+  [1m[36m (3.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1[0m  [["author_id", 1505]]
+  [1m[35m (0.9ms)[0m  SELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1  [["follower_id", 1505]]
+  Rendered api/users/_user.json.jbuilder (122.6ms)
+  [1m[36mFollow Load (0.6ms)[0m  [1mSELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2[0m  [["follower_id", 1505], ["author_id", 1505]]
+  Rendered api/users/show.json.jbuilder (138.4ms)
+Completed 200 OK in 300ms (Views: 147.2ms | ActiveRecord: 20.9ms)
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '7bKkOg8HcOolKK-_xrBEDA' LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Ellery Vance' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_token", "7bKkOg8HcOolKK-_xrBEDA"], ["bio", ""], ["username", "Ellery Vance"], ["password_digest", "$2a$10$lGZPDiPXGk5CYmSev.lgJ.r36.MHAsiq2ceKPiSn3j.9CxwfVIJ8G"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Ellery Vance", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Ellery Vance"]]
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'IhR48pqvo0a4d7utktynYg' AND "users"."id" != 1506) LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Ellery Vance' AND "users"."id" != 1506) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "IhR48pqvo0a4d7utktynYg"], ["id", 1506]]
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT "stories".id FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 1506]]
+  [1m[35m (0.8ms)[0m  SELECT "comments".id FROM "comments" WHERE "comments"."author_id" = $1  [["author_id", 1506]]
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1506]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."author_id" = $1  [["author_id", 1506]]
+  [1m[36m (1.0ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."author_id" WHERE "follows"."follower_id" = $1[0m  [["follower_id", 1506]]
+  Rendered api/users/_user.json.jbuilder (18.0ms)
+  [1m[35mFollow Load (0.7ms)[0m  SELECT "follows".* FROM "follows" WHERE "follows"."follower_id" = $1 AND "follows"."author_id" = $2  [["follower_id", 1506], ["author_id", 1506]]
+  Rendered api/users/show.json.jbuilder (21.2ms)
+Completed 200 OK in 141ms (Views: 17.3ms | ActiveRecord: 9.9ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"bad"=>"justhaxingyaserver"}}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'UY86SyVWm_AsqoekBHAjpQ' LIMIT 1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Ronnel Harclay' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("session_token", "bio", "username", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"  [["session_token", "UY86SyVWm_AsqoekBHAjpQ"], ["bio", ""], ["username", "Ronnel Harclay"], ["password_digest", "$2a$10$DkULOpUPFkaxKlyaacqw6Ovo9Rp1PcoVrOcRghWxkhOrfa0UrZw5C"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'g53hVUdblj2Li4vKoXiwNg' AND "users"."id" != 1507) LIMIT 1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Ronnel Harclay' AND "users"."id" != 1507) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "g53hVUdblj2Li4vKoXiwNg"], ["id", 1507]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by Api::SessionsController#destroy as JSON
+  Parameters: {"id"=>1507}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'N5A4kcT5OptE4Q1MxdcdsA' AND "users"."id" != 1507) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Ronnel Harclay' AND "users"."id" != 1507) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "N5A4kcT5OptE4Q1MxdcdsA"], ["id", 1507]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 2.9ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
