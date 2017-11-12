@@ -1,4 +1,4 @@
-# Large
+# Large      [![Build Status](https://api.travis-ci.org/Th3Nathan/Large.svg?branch=master)](https://travis-ci.org/Th3Nathan/Large)
 
 Large is a blogging web app based on Medium. It was built using a Rails backend with a React/Redux frontend.
 
