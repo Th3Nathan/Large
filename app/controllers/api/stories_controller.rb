@@ -5,6 +5,10 @@ class Api::StoriesController < ApplicationController
     story.bookmarking_user_ids.include?(current_user.id)
   end
 
+  def bookmark_id(story)
+    ( current_user.bookmark_ids & story.bookmark_ids).first
+  end
+
   def index
     @stories = Story.includes(:author, :likes)
   end
@@ -45,10 +49,6 @@ class Api::StoriesController < ApplicationController
   def bookmarked
     @stories = current_user.bookmarked_stories
     render :index
-  end
-
-  def bookmark_id(story)
-    ( current_user.bookmark_ids & story.bookmark_ids).first
   end
 
   def story_params

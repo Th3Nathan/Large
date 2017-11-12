@@ -42,6 +42,7 @@ RSpec.describe Api::UsersController, type: :controller do
     context 'with a valid params' do
       valid_params = { username: 'validname', password: 'validpassword' }
       it 'logs in user' do 
+        #testing implementation rather than behavior?
         expect(controller).to receive(:login).and_call_original
         post :create, format: :json, user: valid_params
       end 
@@ -66,12 +67,10 @@ RSpec.describe Api::UsersController, type: :controller do
     let(:followee) { create :user }
     before(:each) { login }
     it 'sends updated user upon success' do 
-      login
       post :follow, format: :json, id: followee.id 
       expect(user.followees.include?(followee)).to be true
     end 
     it 'renders json message if already following' do 
-      login 
       user.followees = [followee]
       user.save 
       post :follow, format: :json, id: followee.id 
