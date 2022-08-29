@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
 
   def follow_id(showed_user)
     # current_user.followees.find_by({author_id: showed_user.id})
+    # current_user.followees.find_by({author_id: showed_user.id})
     current_user.followee_follows.where({author_id: showed_user.id})
   end
 
